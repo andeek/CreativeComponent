@@ -22,6 +22,9 @@
 @
 
 \subsubsection{igraph}
+<<igraph, child='parts/4.1.3_igraph.Rnw', eval=TRUE>>=
+@
+
 \subsection{Data Management}
 \section{Design and Functionality}
 
