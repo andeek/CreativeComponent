@@ -1,0 +1,16 @@
+{
+    "contents" : "D3 is a javascript library written by Mike Bostock with the main purpose of visualizing and interacting with data. The title D3 stands for ``Data Driven Documents”. This library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of animations and interactions that are tied to underlying data. The key idea behind the library is that DOM elements are completely determined by the data, so rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representaions of their data in a web framework. \n\nThis tool uses D3 to handle all graphical displays and user interactions with the graph. The data is passed to the client and able to be used through Shiny's input bindings. At this point, the graph’s nodes are tied to circles and the edges are tied to paths on the page. User manipulations such as selecting, dragging, and grouping are handled by D3 and then data is passed back to the server via Shiny's output bindings to allow for communication between user and the R engine underneath.",
+    "created" : 1376955002744.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3342061080",
+    "id" : "BBC9A3C3",
+    "lastKnownWriteTime" : 1376955091,
+    "path" : "~/CreativeComponent/paper/parts/4.1.2_d3.Rnw",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "sweave"
+}

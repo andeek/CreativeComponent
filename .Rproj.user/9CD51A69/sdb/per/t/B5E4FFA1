@@ -1,0 +1,15 @@
+{
+    "contents" : "This tool utilizes three main pieces of software to establish interactive user control of a random graph. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface, and data formatting, respectively.",
+    "created" : 1376955093396.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "917570167",
+    "id" : "B5E4FFA1",
+    "lastKnownWriteTime" : 1376955105,
+    "path" : "~/CreativeComponent/paper/parts/4.1_software.Rnw",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "sweave"
+}

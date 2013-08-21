@@ -1,0 +1,15 @@
+{
+    "contents" : "\\documentclass{article}\n\n\\begin{document}\n\n\\part{Background}\n\\section{Networks}\n\\section{Visualization}\n\\section{Layout Algorithms}\n\n\\part{User Interface}\n\\section{Technical Aspects}\n\\subsection{Software}\n<<software, child='parts/4.1_software.Rnw', eval=TRUE>>=\n@\n\n\\subsubsection{Shiny}\n<<shiny, child='parts/4.1.1_shiny.Rnw', eval=TRUE>>=\n@\n\n\\subsubsection{D3}\n<<d3, child='parts/4.1.2_d3.Rnw', eval=TRUE>>=\n@\n\n\\subsubsection{igraph}\n<<igraph, child='parts/4.1.3_igraph.Rnw', eval=TRUE>>=\n@\n\n\\subsection{Data Management}\n\\section{Design and Functionality}\n\n\\part{Further Work}\n\n\n\\end{document}",
+    "created" : 1376954789663.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3829439310",
+    "id" : "956A3212",
+    "lastKnownWriteTime" : 1376958936,
+    "path" : "~/CreativeComponent/paper/cc_kaplan_andrea.Rnw",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "sweave"
+}

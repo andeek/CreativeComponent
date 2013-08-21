@@ -1,0 +1,16 @@
+{
+    "contents" : "igraph is a software package used for creating and manipulating undirected and directed graphs. It is a cross-language packagae available for C, R, python, and Ruby. igraph also supports multiple graph file formats and visualization of graph structures.\n\nThis tool utilizes two parts of igraph, first is the conversion from a gml file to an xml file. The gml file format, short for Graph Modelling Language,is a hierarchical ASCII-based file format for describing graphs. Then, once we have an xml file we can convert to a JSON file using the R package rjson. Getting the graphs in a JSON file formats makes working with them in the D3 library incredibly straightforward. \n\nigraph is also used to compute initial x and y coordinates for the graph using a force-driven layout prior to being passed to the force layout in D3. This reduces the initial work that must be done by the javascript library and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience.\n\n",
+    "created" : 1376955168808.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3847011066",
+    "id" : "13156334",
+    "lastKnownWriteTime" : 1376958932,
+    "path" : "~/CreativeComponent/paper/parts/4.1.3_igraph.Rnw",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "sweave"
+}
