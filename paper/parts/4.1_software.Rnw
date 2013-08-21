@@ -1,1 +1,3 @@
 This tool utilizes three main pieces of software to establish interactive user control of a random graph. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface, and data formatting, respectively.
+
+\includegraphics[width=.9\textwidth]{images/clientserverflow.png}

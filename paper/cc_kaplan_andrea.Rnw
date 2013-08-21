@@ -1,4 +1,8 @@
 \documentclass{article}
+\usepackage{graphicx}
+\usepackage[backend=bibtex, natbib=true]{biblatex}
+\addbibresource{references/refs.bib}
+
 
 \begin{document}
 
@@ -30,5 +34,5 @@
 
 \part{Further Work}
 
-
+\printbibliography
 \end{document}

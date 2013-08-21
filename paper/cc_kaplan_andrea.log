@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.28)  19 AUG 2013 19:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.4.28)  21 AUG 2013 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -169,41 +169,245 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 (/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
 )
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2011/11/13 v1.7 programmable bibliographies
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count88
+)
+\etb@tempcnta=\count89
+)
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count90
+
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+\c@listtotal=\count91
+\c@listcount=\count92
+\c@liststart=\count93
+\c@liststop=\count94
+\c@citecount=\count95
+\c@citetotal=\count96
+\c@multicitecount=\count97
+\c@multicitetotal=\count98
+\c@instcount=\count99
+\c@maxnames=\count100
+\c@minnames=\count101
+\c@maxitems=\count102
+\c@minitems=\count103
+\c@citecounter=\count104
+\c@savedcitecounter=\count105
+\c@uniquelist=\count106
+\c@uniquename=\count107
+\c@refsection=\count108
+\c@refsegment=\count109
+\c@maxextrayear=\count110
+\c@maxextraalpha=\count111
+\c@abbrvpenalty=\count112
+\c@highnamepenalty=\count113
+\c@lownamepenalty=\count114
+\c@maxparens=\count115
+\c@parenlevel=\count116
+\blx@tempcnta=\count117
+\blx@tempcntb=\count118
+\blx@tempcntc=\count119
+\blx@maxsection=\count120
+\blx@maxsegment=\count121
+\blx@notetype=\count122
+\blx@parenlevel@text=\count123
+\blx@parenlevel@foot=\count124
+\labelnumberwidth=\skip44
+\labelalphawidth=\skip45
+\shorthandwidth=\skip46
+\biblabelsep=\skip47
+\bibitemsep=\skip48
+\bibnamesep=\skip49
+\bibinitsep=\skip50
+\bibparsep=\skip51
+\bibhang=\skip52
+\blx@auxin=\read1
+\blx@auxout=\write3
+\c@mincomprange=\count125
+\c@maxcomprange=\count126
+\c@mincompwidth=\count127
+\c@labelname=\count128
+\c@savedlabelname=\count129
+\c@author=\count130
+\c@savedauthor=\count131
+\c@shortauthor=\count132
+\c@savedshortauthor=\count133
+\c@editor=\count134
+\c@savededitor=\count135
+\c@editora=\count136
+\c@savededitora=\count137
+\c@editorb=\count138
+\c@savededitorb=\count139
+\c@editorc=\count140
+\c@savededitorc=\count141
+\c@shorteditor=\count142
+\c@savedshorteditor=\count143
+\c@bookauthor=\count144
+\c@savedbookauthor=\count145
+\c@translator=\count146
+\c@savedtranslator=\count147
+\c@annotator=\count148
+\c@savedannotator=\count149
+\c@commentator=\count150
+\c@savedcommentator=\count151
+\c@introduction=\count152
+\c@savedintroduction=\count153
+\c@foreword=\count154
+\c@savedforeword=\count155
+\c@afterword=\count156
+\c@savedafterword=\count157
+\c@holder=\count158
+\c@savedholder=\count159
+\c@namea=\count160
+\c@savednamea=\count161
+\c@nameb=\count162
+\c@savednameb=\count163
+\c@namec=\count164
+\c@savednamec=\count165
+\c@institution=\count166
+\c@savedinstitution=\count167
+\c@language=\count168
+\c@savedlanguage=\count169
+\c@location=\count170
+\c@savedlocation=\count171
+\c@organization=\count172
+\c@savedorganization=\count173
+\c@origlocation=\count174
+\c@savedoriglocation=\count175
+\c@origpublisher=\count176
+\c@savedorigpublisher=\count177
+\c@pageref=\count178
+\c@savedpageref=\count179
+\c@publisher=\count180
+\c@savedpublisher=\count181
+\c@lista=\count182
+\c@savedlista=\count183
+\c@listb=\count184
+\c@savedlistb=\count185
+\c@listc=\count186
+\c@savedlistc=\count187
+\c@listd=\count188
+\c@savedlistd=\count189
+\c@liste=\count190
+\c@savedliste=\count191
+\c@listf=\count192
+\c@savedlistf=\count193
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2011/11/13 v1.7 biblatex generic compatibility
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2011/11/13 v1.7 biblatex generic definitions
+\c@biburlnumpenalty=\count194
+\c@biburlucpenalty=\count195
+\c@biburllcpenalty=\count196
+\c@smartand=\count197
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def
+File: blx-natbib.def 2011/11/13 v1.7 biblatex natbib compatibility
+)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2011/11/13 v1.7 biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2011/11/13 v1.7 biblatex bibliography style
+))
+Package biblatex Info: Trying to load citation style 'numeric'...
+Package biblatex Info: ... file 'numeric.cbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+File: numeric.cbx 2011/11/13 v1.7 biblatex citation style
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2011/11/13 v1.7 biblatex localization
+)
+\@quotelevel=\count198
+\@quotereset=\count199
+
 (./cc_kaplan_andrea.aux)
 \openout1 = `cc_kaplan_andrea.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    ... okay on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count88
+\scratchcounter=\count200
 \scratchdimen=\dimen109
 \scratchbox=\box26
-\nofMPsegments=\count89
-\nofMParguments=\count90
+\nofMPsegments=\count201
+\nofMParguments=\count202
 \everyMPshowfont=\toks15
-\MPscratchCnt=\count91
+\MPscratchCnt=\count203
 \MPscratchDim=\dimen110
-\MPnumerator=\count92
-\makeMPintoPDFobject=\count93
+\MPnumerator=\count204
+\makeMPintoPDFobject=\count205
 \everyMPtoPDFconversion=\toks16
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -253,34 +457,63 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package biblatex Info: No input encoding detected.
+(biblatex)             Assuming 'ascii'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'ascii'.
+\openout3 = `cc_kaplan_andrea-blx.bib'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'cc_kaplan_andrea.bbl' found.
+
+(./cc_kaplan_andrea.bbl)
+Package biblatex Info: Reference section=0 on input line 62.
+Package biblatex Info: Reference segment=0 on input line 62.
+
+<images/clientserverflow.png, id=1, 752.8125pt x 266.9975pt>
+File: images/clientserverflow.png Graphic file (type png)
+
+<use images/clientserverflow.png>
+Package pdftex.def Info: images/clientserverflow.png used on input line 74.
+(pdftex.def)             Requested size: 310.4979pt x 110.1256pt.
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ù in font cmr10!
+ [1
 
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Missing character: There is no ‚ in font cmr10!
-Missing character: There is no Ä in font cmr10!
-Missing character: There is no ô in font cmr10!
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/clientserverflow.
+png (PNG copy)>]
+Package color Info: Redefining color shadecolor on input line 96.
  [2]
-(./cc_kaplan_andrea.aux) ) 
+Package color Info: Redefining color shadecolor on input line 126.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 150.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 150.
+ [3] [4]
+(./cc_kaplan_andrea.aux)
+Package logreq Info: Writing requests to 'cc_kaplan_andrea.run.xml'.
+\openout1 = `cc_kaplan_andrea.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2066 strings out of 493485
- 30167 string characters out of 3143526
- 81346 words of memory out of 3000000
- 5367 multiletter control sequences out of 15000+200000
- 5465 words of font info for 20 fonts, out of 3000000 for 9000
+ 6811 strings out of 493485
+ 110692 string characters out of 3143526
+ 258529 words of memory out of 3000000
+ 10047 multiletter control sequences out of 15000+200000
+ 6280 words of font info for 23 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,6n,23p,654b,117s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb>
-Output written on cc_kaplan_andrea.pdf (2 pages, 50963 bytes).
+ 38i,5n,49p,841b,948s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on cc_kaplan_andrea.pdf (4 pages, 692820 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 15 compressed objects within 1 object stream
+ 42 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

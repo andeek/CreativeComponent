@@ -1,0 +1,113 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 1.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{mb-d3}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Bostock}{B.}%
+     {Mike}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BM1}
+  \strng{fullhash}{BM1}
+  \field{labelyear}{2012}
+  \field{sortinit}{B}
+  \field{title}{D3.js: Data Driven Documents}
+  \verb{url}
+  \verb http://d3js.org/
+  \endverb
+  \field{year}{2012}
+\endentry
+
+\entry{acb-rjson}{manual}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Couture-Beil}{C.-B.}%
+     {Alex}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CBA1}
+  \strng{fullhash}{CBA1}
+  \field{labelyear}{2013}
+  \field{sortinit}{C}
+  \field{note}{R package version 0.2.12}
+  \field{title}{rjson: JSON for R}
+  \verb{url}
+  \verb http://CRAN.R-project.org/package=rjson
+  \endverb
+  \field{year}{2013}
+\endentry
+
+\entry{gc-igraph}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Csardi}{C.}%
+     {Gabor}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Nepusz}{N.}%
+     {Tamas}{T.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CGNT1}
+  \strng{fullhash}{CGNT1}
+  \field{labelyear}{2006}
+  \field{sortinit}{C}
+  \field{pages}{1695}
+  \field{title}{The igraph software package for complex network research}
+  \verb{url}
+  \verb http://igraph.sf.net
+  \endverb
+  \field{volume}{Complex Systems}
+  \field{journaltitle}{InterJournal}
+  \field{year}{2006}
+\endentry
+
+\entry{rs-shiny}{manual}{}
+  \name{author}{2}{}{%
+    {{}%
+     {{RStudio}}{R.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {{Inc.}}{I.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{RI1}
+  \strng{fullhash}{RI1}
+  \field{labelyear}{2013}
+  \field{sortinit}{R}
+  \field{note}{R package version 0.4.0}
+  \field{title}{shiny: Web Application Framework for R}
+  \verb{url}
+  \verb http://CRAN.R-project.org/package=shiny
+  \endverb
+  \field{year}{2013}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
