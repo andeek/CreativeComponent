@@ -1,3 +1,10 @@
-Gravicom utilizes three main pieces of software to establish interactive user control of a random graph. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
+Gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
 
-\includegraphics[width=.95\textwidth]{images/clientserverflow.png}
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/clientserverflow.png}
+\caption{\label{fig:clientserver}\hh{Description of the figure}}
+\end{figure}
+
+\hh{The figure is absolutely stunning!!!! I love it! Could you also include the actual software requirements, i.e. the software that the client needs to have installed - which I believe is just a javascript enabled internet browser, and all the software that has to be installed on the server side: R (version? packages?)}
+
