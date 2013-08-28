@@ -1,6 +1,6 @@
 igraph is a software package used for creating and manipulating undirected and directed graphs.\cite{gc-igraph} It is a cross-language package available for C, R, python, and Ruby. igraph also supports multiple graph file formats and visualization of graph structures.
 
-This tool utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Here is an example gml file of an undirected graph with two nodes and one edge. The important points to note are the the node ids are numeric, the edge has only source and target attributes of the node ids to be connected, and the nodes can have other attributes, as typified by ``value" in the example.
+Gravicom utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Here is an example gml file of an undirected graph with two nodes and one edge. The important points to note are the the node ids are numeric, the edge has only source and target attributes of the node ids to be connected, and the nodes can have other attributes, as typified by ``value" in the example.
 <<gml, results='markup', echo=FALSE>>=
 cat( readLines( "../data/sample.gml" ) , sep = "\n" )
 @
@@ -9,7 +9,6 @@ Then, once we have an XML file we can convert to a JSON file using the R package
 <<json, results='markup', echo=FALSE>>=
 cat( readLines( "../data/sample.json" ) , sep = "\n" )
 @
-
 
 igraph is also used to compute initial x and y coordinates for the graph using a force-driven layout prior to being passed to the force layout in D3. This reduces the initial work that must be done by the javascript library and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience.
 

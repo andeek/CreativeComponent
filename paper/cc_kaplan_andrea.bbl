@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex version 1.7 $
+% $ biblatex version 2.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -16,23 +16,34 @@
   {}
 \endgroup
 
-\entry{mb-d3}{online}{}
-  \name{author}{1}{}{%
+\entry{mb-d3}{article}{}
+  \name{author}{3}{}{%
     {{}%
      {Bostock}{B.}%
-     {Mike}{M.}%
+     {Michael}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Ogievetsky}{O.}%
+     {Vadim}{V.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Heer}{H.}%
+     {Jeffrey}{J.}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{BM1}
-  \strng{fullhash}{BM1}
-  \field{labelyear}{2012}
+  \strng{namehash}{BMOVHJ1}
+  \strng{fullhash}{BMOVHJ1}
   \field{sortinit}{B}
-  \field{title}{D3.js: Data Driven Documents}
+  \field{title}{D3: Data-Driven Documents}
   \verb{url}
-  \verb http://d3js.org/
+  \verb http://vis.stanford.edu/files/2011-D3-InfoVis.pdf
   \endverb
-  \field{year}{2012}
+  \field{journaltitle}{IEEE Trans. Visualization \& Comp. Graphics (Proc.
+  InfoVis)}
+  \field{year}{2011}
 \endentry
 
 \entry{acb-rjson}{manual}{}
@@ -45,7 +56,6 @@
   }
   \strng{namehash}{CBA1}
   \strng{fullhash}{CBA1}
-  \field{labelyear}{2013}
   \field{sortinit}{C}
   \field{note}{R package version 0.2.12}
   \field{title}{rjson: JSON for R}
@@ -70,7 +80,6 @@
   }
   \strng{namehash}{CGNT1}
   \strng{fullhash}{CGNT1}
-  \field{labelyear}{2006}
   \field{sortinit}{C}
   \field{pages}{1695}
   \field{title}{The igraph software package for complex network research}
@@ -97,7 +106,6 @@
   }
   \strng{namehash}{RI1}
   \strng{fullhash}{RI1}
-  \field{labelyear}{2013}
   \field{sortinit}{R}
   \field{note}{R package version 0.4.0}
   \field{title}{shiny: Web Application Framework for R}

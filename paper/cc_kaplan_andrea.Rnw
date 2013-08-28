@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{graphicx}
+\usepackage{graphicx, hyperref}
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 
