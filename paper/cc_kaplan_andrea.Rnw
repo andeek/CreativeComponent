@@ -3,6 +3,11 @@
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 
+\usepackage{color}
+\newcommand{\hh}[1]{{\color{magenta} #1}}
+
+
+
 
 \begin{document}
 
