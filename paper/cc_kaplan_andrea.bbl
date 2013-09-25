@@ -92,20 +92,15 @@
 \endentry
 
 \entry{rs-shiny}{manual}{}
-  \name{author}{2}{}{%
+  \name{author}{1}{}{%
     {{}%
-     {{RStudio}}{R.}%
-     {}{}%
-     {}{}%
-     {}{}}%
-    {{}%
-     {{Inc.}}{I.}%
+     {{RStudio Inc.}}{R.}%
      {}{}%
      {}{}%
      {}{}}%
   }
-  \strng{namehash}{RI1}
-  \strng{fullhash}{RI1}
+  \strng{namehash}{R1}
+  \strng{fullhash}{R1}
   \field{sortinit}{R}
   \field{note}{R package version 0.4.0}
   \field{title}{shiny: Web Application Framework for R}
