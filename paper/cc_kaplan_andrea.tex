@@ -166,14 +166,16 @@ Then, once we have an XML file we can convert to a JSON file using the R package
 \end{kframe}
 \end{knitrout}
 
-
-igraph is also used to compute initial x and y coordinates for the graph using a force-driven layout prior to being passed to the force layout in D3. Our example data will yield the graph in figure~\ref{fig:samplegraph}. This reduces the initial work that must be done by the JavaScript library and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience. 
+Our example data will yield the graph in figure~\ref{fig:samplegraph}.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics{images/samplegraph.png}
 \caption{\label{fig:samplegraph} Graph created from sample gml file.}
 \end{figure}
+
+igraph is also used to compute initial x and y coordinates for the graph using a force-driven layout prior to being passed to the force layout in D3. This reduces the initial work that must be done by the JavaScript library and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience. 
+
 
 
 
