@@ -75,40 +75,53 @@
 \section{Technical Aspects}
 \subsection{Software}
 
-Gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
+gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
 
 \begin{figure}[hbtp]
 \centering
 \includegraphics[width=\textwidth]{images/clientserverflow.png}
-\caption{\label{fig:clientserver}\hh{Description of the figure}}
+\caption{\label{fig:clientserver} Relationship between client and server, specifically focusing on how data travels between the two.}
 \end{figure}
 
-\hh{The figure is absolutely stunning!!!! I love it! Could you also include the actual software requirements, i.e. the software that the client needs to have installed - which I believe is just a javascript enabled internet browser, and all the software that has to be installed on the server side: R (version? packages?)}
+There are very minimal software requirements for a user of gravicom. The client simply needs to have a modern browser, which means everything except IE8 and below. 
 
+The server side requirements are more extensive, but this does not affect the user of gravicom, only those wanting to host their own instance of the application. To host gravicom, a Linux server is required, with the following installed:
+
+\begin{itemize}
+\item Node.js (0.8.16 or later)
+\item {\tt R} (2.15 or later)
+\item Shiny {\tt R} package, installed into the machine-wide site library. 
+\item Shiny Server
+\end{itemize}
 
 
 \subsubsection{Shiny}
 
-\hh{put references before the punctuation mark as close to the topic that you want to address. Here, I would use it in the form of Shine \cite{rs-shiny} is an {\tt R} package ...}
-Shiny is an R package created by RStudio that enables R users to create an interactive web application that utilizes R as the background engine.\cite{rs-shiny} Through default methods to build user interface elements in HTML and a handle to the server side code, Shiny is a very simple way to turn R code into a website. 
+Shiny \cite{rs-shiny} is an {\tt R} package created by RStudio that enables {\tt R} users to create an interactive web application that utilizes {\tt R} as the background engine. Through default methods to build user interface elements in HTML and a handle to the server side code, Shiny is a very simple way to turn {\tt R} code into a website. 
 
-Gravicom uses the Shiny functionality to create user controls, pass correctly formatted data to the client, and as a means to display summary information regarding the user's interactions with a graph at any point in time. In this context, Shiny serves as the translator between the formatted data and what the user sees and interacts with on their screen.
+gravicom uses the Shiny functionality to create user controls, pass correctly formatted data to the client, and as a means to display summary information regarding the user's interactions with a graph at any point in time. In this context, Shiny serves as the translator between the formatted data and what the user sees and interacts with on their screen.
 
 
 \subsubsection{D3}
 
-D3 is a javascript library written by Mike Bostock with the main purpose of visualizing and interacting with data and can be found at \url{http://www.d3js.org}.\cite{mb-d3} The title D3 stands for ``Data Driven Documents. This library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of animations and interactions that are tied to underlying data. The key idea behind the library is that DOM elements are completely determined by the data, so rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representaions of their data in a web framework. 
+D3 \cite{mb-d3} is a JavaScript library written by Mike Bostock with the main purpose of visualizing and interacting with data and can be found at \url{http://www.d3js.org}. The title D3 stands for ``Data Driven Documents. This library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of animations and interactions that are tied to underlying data. The key idea behind the library is that Document Object Model elements are completely determined by the data. The Document Object Model (DOM) is a convention for representing and interacting with objects in HTML, XHTML and XML. So, rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representaions of their data in a web framework. 
 
-Gravicom uses D3 to handle all graphical displays and user interactions with the graph. The data is passed to the client and able to be used through Shiny's input bindings. It is crucial that the data has been formatted correctly at this point for the javascript to properly function. For this reason, we limit the file types being passed in to the tool to a robust graph-specific type.
+gravicom uses D3 to handle all graphical displays and user interactions with the graph. The data is passed to the client and able to be used through Shiny's input bindings. It is crucial that the data has been formatted correctly at this point for the JavaScript to properly function. For this reason, we limit the file types being passed in to the tool to a robust graph-specific type.
 
-At this point in the page lifecycle, the graph's nodes are tied to circles and the edges are tied to paths on the page. User manipulations such as selecting, dragging, and grouping are handled by D3 and then data is passed back to the server via Shiny's output bindings to allow for communication between user and the R engine underneath. What this means is that all visualization and user interaction with the graph are accomplished using javascript, more specifically the library D3. Shiny and R serve as the framework on which the data sits, but when the user touches the data they are doing so through the javascript pieces.
+At this point in the page lifecycle, the graph's nodes are tied to circles and the edges are tied to paths on the page. User manipulations such as selecting, dragging, and grouping are handled by D3 and then data is passed back to the server via Shiny's output bindings to allow for communication between user and the {\tt R} engine underneath. This is illustrated in figure~\ref{fig:pagelifecycle}. What this means is that all visualization and user interaction with the graph are accomplished using JavaScript, more specifically the library D3. Shiny and {\tt R} serve as the framework on which the data sits, but when the user touches the data they are doing so through the JavaScript pieces. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/pagelifecycle.png}
+\caption{\label{fig:pagelifecycle} Page lifecycle beginning from on load. User actions are hilighted in red, server actions in green, and actions completed on the client side are hilighted in blue.}
+\end{figure}
 
 
 \subsubsection{igraph}
 
-igraph is a software package used for creating and manipulating undirected and directed graphs.\cite{gc-igraph} It is a cross-language package available for C, R, python, and Ruby. igraph also supports multiple graph file formats and visualization of graph structures.
+igraph \cite{gc-igraph} is a software package used for creating and manipulating undirected and directed graphs. It is a cross-language package available for C, R, python, and Ruby. igraph also supports multiple graph file formats and visualization of graph structures.
 
-Gravicom utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Here is an example gml file of an undirected graph with two nodes and one edge. The important points to note are the the node ids are numeric, the edge has only source and target attributes of the node ids to be connected, and the nodes can have other attributes, as typified by ``value" in the example.
+gravicom utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Here is an example gml file of an undirected graph with two nodes and one edge. The important points to note are the the node ids are numeric, the edge has only source and target attributes of the node ids to be connected, and the nodes can have other attributes, as typified by ``value" in the example.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
@@ -138,7 +151,7 @@ Gravicom utilizes two parts of igraph, first is the conversion from a gml file t
 \end{knitrout}
 
 
-Then, once we have an XML file we can convert to a JSON file using the R package rjson.\cite{acb-rjson} Getting the graphs in a JSON file formats makes working with them in the D3 library incredibly straightforward. Here is our example in the finalized JSON format.
+Then, once we have an XML file we can convert to a JSON file using the R package rjson \cite{acb-rjson}. Getting the graphs in a JSON file formats makes working with them in the D3 library incredibly straightforward. Here is our example in the finalized JSON format.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
@@ -154,7 +167,13 @@ Then, once we have an XML file we can convert to a JSON file using the R package
 \end{knitrout}
 
 
-igraph is also used to compute initial x and y coordinates for the graph using a force-driven layout prior to being passed to the force layout in D3. This reduces the initial work that must be done by the javascript library and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience.
+igraph is also used to compute initial x and y coordinates for the graph using a force-driven layout prior to being passed to the force layout in D3. Our example data will yield the graph in figure~\ref{fig:samplegraph}. This reduces the initial work that must be done by the JavaScript library and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics{images/samplegraph.png}
+\caption{\label{fig:samplegraph} Graph created from sample gml file.}
+\end{figure}
 
 
 
