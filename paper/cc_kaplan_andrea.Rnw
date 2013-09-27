@@ -7,10 +7,12 @@
 \newcommand{\hh}[1]{{\color{magenta} #1}}
 
 
-
+\title{gravicom - a web-based tool for community detection in networks}
+\author{Andrea J. Kaplan}
 
 \begin{document}
 
+\maketitle
 \section{Background}
 \subsection{Networks}
 \subsection{Visualization}
@@ -18,6 +20,9 @@
 
 \section{User Interface}
 \subsection{Design and Functionality}
+\subsubsection{Examples}
+
+\subsubsection{Slightly more complex examples}
 
 \subsection{Technical Aspects}
 \subsubsection{Software}
@@ -37,6 +42,7 @@
 @
 
 \subsubsection{Data Management}
+
 
 \section{Further Work}
 
