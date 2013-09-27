@@ -6,7 +6,7 @@ gravicom utilizes three main pieces of software to establish interactive user co
 \caption{\label{fig:clientserver} Relationship between client and server, specifically focusing on how data travels between the two.}
 \end{figure}
 
-There are very minimal software requirements for a user of gravicom. The client simply needs to have a modern browser, which means everything except IE8 and below. 
+There are very minimal software requirements for a user of gravicom. The client simply needs to have a \hh{Javascrip enabled internet} browser, \hh{something} which \hh{almost any modern browser fulfills} (\hh{an exception is} IE8 and below). 
 
 The server side requirements are more extensive, but this does not affect the user of gravicom, only those wanting to host their own instance of the application. To host gravicom, a Linux server is required, with the following installed:
 

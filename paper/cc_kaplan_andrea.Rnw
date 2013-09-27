@@ -11,33 +11,34 @@
 
 \begin{document}
 
-\part{Background}
-\section{Networks}
-\section{Visualization}
-\section{Layout Algorithms}
+\section{Background}
+\subsection{Networks}
+\subsection{Visualization}
+\subsection{Layout Algorithms}
 
-\part{User Interface}
-\section{Technical Aspects}
-\subsection{Software}
+\section{User Interface}
+\subsection{Design and Functionality}
+
+\subsection{Technical Aspects}
+\subsubsection{Software}
 <<software, child='parts/4.1_software.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{Shiny}
+\paragraph{Shiny}
 <<shiny, child='parts/4.1.1_shiny.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{D3}
+\paragraph{D3}
 <<d3, child='parts/4.1.2_d3.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{igraph}
+\paragraph{igraph}
 <<igraph, child='parts/4.1.3_igraph.Rnw', eval=TRUE>>=
 @
 
-\subsection{Data Management}
-\section{Design and Functionality}
+\subsubsection{Data Management}
 
-\part{Further Work}
+\section{Further Work}
 
 \printbibliography
 \end{document}
