@@ -20,7 +20,7 @@
 
 \section{User Interface}
 \subsection{Design and Functionality}
-\subsubsection{Examples}
+\subsubsection{Description}
 
 \subsubsection{Slightly more complex examples}
 
