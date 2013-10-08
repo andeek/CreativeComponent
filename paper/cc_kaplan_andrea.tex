@@ -70,12 +70,11 @@
 
 \section{User Interface}
 \subsection{Design and Functionality}
-\subsubsection{Examples}
+\subsubsection{Description}
 
 \subsubsection{Slightly more complex examples}
 
 \subsection{Technical Aspects}
-\subsubsection{Software}
 
 gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
 
@@ -85,7 +84,7 @@ gravicom utilizes three main pieces of software to establish interactive user co
 \caption{\label{fig:clientserver} Relationship between client and server, specifically focusing on how data travels between the two.}
 \end{figure}
 
-There are very minimal software requirements for a user of gravicom. The client simply needs to have a \hh{Javascrip enabled internet} browser, \hh{something} which \hh{almost any modern browser fulfills} (\hh{an exception is} IE8 and below). 
+There are very minimal software requirements for a user of gravicom. The client simply needs to have a JavaScript enabled internet browser with HTML5 compatibility, something which almost any modern browser fulfills (an exception is IE8 and below). 
 
 The server side requirements are more extensive, but this does not affect the user of gravicom, only those wanting to host their own instance of the application. To host gravicom, a Linux server is required, with the following installed:
 
@@ -97,16 +96,16 @@ The server side requirements are more extensive, but this does not affect the us
 \end{itemize}
 
 
-\paragraph{Shiny}
+\subsubsection{Shiny}
 
 Shiny \cite{rs-shiny} is an {\tt R} package created by RStudio that enables {\tt R} users to create an interactive web application that utilizes {\tt R} as the background engine. Through default methods to build user interface elements in HTML and a handle to the server side code, Shiny is a very simple way to turn {\tt R} code into a website. 
 
 gravicom uses the Shiny functionality to create user controls, pass correctly formatted data to the client, and as a means to display summary information regarding the user's interactions with a graph at any point in time. In this context, Shiny serves as the translator between the formatted data and what the user sees and interacts with on their screen.
 
 
-\paragraph{D3}
+\subsubsection{D3}
 
-D3 \cite{mb-d3} stands for ``Data Driven Documents" and is a JavaScript library developed and maintained by Mike Bostock with the  purpose of visualizing and interacting with data \hh{in a web-based interface}. It is freely available from \url{http://www.d3js.org}. The library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of rendering animations and providing user interactions that are tied to the underlying data. The key idea behind the library is that Document Object Model elements are completely determined by the data. The Document Object Model (DOM) is a convention for representing and interacting with objects in HTML, XHTML and XML. So, rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representations of their data in a web framework. 
+D3 \cite{mb-d3} stands for ``Data Driven Documents" and is a JavaScript library developed and maintained by Mike Bostock with the  purpose of visualizing and interacting with data in a web-based interface. It is freely available from \url{http://www.d3js.org}. The library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of rendering animations and providing user interactions that are tied to the underlying data. The key idea behind the library is that Document Object Model elements are completely determined by the data. The Document Object Model (DOM) is a convention for representing and interacting with objects in HTML, XHTML and XML. So, rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representations of their data in a web framework. 
 
 gravicom uses D3 to handle all graphical displays and user interactions with the graph. The data is passed to the client and able to be used through Shiny's input bindings. It is crucial that the data has been formatted correctly at this point for the JavaScript to properly function. For this reason, we limit the file types being passed in to the tool to a robust graph-specific type.
 
@@ -119,11 +118,11 @@ At this point in the page lifecycle, the graph's nodes are tied to circles and t
 \end{figure}
 
 
-\paragraph{igraph}
+\subsubsection{igraph}
 
 igraph \cite{gc-igraph} is a software package used for creating and manipulating undirected and directed graphs. It is a cross-language package available for C, R, python, and Ruby. igraph also supports multiple graph file formats and visualization of graph structures.
 
-gravicom utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Below is an example gml file of an undirected graph consisting of two nodes linked by a single edge. The important points to note are that  node identifiers (id) have to be numeric. An edge consists only of source and target ids of the nodes it connects, while  nodes can have other attributes, e.g.~{\tt value} in the example. \hh{For a directed graph, the parameter {\tt directed} has to be set to 1, which will result in the edge information on target and source being evaluated accordingly.}
+gravicom utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Below is an example gml file of an undirected graph consisting of two nodes linked by a single edge. The important points to note are that  node identifiers (id) have to be numeric. An edge consists only of source and target ids of the nodes it connects, while  nodes can have other attributes, e.g.~{\tt value} in the example. For a directed graph, the parameter {\tt directed} has to be set to 1, which will result in the edge information on target and source being evaluated accordingly.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
@@ -177,9 +176,6 @@ Our example data will yield the graph in figure~\ref{fig:samplegraph}.
 The second use of igraph within gravicom is to compute initial $x$ and $y$ coordinates for the nodes of the graph using a force-driven layout. This provides the initialization for the force-layout algorithm in D3. This reduces the computational load on the clients' side and helps minimize unnecessary movement by the nodes. This is critical as the extra movement at the loading of the pages creates an unnecessarily chaotic start to the user's experience. 
 
 
-
-
-\subsubsection{Data Management}
 
 
 \section{Further Work}

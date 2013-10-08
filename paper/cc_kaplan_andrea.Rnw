@@ -25,24 +25,20 @@
 \subsubsection{Slightly more complex examples}
 
 \subsection{Technical Aspects}
-\subsubsection{Software}
 <<software, child='parts/4.1_software.Rnw', eval=TRUE>>=
 @
 
-\paragraph{Shiny}
+\subsubsection{Shiny}
 <<shiny, child='parts/4.1.1_shiny.Rnw', eval=TRUE>>=
 @
 
-\paragraph{D3}
+\subsubsection{D3}
 <<d3, child='parts/4.1.2_d3.Rnw', eval=TRUE>>=
 @
 
-\paragraph{igraph}
+\subsubsection{igraph}
 <<igraph, child='parts/4.1.3_igraph.Rnw', eval=TRUE>>=
 @
-
-\subsubsection{Data Management}
-
 
 \section{Further Work}
 
