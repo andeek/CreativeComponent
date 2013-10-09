@@ -20,24 +20,27 @@
 
 \section{User Interface}
 \subsection{Design and Functionality}
+
 \subsubsection{Description}
+<<description, child='parts/description.Rnw', eval=TRUE>>=
+@
 
 \subsubsection{Slightly more complex examples}
 
 \subsection{Technical Aspects}
-<<software, child='parts/4.1_software.Rnw', eval=TRUE>>=
+<<technical_aspects, child='parts/technical_aspects.Rnw', eval=TRUE>>=
 @
 
 \subsubsection{Shiny}
-<<shiny, child='parts/4.1.1_shiny.Rnw', eval=TRUE>>=
+<<shiny, child='parts/shiny.Rnw', eval=TRUE>>=
 @
 
 \subsubsection{D3}
-<<d3, child='parts/4.1.2_d3.Rnw', eval=TRUE>>=
+<<d3, child='parts/d3.Rnw', eval=TRUE>>=
 @
 
 \subsubsection{igraph}
-<<igraph, child='parts/4.1.3_igraph.Rnw', eval=TRUE>>=
+<<igraph, child='parts/igraph.Rnw', eval=TRUE>>=
 @
 
 \section{Further Work}
