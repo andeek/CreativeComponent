@@ -91,6 +91,56 @@
   \field{year}{2006}
 \endentry
 
+\entry{gn-football}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Girvan}{G.}%
+     {M.}{M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Newman}{N.}%
+     {M.~E.~J.}{M.~E.~J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{GMNMEJ1}
+  \strng{fullhash}{GMNMEJ1}
+  \field{sortinit}{G}
+  \field{abstract}{%
+  A number of recent studies have focused on the statistical properties of
+  networked systems such as social networks and the Worldwide Web. Researchers
+  have concentrated particularly on a few properties that seem to be common to
+  many networks: the small-world property, power-law degree distributions, and
+  network transitivity. In this article, we highlight another property that is
+  found in many networks, the property of community structure, in which network
+  nodes are joined together in tightly knit groups, between which there are
+  only looser connections. We propose a method for detecting such communities,
+  built around the idea of using centrality indices to find community
+  boundaries. We test our method on computer-generated and real-world graphs
+  whose community structure is already known and find that the method detects
+  this known structure with high sensitivity and reliability. We also apply the
+  method to two networks whose community structure is not well known—a
+  collaboration network and a food web—and find that it detects significant
+  and informative community divisions in both cases.%
+  }
+  \verb{doi}
+  \verb 10.1073/pnas.122653799
+  \endverb
+  \verb{eprint}
+  \verb http://www.pnas.org/content/99/12/7821.full.pdf+html
+  \endverb
+  \field{number}{12}
+  \field{pages}{7821\bibrangedash 7826}
+  \field{title}{Community structure in social and biological networks}
+  \verb{url}
+  \verb http://www.pnas.org/content/99/12/7821.abstract
+  \endverb
+  \field{volume}{99}
+  \field{journaltitle}{Proceedings of the National Academy of Sciences}
+  \field{year}{2002}
+\endentry
+
 \entry{rs-shiny}{manual}{}
   \name{author}{1}{}{%
     {{}%

@@ -141,7 +141,69 @@ The tabset allows the user to switch between two tabs on the screen. The first (
 \end{figure}
 
 
-\subsubsection{Slightly more complex examples}
+\subsection{Examples}
+
+To demonstrate the use of gravicom, we present three real-world network datasets and explore their community structure.
+
+\subsubsection{College Football}
+The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. In this network, nodes represent teams and an edge represents a regular-season game played between the two teams connected. The network as it looks on load in gravicom is presented in figure~\ref{fig:football_1}. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/football_1.png}
+\caption{\label{fig:football_1} College Football network represented in gravicom.}
+\end{figure}
+
+Colleges within the same football conference will play members of their conference more frequently than teams outside of their conference, making this an interesting dataset to try to detect communities in. This is also an ideal example due to the relatively small number of nodes and edges present, making a graphical representation feasible. One challenge encountered with this dataset is that there are independent teams like Notre Dame that are not in a conference, and so may complicate community detection. Another complication is that small conference schools will typically play large conference schools in the beginning of the season in order to pay for their athletic programs, which could cause there to be more edges than expected between small conferences and large conferences.
+
+Upon viewing the network in gravicom, some likely communities emerge and by selecting nodes to determine within and outside edges, we can classify colleges into conferences, as seen in figure~\ref{fig:football_2}.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/football_2.png}
+\includegraphics[]{images/football_3.png}
+\caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges.}
+\end{figure}
+
+Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this, allowing new communities to potentially become more easily apparent as seen in figure~\ref{fig:football_4}. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/football_4.png}
+\caption{\label{fig:football_4} After the first community is detected, more communities become apparent in the network.}
+\end{figure}
+
+Additionally, the user can check which nodes were grouped in each community. In this example (figure~\ref{fig:football_5}), we can see the first community detected roughly corresponds to the Big 10, with independent Notre Dame being grouped in the Big 10 due to playing two Big 10 teams in 2000.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/football_5.png}
+\caption{\label{fig:football_5} A drill-down of the first grouped community which roughly corresponds to the Big 10 Conference.}
+\end{figure}
+
+After the first community has been selected, another community at the top of the graph has been revealed. The user can once again, select and group this community and take a look at the nodes in the community as seen in figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. The first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences would be more difficult to detect.
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/football_6.png}
+\includegraphics[width=\textwidth]{images/football_7.png}
+\caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
+\end{figure}
+
+This process can be repeated until the user is satisfied with the communities selected. The conclusion of this process is seen in figure~\ref{fig:football_8}. We detected visually 11 conferences in the dataset. There were 11 conferences and 6 independent schools in the dataset which roughly match with what we detected. 
+
+\begin{figure}[hbtp]
+\centering
+\includegraphics[width=\textwidth]{images/football_8.png}
+\caption{\label{fig:football_8} Final community structure detected in gravicom.}
+\end{figure}
+
+
+\subsubsection{Dolphins}
+
+\subsubsection{Political Books Sold}
+
+
 
 \subsection{Technical Aspects}
 

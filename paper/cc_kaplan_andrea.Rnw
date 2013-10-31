@@ -25,7 +25,9 @@
 <<description, child='parts/description.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{Slightly more complex examples}
+\subsection{Examples}
+<<examples, child='parts/examples.Rnw', eval=TRUE>>=
+@
 
 \subsection{Technical Aspects}
 <<technical_aspects, child='parts/technical_aspects.Rnw', eval=TRUE>>=
