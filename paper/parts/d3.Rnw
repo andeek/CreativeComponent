@@ -4,7 +4,7 @@ gravicom uses D3 to handle all graphical displays and user interactions with the
 
 At this point in the page lifecycle, the graph's nodes are tied to circles and the edges are tied to paths on the page. User manipulations such as selecting, dragging, and grouping are handled by D3 and  data is passed back to the server via Shiny's output bindings to allow for communication between user and the {\tt R} engine underneath. This is illustrated in figure~\ref{fig:pagelifecycle}. What this means is that all visualization and user interaction with the graph are accomplished using JavaScript, more specifically the library D3. Shiny and {\tt R} serve as the framework on which the data sits, but when the user touches the data they are doing so through the JavaScript elements. 
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/pagelifecycle.png}
 \caption{\label{fig:pagelifecycle} Page lifecycle beginning from on load. User actions are highlighted in red, server actions in green, and actions completed on the client side are highlighted in blue.}

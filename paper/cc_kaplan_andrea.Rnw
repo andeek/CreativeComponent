@@ -1,5 +1,6 @@
 \documentclass{article}
-\usepackage{graphicx, hyperref}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{graphicx, hyperref, float}
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 

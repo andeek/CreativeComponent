@@ -10,7 +10,7 @@ cat( readLines( "../data/sample.json" ) , sep = "\n" )
 @
 Our example data will yield the graph in figure~\ref{fig:samplegraph}.
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
 \centering
 \includegraphics{images/samplegraph.png}
 \caption{\label{fig:samplegraph} Graph created from sample gml file.}

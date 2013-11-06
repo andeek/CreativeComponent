@@ -1,6 +1,6 @@
 gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
 
-\begin{figure}[hbtp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/clientserverflow.png}
 \caption{\label{fig:clientserver} Relationship between client and server, specifically focusing on how data travels between the two.}
