@@ -70,8 +70,104 @@ This process can be repeated until the user is satisfied with the communities se
 \caption{\label{fig:football_8} Final community structure detected in gravicom.}
 \end{figure}
 
-
-\subsubsection{Dolphins}
-
 \subsubsection{Political Books Sold}
+The second example dataset is a network of political books published close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral in the data set and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups with a smaller group between as a connection when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/polbooks_1.png}
+\includegraphics[width=\textwidth]{images/polbooks_2.png}
+\caption{\label{fig:football_8} Political books dataset as seen in gravicom prior and post community detection.}
+\end{figure}
+
+<<polbooks_check, echo=FALSE, warning=FALSE, results='hide', error=FALSE>>=
+polbooks.df <- get.data.frame(read.graph("../data/polbooks_network.gml", format="gml"), what="vertices")
+
+#put all ungrouped as own group -- corresponds to value 5
+if(length(polbooks.df[substring(polbooks.df$Group,1,1) == "n",]$Group) > 0) {polbooks.df[substring(polbooks.df$Group,1,1) == "n",]$Group<-"ungrouped"}
+
+#create map from gravicom to original by most mapped
+map <- ddply(polbooks.df, .(Group), summarise, orig.grp = names(sort(-table(value)))[1])
+polbooks.df.m <- merge(polbooks.df, map, by = "Group", all.x=TRUE)
+
+#percent school misspecified
+percent_correct <- 1 - sum(polbooks.df.m$value != polbooks.df.m$orig.grp)/nrow(polbooks.df)
+
+labels.map <- data.frame(name=c("Conservative", "Liberal", "Neutral"), abbr=c("c","l","n"))
+
+libe <- merge(subset(polbooks.df.m, orig.grp == "l")[,c("label", 'value')], labels.map, by.x="value", by.y="abbr")[,-1]
+cons <- merge(subset(polbooks.df.m, orig.grp == "c")[,c("label", 'value')], labels.map, by.x="value", by.y="abbr")[,-1]
+neut <- merge(subset(polbooks.df.m, orig.grp == "n")[,c("label", 'value')], labels.map, by.x="value", by.y="abbr")[,-1]
+
+n <- max(nrow(libe), nrow(cons), nrow(neut))
+
+#hacktastic
+res <- cbind(
+  rbind(libe, data.frame(label=rep(" ", n - nrow(libe)), name=rep(" ", n - nrow(libe)))),
+  rbind(cons, data.frame(label=rep(" ", n - nrow(cons)), name=rep(" ", n - nrow(cons)))),
+  rbind(neut, data.frame(label=rep(" ", n - nrow(neut)), name=rep(" ", n - nrow(neut)))))
+
+library(xtable)
+print(xtable(res), include.rownames=FALSE)
+@
+We detected visually 3 types of books in the dataset. Through manual specification of types of books, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the books into their categories.
+%output of above xtable
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Wed Nov 06 18:32:14 2013
+% \begin{table}[ht]
+% \centering
+% \begin{tabular}{llllll}
+% \hline
+% \multicolumn{2}{c}{gravicom Liberal} & \multicolumn{2}{c}{gravicom Conservative} & \multicolumn{2}{c}{gravicom gravicom Neutral} \\
+%   \hline
+%   \hline
+% Book Title & Actual Category & Book Title & Actual Category & Book Title & Actual Category \\ 
+%   \hline
+% Bush at War & Conservative & A National Party No More & Conservative & Bush vs. the Beltway & Conservative \\ 
+%   Downsize This! & Liberal & Dereliction of Duty & Conservative & Charlie Wilson's War & Conservative \\ 
+%   The Culture of Fear & Liberal & Ten Minutes from Normal & Conservative & Dangerous Dimplomacy & Conservative \\ 
+%   House of Bush, House of Saud & Liberal & Bush Country & Conservative & The Man Who Warned America & Conservative \\ 
+%   The Best Democracy Money Can Buy & Liberal & Rumsfeld's War & Conservative & Rise of the Vulcans & Conservative \\ 
+%   Rogue Nation & Liberal & Legacy & Conservative & Allies & Conservative \\ 
+%   Stupid White Men & Liberal & Hating America & Conservative & Soft Power & Liberal \\ 
+%   Rush Limbaugh Is a Big Fat Idiot & Liberal & Hillary's Scheme & Conservative & The Choice & Liberal \\ 
+%   The Great Unraveling & Liberal & Let Freedom Ring & Conservative & America Unbound & Liberal \\ 
+%   Against All Enemies & Liberal & Tales from the Left Coast & Conservative & 1000 Years for Revenge & Neutral \\ 
+%   American Dynasty & Liberal & Breakdown & Conservative & Colossus & Neutral \\ 
+%   The Price of Loyalty & Liberal & Losing Bin Laden & Conservative & Why America Slept & Neutral \\ 
+%   The Sorrows of Empire & Liberal & The French Betrayal of America & Conservative & Ghost Wars & Neutral \\ 
+%   Worse Than Watergate & Liberal & Spin Sisters & Conservative & Sleeping With the Devil & Neutral \\ 
+%   Perfectly Legal & Liberal & The Right Man & Conservative & Empire & Neutral \\ 
+%   Big Lies & Liberal & Useful Idiots & Conservative & The Future of Freedom & Neutral \\ 
+%   The Lies of George W. Bush & Liberal & Shut Up and Sing & Conservative & All the Shah's Men & Neutral \\ 
+%   Bushwomen & Liberal & Who's Looking Out for You? & Conservative & Surprise, Security, the American Experience & Neutral \\ 
+%   The Bubble of American Supremacy & Liberal & Those Who Trespass & Conservative &   &   \\ 
+%   Living History & Liberal & Bias & Conservative &   &   \\ 
+%   The Politics of Truth & Liberal & The O'Reilly Factor & Conservative &   &   \\ 
+%   Fanatics and Fools & Liberal & Persecution & Conservative &   &   \\ 
+%   Bushwhacked & Liberal & Deliver Us from Evil & Conservative &   &   \\ 
+%   Disarming Iraq & Liberal & Give Me a Break & Conservative &   &   \\ 
+%   Lies and the Lying Liars Who Tell Them & Liberal & Betrayal & Conservative &   &   \\ 
+%   MoveOn's 50 Ways to Love Your Country & Liberal & The Real America & Conservative &   &   \\ 
+%   The Buying of the President 2004 & Liberal & The Faith of George W Bush & Conservative &   &   \\ 
+%   Buck Up Suck Up & Liberal & The Death of Right and Wrong & Conservative &   &   \\ 
+%   Hegemony or Survival & Liberal & The Third Terrorist & Conservative &   &   \\ 
+%   The New Pearl Harbor & Liberal & Arrogance & Conservative &   &   \\ 
+%   Freethinkers & Liberal & The Savage Nation & Conservative &   &   \\ 
+%   Had Enough? & Liberal & The Bushes & Conservative &   &   \\ 
+%   It's Still the Economy, Stupid! & Liberal & Things Worth Fighting For & Conservative &   &   \\ 
+%   We're Right They're Wrong & Liberal & Off with Their Heads & Conservative &   &   \\ 
+%   What Liberal Media? & Liberal & We Will Prevail & Conservative &   &   \\ 
+%   The Clinton Wars & Liberal & Why Courage Matters & Conservative &   &   \\ 
+%   Weapons of Mass Deception & Liberal & Hollywood Interrupted & Conservative &   &   \\ 
+%   Dude, Where's My Country? & Liberal & The Enemy Within & Conservative &   &   \\ 
+%   Thieves in High Places & Liberal & Slander & Conservative &   &   \\ 
+%   Shrub & Liberal & Endgame & Conservative &   &   \\ 
+%   The Exception to the Rulers & Liberal & The Official Handbook Vast Right Wing Conspiracy & Conservative &   &   \\ 
+%   Plan of Attack & Neutral & Fighting Back & Conservative &   &   \\ 
+%     &   & Power Plays & Neutral &   &   \\ 
+%     &   & Meant To Be & Neutral &   &   \\ 
+%     &   & The Perfect Wife & Neutral &   &   \\ 
+%    \hline
+% \end{tabular}
+% \end{table}

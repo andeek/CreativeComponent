@@ -1,6 +1,6 @@
 \documentclass{article}
 \usepackage[margin=1.25in]{geometry}
-\usepackage{graphicx, hyperref, float}
+\usepackage{graphicx, hyperref, float, multicol}
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 
@@ -21,6 +21,9 @@
 
 \section{User Interface}
 \subsection{Design and Functionality}
+<<design, child='parts/design.Rnw', eval=TRUE>>=
+@
+
 
 \subsubsection{Description}
 <<description, child='parts/description.Rnw', eval=TRUE>>=

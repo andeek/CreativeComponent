@@ -16,6 +16,18 @@
   {}
 \endgroup
 
+\entry{polbooks}{misc}{}
+  \field{sortinit}{B}
+  \field{abstract}{%
+  A network of books about recent US politics sold by the online bookseller
+  Amazon.com. Edges between books represent frequent copurchasing of books by
+  the same buyers. The network was compiled by V. Krebs and is unpublished, but
+  can found on Krebs' web site.%
+  }
+  \field{note}{\url{http://networkdata.ics.uci.edu/data.php?d=polbooks}}
+  \field{title}{Books about US Politics}
+\endentry
+
 \entry{mb-d3}{article}{}
   \name{author}{3}{}{%
     {{}%
