@@ -2,11 +2,12 @@ To demonstrate the use of gravicom, we present three real-world network datasets
 
 \subsubsection{College Football}
 The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. In this network, nodes represent teams and an edge represents a regular-season game played between the two teams connected. The network as it looks on load in gravicom is presented in figure~\ref{fig:football_1}. 
+\hh{You should say that the distances between the nodes are based on the number of games played between the teams.}
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/football_1.png}
-\caption{\label{fig:football_1} College Football network represented in gravicom.}
+\caption{\label{fig:football_1} College Football network represented in gravicom. \hh{What do you want the user to see? Pick one aspect.}}
 \end{figure}
 
 Colleges within the same football conference will play members of their conference more frequently than teams outside of their conference, making this an interesting dataset to try to detect communities in. This is also an ideal example due to the relatively small number of nodes and edges present, making a graphical representation feasible. One challenge encountered with this dataset is that there are independent teams like Notre Dame that are not in a conference, and so may complicate community detection. Another complication is that small conference schools will typically play large conference schools in the beginning of the season in order to pay for their athletic programs, which could cause there to be more edges than expected between small conferences and large conferences.
@@ -110,7 +111,7 @@ res <- cbind(
 library(xtable)
 print(xtable(res), include.rownames=FALSE)
 @
-We detected visually 3 types of books in the dataset. Through manual specification of types of books, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the books into their categories.
+We detected visually 3 types of books in the dataset. Through manual specification of types of books, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the books into their categories. \hh{What is `correct' based on?}
 %output of above xtable
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
 % Wed Nov 06 18:32:14 2013
