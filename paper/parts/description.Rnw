@@ -13,7 +13,7 @@ The gravicom interface is comprised of five main parts,
 \caption{\label{fig:sitecomponents} The components that make up gravicom, (1) Control panel, (2) Data management, (3) Connection table, (4) Graph display, and (5) Tabset.}
 \end{figure}
 
-Each of these pieces serves as a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through \hh{direct interaction with} diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
+Each of these pieces serves as a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through direct interaction with diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
 
 \paragraph{Control Panel}
 The control panel serves as the starting point for a user's session in gravicom. It contains intructions for the user, as well as the means for a user to select a dataset and the diagnostic connection table. Additionally, the control panel contains a link to the source code for gravicom, should a user be interested in the inner workings of gravicom.
@@ -27,7 +27,7 @@ The data management piece is made up of two main parts, data selection and data 
 \caption{\label{fig:uploadnewdataset} The data selection area upon clicking the ``Upload new dataset" checkbox.}
 \end{figure}
 
-Data can be downloaded from gravicom with current communities stored. This feature can be used as a save point in working with a graph or as a means to \hh{export changes}  made in gravicom to another tool.
+Data can be downloaded from gravicom with current communities stored. This feature can be used as a save point in working with a graph or as a means to export changes made in gravicom to another tool.
 
 
 
@@ -35,8 +35,7 @@ Data can be downloaded from gravicom with current communities stored. This featu
 The connection table is a diagnostic tool for the user to help determine if he has detected a community in his graph. The  table displays the number of connections within a user's selection of nodes in the graph and the number of connections from nodes in a user's selection to nodes not in the selection. The comparison of these two numbers can give the user an idea of if what he has selected is a community or not. The idea behind the connection table is that a community will have more connections within than connections to nodes outside the community.  To aid in the comparison, there is also a proportion column that displays the ratio of number of connections within a selection to the number of connections outside the selection. 
 
 \paragraph{Graph Display}
-The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has \hh{several} ways to interact with the graph: drag, select, and group. 
-A user can drag a node at any time % to attempt to get a better view of potential communities. However, the graph is setup with a gravity parameter that generally keeps the graph in the center of the screen. 
+The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has several ways to interact with the graph: drag, select, and group. A user can drag a node at any time. % to attempt to get a better view of potential communities. However, the graph is setup with a gravity parameter that generally keeps the graph in the center of the screen. 
 Upon dragging, the force-directed layout is  rerun, giving an altered view of the graph. Figure~\ref{fig:graphdrag} shows a graph in the process of being dragged.
 
 \begin{figure}[H]
@@ -63,7 +62,7 @@ Selected nodes can be grouped together. Once grouped, a new node is created that
 \end{figure}
 
 \paragraph{Tabset}
-The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Each group show how many nodes are contained in that group as well as the ability to drop down and view the nodes contained in that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node \hh{IDs} will  be shown. For an example, see figure~\ref{fig:groupstab}.
+The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Each group show how many nodes are contained in that group as well as the ability to drop down and view the nodes contained in that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node IDs will be shown. For an example, see figure~\ref{fig:groupstab}.
 
 \begin{figure}[H]
 \centering

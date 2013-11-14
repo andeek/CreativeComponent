@@ -93,7 +93,7 @@ The gravicom interface is comprised of five main parts,
 \caption{\label{fig:sitecomponents} The components that make up gravicom, (1) Control panel, (2) Data management, (3) Connection table, (4) Graph display, and (5) Tabset.}
 \end{figure}
 
-Each of these pieces serves as a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through \hh{direct interaction with} diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
+Each of these pieces serves as a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through direct interaction with diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
 
 \paragraph{Control Panel}
 The control panel serves as the starting point for a user's session in gravicom. It contains intructions for the user, as well as the means for a user to select a dataset and the diagnostic connection table. Additionally, the control panel contains a link to the source code for gravicom, should a user be interested in the inner workings of gravicom.
@@ -107,7 +107,7 @@ The data management piece is made up of two main parts, data selection and data 
 \caption{\label{fig:uploadnewdataset} The data selection area upon clicking the ``Upload new dataset" checkbox.}
 \end{figure}
 
-Data can be downloaded from gravicom with current communities stored. This feature can be used as a save point in working with a graph or as a means to \hh{export changes}  made in gravicom to another tool.
+Data can be downloaded from gravicom with current communities stored. This feature can be used as a save point in working with a graph or as a means to export changes made in gravicom to another tool.
 
 
 
@@ -115,8 +115,7 @@ Data can be downloaded from gravicom with current communities stored. This featu
 The connection table is a diagnostic tool for the user to help determine if he has detected a community in his graph. The  table displays the number of connections within a user's selection of nodes in the graph and the number of connections from nodes in a user's selection to nodes not in the selection. The comparison of these two numbers can give the user an idea of if what he has selected is a community or not. The idea behind the connection table is that a community will have more connections within than connections to nodes outside the community.  To aid in the comparison, there is also a proportion column that displays the ratio of number of connections within a selection to the number of connections outside the selection. 
 
 \paragraph{Graph Display}
-The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has \hh{several} ways to interact with the graph: drag, select, and group. 
-A user can drag a node at any time % to attempt to get a better view of potential communities. However, the graph is setup with a gravity parameter that generally keeps the graph in the center of the screen. 
+The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has several ways to interact with the graph: drag, select, and group. A user can drag a node at any time. % to attempt to get a better view of potential communities. However, the graph is setup with a gravity parameter that generally keeps the graph in the center of the screen. 
 Upon dragging, the force-directed layout is  rerun, giving an altered view of the graph. Figure~\ref{fig:graphdrag} shows a graph in the process of being dragged.
 
 \begin{figure}[H]
@@ -143,7 +142,7 @@ Selected nodes can be grouped together. Once grouped, a new node is created that
 \end{figure}
 
 \paragraph{Tabset}
-The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Each group show how many nodes are contained in that group as well as the ability to drop down and view the nodes contained in that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node \hh{IDs} will  be shown. For an example, see figure~\ref{fig:groupstab}.
+The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Each group show how many nodes are contained in that group as well as the ability to drop down and view the nodes contained in that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node IDs will be shown. For an example, see figure~\ref{fig:groupstab}.
 
 \begin{figure}[H]
 \centering
@@ -220,7 +219,7 @@ The second example dataset is a network of political books published close to th
 \centering
 \includegraphics[width=\textwidth]{images/polbooks_1.png}
 \includegraphics[width=\textwidth]{images/polbooks_2.png}
-\caption{\label{fig:football_8} Political books dataset as seen in gravicom prior and post community detection.}
+\caption{\label{polbooks_1} Political books dataset as seen in gravicom prior and post community detection.}
 \end{figure}
 
 
@@ -339,45 +338,21 @@ igraph \cite{gc-igraph} is a software package used for creating and manipulating
 gravicom utilizes two parts of igraph, first is the conversion from a gml file to an XML file. The gml file format, short for Graph Modelling Language, is a hierarchical ASCII-based file format for describing graphs. Below is an example gml file of an undirected graph consisting of two nodes linked by a single edge. The important points to note are that  node identifiers (id) have to be numeric. An edge consists only of source and target ids of the nodes it connects, while  nodes can have other attributes, e.g.~{\tt value} in the example. For a directed graph, the parameter {\tt directed} has to be set to 1, which will result in the edge information on target and source being evaluated accordingly.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## graph
-## [
-##   directed 0
-##   node
-##   [
-##     id 0
-##     label "Node 1"
-##     value 100
-##   ]
-##   node
-##   [
-##     id 1
-##     label "Node 2"
-##     value 200
-##   ]
-##   edge
-##   [
-##     source 1
-##     target 0
-##   ]
-## ]
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: cannot open file '../data/sample.gml': No such file or directory}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: cannot open the connection}}\end{kframe}
 \end{knitrout}
 
 For the conversion from an  XML file  to a JSON file we make user of the R package {\tt rjson} \cite{acb-rjson}.  JSON is the native data format used in D3, which  makes working with data in the D3 library incredibly straightforward. Here is our example in the finalized JSON format:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## {
-##   "nodes":
-##   [{"id":"n0","v_id":"0","v_label":"Node 1","v_value":"100"}, 
-##    {"id":"n1","v_id":"1","v_label":"Node 2","v_value":"200"}], 
-##  "edges":
-##   [{"source":0, "target":1}]
-## }
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: cannot open file '../data/sample.json': No such file or directory}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: cannot open the connection}}\end{kframe}
 \end{knitrout}
 
 Our example data will yield the graph in figure~\ref{fig:samplegraph}.
