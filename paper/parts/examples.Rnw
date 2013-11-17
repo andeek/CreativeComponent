@@ -78,7 +78,7 @@ The second example dataset is a network of political books published close to th
 \centering
 \includegraphics[width=\textwidth]{images/polbooks_1.png}
 \includegraphics[width=\textwidth]{images/polbooks_2.png}
-\caption{\label{polbooks_1} Political books dataset as seen in gravicom prior and post community detection.}
+\caption{\label{fig:polbooks_1} Political books dataset as seen in gravicom prior and post community detection.}
 \end{figure}
 
 <<polbooks_check, echo=FALSE, warning=FALSE, results='hide', error=FALSE>>=
