@@ -16,6 +16,14 @@ Upon viewing the network in gravicom, some likely communities emerge and by sele
 
 \begin{figure}[H]
 \centering
+\includegraphics[width=\textwidth]{images/football_progression.png}
+\caption{\label{fig:football_progression}The full process of selecting and grouping communities in gravicom using the football dataset.}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth]{images/football_2.png}
 \includegraphics[]{images/football_3.png}
 \caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges.}
@@ -46,10 +54,11 @@ After the first community has been selected, another community at the top of the
 \caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
 \end{figure}
 
-<<football_check, echo=FALSE, warning=FALSE, results='hide', error=FALSE>>=
+<<football_check, echo=FALSE, warning=FALSE, results='hide', error=FALSE, results='asis'>>=
 library(igraph)
 library(plyr)
 library(scales)
+library(xtable)
 football.df <- get.data.frame(read.graph("../data/football_network.gml", format="gml"), what="vertices")
 
 #put all ungrouped as own group -- corresponds to value 5
@@ -59,8 +68,17 @@ football.df[substring(football.df$Group,1,1) == "n",]$Group<-"independent"
 map <- ddply(football.df, .(Group), summarise, orig.grp = names(sort(-table(value)))[1])
 football.df.m <- merge(football.df, map, by = "Group", all.x=TRUE)
 
+results <- ddply(football.df.m, .(orig.grp), summarise, teams=paste(label, collapse=", "), perc.right=percent(1 - sum(value != orig.grp)/length(orig.grp)))
+results <- results[with(results, order(as.numeric(orig.grp))),]
+results$Conference <- c("ACC", "Big East", "Big 10", "Big 12", "C-USA", "Independent", "MAC", "Mountain West", "Pac-10", "SEC", "Big West", "WAC" )
+
+results <- results[,c(4,2,3)]
+colnames(results) <- c("Conference", "Teams Identified", "Accuracy")
+
 #percent school misspecified
 percent_correct <- 1 - sum(football.df.m$value != football.df.m$orig.grp)/nrow(football.df)
+
+print(xtable(results, align=c("c", "c","p{6cm}","c")),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H', )
 @
 
 This process can be repeated until the user is satisfied with the communities selected. The conclusion of this process is seen in figure~\ref{fig:football_8}. We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the football teams into their conferences.

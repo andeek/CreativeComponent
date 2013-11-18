@@ -49,7 +49,7 @@
 
 \usepackage{alltt}
 \usepackage[margin=1.25in]{geometry}
-\usepackage{graphicx, hyperref, float, multicol}
+\usepackage{graphicx, hyperref, float, multicol, pdflscape}
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 
@@ -121,7 +121,7 @@ Upon dragging, the force-directed layout is  rerun, giving an altered view of th
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/graphdrag.png}
-\caption{\label{fig:graphdrag} A graph in the process of being dragged. \hh{Would it be possible to put some marker on the node that's being dragged?}}
+\caption{\label{fig:graphdrag} A graph in the process of being dragged. The node being dragged is marked by a red circle.}
 \end{figure}
 
 Selection and grouping of  nodes are actions working together: in order to group nodes, a user  first selects a community based on a visual appraisal of the graph. To select nodes the user clicks and drags a selection box around nodes. See figure~\ref{fig:graphselect} for the results of selection in the interface. The shift key can also be used for multiple selections. Upon selection, the connection table is updated and the user can evaluate their selection as a community and alter the selection if need be (the shift key selection is very useful in this step).
@@ -171,6 +171,14 @@ Upon viewing the network in gravicom, some likely communities emerge and by sele
 
 \begin{figure}[H]
 \centering
+\includegraphics[width=\textwidth]{images/football_progression.png}
+\caption{\label{fig:football_progression}The full process of selecting and grouping communities in gravicom using the football dataset.}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\centering
 \includegraphics[width=\textwidth]{images/football_2.png}
 \includegraphics[]{images/football_3.png}
 \caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges.}
@@ -201,6 +209,29 @@ After the first community has been selected, another community at the top of the
 \caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
 \end{figure}
 
+% latex table generated in R 3.0.2 by xtable 1.7-1 package
+% Sun Nov 17 20:53:16 2013
+\begin{table}[H]
+\centering
+\begin{tabular}{cp{6cm}c}
+  \hline
+Conference & Teams Identified & Accuracy \\ 
+  \hline
+ACC & Duke, WakeForest, Virginia, FloridaState, Clemson, NorthCarolina, Maryland, GeorgiaTech, NorthCarolinaState & 100\% \\ 
+  Big East & BostonCollege, MiamiFlorida, VirginiaTech, Syracuse, Temple, WestVirginia, Connecticut, Pittsburgh, Rutgers & 88.9\% \\ 
+  Big 10 & OhioState, PennState, Michigan, MichiganState, Purdue, Minnesota, Northwestern, Illinois, Iowa, Wisconsin, Indiana & 100\% \\ 
+  Big 12 & KansasState, IowaState, Kansas, TexasA\&M, TexasTech, Baylor, Missouri, Texas, OklahomaState, Colorado, Oklahoma, Nebraska & 100\% \\ 
+  C-USA & Cincinnati, Louisville, Houston, Tulane, SouthernMississippi, Army, Memphis, EastCarolina, AlabamaBirmingham & 100\% \\ 
+  Independent & NotreDame, Navy & 100\% \\ 
+  MAC & CentralFlorida, WesternMichigan, MiamiOhio, Ohio, BowlingGreenState, Marshall, BallState, Akron, Buffalo, NorthernIllinois, EasternMichigan, Toledo, CentralMichigan, Kent & 92.9\% \\ 
+  Mountain West & BrighamYoung, SanDiegoState, BoiseState, Wyoming, NewMexico, NevadaLasVegas, Utah, NorthTexas, UtahState, NewMexicoState, ColoradoState, ArkansasState, Idaho, AirForce & 57.1\% \\ 
+  Pac-10 & Arizona, OregonState, Washington, WashingtonState, ArizonaState, UCLA, Stanford, SouthernCalifornia, Oregon, California & 100\% \\ 
+  SEC & Vanderbilt, Florida, LouisianaState, SouthCarolina, Mississippi, Arkansas, Auburn, Kentucky, Georgia, MississippiState, Alabama, Tennessee & 100\% \\ 
+  Big West & MiddleTennesseeState, LouisianaLafayette, LouisianaMonroe, LouisianaTech & 75\% \\ 
+  WAC & Nevada, FresnoState, TexasChristian, Tulsa, Hawaii, Rice, SouthernMethodist, SanJoseState, TexasElPaso & 88.9\% \\ 
+   \hline
+\end{tabular}
+\end{table}
 
 
 
