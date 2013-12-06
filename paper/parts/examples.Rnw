@@ -97,7 +97,7 @@ The second example dataset is a network of political books purchased close to th
 \caption{\label{fig:polbooks_1} Political books dataset as seen in gravicom prior and post community detection.}
 \end{figure}
 
-<<polbooks_check, echo=FALSE, warning=FALSE, results='hide', error=FALSE>>=
+<<polbooks_check, echo=FALSE, warning=FALSE, results='asis', error=FALSE>>=
 polbooks.df <- get.data.frame(read.graph("../data/polbooks_network.gml", format="gml"), what="vertices")
 
 #create map from gravicom to original by most mapped
