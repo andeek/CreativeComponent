@@ -156,26 +156,17 @@ The tabset allows the user to switch between two tabs on the screen. The first (
 To demonstrate the use of gravicom, we present three real-world network datasets and explore their community structure.
 
 \subsubsection{College Football}
-The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. In this network, nodes represent teams and an edge represents a regular-season game played between the two teams connected. The network as it looks on load in gravicom is presented in figure~\ref{fig:football_1}. 
-\hh{You should say that the distances between the nodes are based on the number of games played between the teams.}
+The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. In this network, nodes represent teams and an edge represents a regular-season game played between the two teams connected. The distances between the nodes are based on the number of games played between the teams. The network as it looks on load in gravicom is presented in figure~\ref{fig:football_1}. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/football_1.png}
-\caption{\label{fig:football_1} College Football network represented in gravicom. \hh{What do you want the user to see? Pick one aspect.}}
+\caption{\label{fig:football_1} College Football network represented in gravicom. Communities are visually evident and will become more identifiable as other are grouped.}
 \end{figure}
 
 Colleges within the same football conference will play members of their conference more frequently than teams outside of their conference, making this an interesting dataset to try to detect communities in. This is also an ideal example due to the relatively small number of nodes and edges present, making a graphical representation feasible. One challenge encountered with this dataset is that there are independent teams like Notre Dame that are not in a conference, and so may complicate community detection. Another complication is that small conference schools will typically play large conference schools in the beginning of the season in order to pay for their athletic programs, which could cause there to be more edges than expected between small conferences and large conferences.
 
 Upon viewing the network in gravicom, some likely communities emerge and by selecting nodes to determine within and outside edges, we can classify colleges into conferences, as seen in figure~\ref{fig:football_2}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/football_progression.png}
-\caption{\label{fig:football_progression}The full process of selecting and grouping communities in gravicom using the football dataset.}
-\end{figure}
-
-
 
 \begin{figure}[H]
 \centering
@@ -209,42 +200,45 @@ After the first community has been selected, another community at the top of the
 \caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
 \end{figure}
 
+This process can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/football_progression.png}
+\caption{\label{fig:football_progression}The full process of selecting and grouping communities in gravicom using the football dataset.}
+\end{figure}
+
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Sun Nov 17 20:53:16 2013
+% Fri Dec 06 08:55:54 2013
 \begin{table}[H]
 \centering
-\begin{tabular}{cp{6cm}c}
+\begin{tabular}{cp{10cm}c}
   \hline
 Conference & Teams Identified & Accuracy \\ 
   \hline
-ACC & Duke, WakeForest, Virginia, FloridaState, Clemson, NorthCarolina, Maryland, GeorgiaTech, NorthCarolinaState & 100\% \\ 
-  Big East & BostonCollege, MiamiFlorida, VirginiaTech, Syracuse, Temple, WestVirginia, Connecticut, Pittsburgh, Rutgers & 88.9\% \\ 
-  Big 10 & OhioState, PennState, Michigan, MichiganState, Purdue, Minnesota, Northwestern, Illinois, Iowa, Wisconsin, Indiana & 100\% \\ 
-  Big 12 & KansasState, IowaState, Kansas, TexasA\&M, TexasTech, Baylor, Missouri, Texas, OklahomaState, Colorado, Oklahoma, Nebraska & 100\% \\ 
-  C-USA & Cincinnati, Louisville, Houston, Tulane, SouthernMississippi, Army, Memphis, EastCarolina, AlabamaBirmingham & 100\% \\ 
-  Independent & NotreDame, Navy & 100\% \\ 
-  MAC & CentralFlorida, WesternMichigan, MiamiOhio, Ohio, BowlingGreenState, Marshall, BallState, Akron, Buffalo, NorthernIllinois, EasternMichigan, Toledo, CentralMichigan, Kent & 92.9\% \\ 
-  Mountain West & BrighamYoung, SanDiegoState, BoiseState, Wyoming, NewMexico, NevadaLasVegas, Utah, NorthTexas, UtahState, NewMexicoState, ColoradoState, ArkansasState, Idaho, AirForce & 57.1\% \\ 
-  Pac-10 & Arizona, OregonState, Washington, WashingtonState, ArizonaState, UCLA, Stanford, SouthernCalifornia, Oregon, California & 100\% \\ 
-  SEC & Vanderbilt, Florida, LouisianaState, SouthCarolina, Mississippi, Arkansas, Auburn, Kentucky, Georgia, MississippiState, Alabama, Tennessee & 100\% \\ 
-  Big West & MiddleTennesseeState, LouisianaLafayette, LouisianaMonroe, LouisianaTech & 75\% \\ 
-  WAC & Nevada, FresnoState, TexasChristian, Tulsa, Hawaii, Rice, SouthernMethodist, SanJoseState, TexasElPaso & 88.9\% \\ 
+ACC & Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina,  Maryland,  Georgia Tech,  North Carolina State & 100\% \\ 
+  Big East & Boston College,  Miami Florida,  Virginia Tech,  Syracuse,  Temple,  West Virginia, {\it  Connecticut},  Pittsburgh,  Rutgers & 88.9\% \\ 
+  Big 10 & Ohio State,  Penn State,  Michigan,  Michigan State,  Purdue,  Minnesota,  Northwestern,  Illinois,  Iowa,  Wisconsin,  Indiana & 100\% \\ 
+  Big 12 & Kansas State,  Iowa State,  Kansas,  Texas A\& M,  Texas Tech,  Baylor,  Missouri,  Texas,  Oklahoma State,  Colorado,  Oklahoma,  Nebraska & 100\% \\ 
+  C-USA & Cincinnati,  Louisville,  Houston,  Tulane,  Southern Mississippi,  Army,  Memphis,  East Carolina,  Alabama Birmingham & 100\% \\ 
+  Independent & Notre Dame,  Navy & 100\% \\ 
+  MAC & {\it  Central Florida},  Western Michigan,  Miami Ohio,  Ohio,  Bowling Green State,  Marshall,  Ball State,  Akron,  Buffalo,  Northern Illinois,  Eastern Michigan,  Toledo,  Central Michigan,  Kent & 92.9\% \\ 
+  Mountain West & Brigham Young,  San Diego State, {\it  Boise State},  Wyoming,  New Mexico,  Nevada Las Vegas,  Utah, {\it  North Texas}, {\it  Utah State}, {\it  New Mexico State},  Colorado State, {\it  Arkansas State}, {\it  Idaho},  Air Force & 57.1\% \\ 
+  Pac-10 & Arizona,  Oregon State,  Washington,  Washington State,  Arizona State,  UC LA,  Stanford,  Southern California,  Oregon,  California & 100\% \\ 
+  SEC & Vanderbilt,  Florida,  Louisiana State,  South Carolina,  Mississippi,  Arkansas,  Auburn,  Kentucky,  Georgia,  Mississippi State,  Alabama,  Tennessee & 100\% \\ 
+  Big West & Middle Tennessee State,  Louisiana Lafayette,  Louisiana Monroe, {\it  Louisiana Tech} & 75\% \\ 
+  WAC & Nevada,  Fresno State, {\it  Texas Christian},  Tulsa,  Hawaii,  Rice,  Southern Methodist,  San Jose State,  Texas El Paso & 88.9\% \\ 
    \hline
 \end{tabular}
+\label{tab:football_final}
 \end{table}
 
 
 
-This process can be repeated until the user is satisfied with the communities selected. The conclusion of this process is seen in figure~\ref{fig:football_8}. We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify 91.3\% of the football teams into their conferences.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/football_8.png}
-\caption{\label{fig:football_8} Final community structure detected in gravicom.}
-\end{figure}
+We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify 91.3\% of the football teams into their conferences.
 
 \subsubsection{Political Books Sold}
-The second example dataset is a network of political books published close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral in the data set and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups with a smaller group between as a connection when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
+The second example dataset is a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the data set and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups with a smaller group between as a connection when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
 
 \begin{figure}[H]
 \centering
@@ -255,67 +249,7 @@ The second example dataset is a network of political books published close to th
 
 
 
-We detected visually 3 types of books in the dataset. Through manual specification of types of books, we were able to correctly classify 86.67\% of the books into their categories. \hh{What is `correct' based on?}
-%output of above xtable
-% latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Wed Nov 06 18:32:14 2013
-% \begin{table}[ht]
-% \centering
-% \begin{tabular}{llllll}
-% \hline
-% \multicolumn{2}{c}{gravicom Liberal} & \multicolumn{2}{c}{gravicom Conservative} & \multicolumn{2}{c}{gravicom gravicom Neutral} \\
-%   \hline
-%   \hline
-% Book Title & Actual Category & Book Title & Actual Category & Book Title & Actual Category \\ 
-%   \hline
-% Bush at War & Conservative & A National Party No More & Conservative & Bush vs. the Beltway & Conservative \\ 
-%   Downsize This! & Liberal & Dereliction of Duty & Conservative & Charlie Wilson's War & Conservative \\ 
-%   The Culture of Fear & Liberal & Ten Minutes from Normal & Conservative & Dangerous Dimplomacy & Conservative \\ 
-%   House of Bush, House of Saud & Liberal & Bush Country & Conservative & The Man Who Warned America & Conservative \\ 
-%   The Best Democracy Money Can Buy & Liberal & Rumsfeld's War & Conservative & Rise of the Vulcans & Conservative \\ 
-%   Rogue Nation & Liberal & Legacy & Conservative & Allies & Conservative \\ 
-%   Stupid White Men & Liberal & Hating America & Conservative & Soft Power & Liberal \\ 
-%   Rush Limbaugh Is a Big Fat Idiot & Liberal & Hillary's Scheme & Conservative & The Choice & Liberal \\ 
-%   The Great Unraveling & Liberal & Let Freedom Ring & Conservative & America Unbound & Liberal \\ 
-%   Against All Enemies & Liberal & Tales from the Left Coast & Conservative & 1000 Years for Revenge & Neutral \\ 
-%   American Dynasty & Liberal & Breakdown & Conservative & Colossus & Neutral \\ 
-%   The Price of Loyalty & Liberal & Losing Bin Laden & Conservative & Why America Slept & Neutral \\ 
-%   The Sorrows of Empire & Liberal & The French Betrayal of America & Conservative & Ghost Wars & Neutral \\ 
-%   Worse Than Watergate & Liberal & Spin Sisters & Conservative & Sleeping With the Devil & Neutral \\ 
-%   Perfectly Legal & Liberal & The Right Man & Conservative & Empire & Neutral \\ 
-%   Big Lies & Liberal & Useful Idiots & Conservative & The Future of Freedom & Neutral \\ 
-%   The Lies of George W. Bush & Liberal & Shut Up and Sing & Conservative & All the Shah's Men & Neutral \\ 
-%   Bushwomen & Liberal & Who's Looking Out for You? & Conservative & Surprise, Security, the American Experience & Neutral \\ 
-%   The Bubble of American Supremacy & Liberal & Those Who Trespass & Conservative &   &   \\ 
-%   Living History & Liberal & Bias & Conservative &   &   \\ 
-%   The Politics of Truth & Liberal & The O'Reilly Factor & Conservative &   &   \\ 
-%   Fanatics and Fools & Liberal & Persecution & Conservative &   &   \\ 
-%   Bushwhacked & Liberal & Deliver Us from Evil & Conservative &   &   \\ 
-%   Disarming Iraq & Liberal & Give Me a Break & Conservative &   &   \\ 
-%   Lies and the Lying Liars Who Tell Them & Liberal & Betrayal & Conservative &   &   \\ 
-%   MoveOn's 50 Ways to Love Your Country & Liberal & The Real America & Conservative &   &   \\ 
-%   The Buying of the President 2004 & Liberal & The Faith of George W Bush & Conservative &   &   \\ 
-%   Buck Up Suck Up & Liberal & The Death of Right and Wrong & Conservative &   &   \\ 
-%   Hegemony or Survival & Liberal & The Third Terrorist & Conservative &   &   \\ 
-%   The New Pearl Harbor & Liberal & Arrogance & Conservative &   &   \\ 
-%   Freethinkers & Liberal & The Savage Nation & Conservative &   &   \\ 
-%   Had Enough? & Liberal & The Bushes & Conservative &   &   \\ 
-%   It's Still the Economy, Stupid! & Liberal & Things Worth Fighting For & Conservative &   &   \\ 
-%   We're Right They're Wrong & Liberal & Off with Their Heads & Conservative &   &   \\ 
-%   What Liberal Media? & Liberal & We Will Prevail & Conservative &   &   \\ 
-%   The Clinton Wars & Liberal & Why Courage Matters & Conservative &   &   \\ 
-%   Weapons of Mass Deception & Liberal & Hollywood Interrupted & Conservative &   &   \\ 
-%   Dude, Where's My Country? & Liberal & The Enemy Within & Conservative &   &   \\ 
-%   Thieves in High Places & Liberal & Slander & Conservative &   &   \\ 
-%   Shrub & Liberal & Endgame & Conservative &   &   \\ 
-%   The Exception to the Rulers & Liberal & The Official Handbook Vast Right Wing Conspiracy & Conservative &   &   \\ 
-%   Plan of Attack & Neutral & Fighting Back & Conservative &   &   \\ 
-%     &   & Power Plays & Neutral &   &   \\ 
-%     &   & Meant To Be & Neutral &   &   \\ 
-%     &   & The Perfect Wife & Neutral &   &   \\ 
-%    \hline
-% \end{tabular}
-% \end{table}
+We detected visually 3 types of books in the dataset. Through manual specification of types of books, we were able to correctly classify 86.67\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
 
 
 \subsection{Technical Aspects}
