@@ -6,7 +6,7 @@
 
 \usepackage{color}
 \newcommand{\hh}[1]{{\color{magenta} #1}}
-
+\newcommand{\ak}[1]{{\color{blue} #1}}
 
 \title{gravicom - a web-based tool for community detection in networks}
 \author{Andrea J. Kaplan}
@@ -29,7 +29,7 @@
 <<description, child='parts/description.Rnw', eval=TRUE>>=
 @
 
-\subsection{Examples}
+\section{Examples}
 <<examples, child='parts/examples.Rnw', eval=TRUE>>=
 @
 

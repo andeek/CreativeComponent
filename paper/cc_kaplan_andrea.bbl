@@ -172,6 +172,27 @@
   \field{year}{2013}
 \endentry
 
+\entry{zachary1977information}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Zachary}{Z.}%
+     {Wayne~W}{W.~W.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {JSTOR}%
+  }
+  \strng{namehash}{ZWW1}
+  \strng{fullhash}{ZWW1}
+  \field{sortinit}{Z}
+  \field{pages}{452\bibrangedash 473}
+  \field{title}{An information flow model for conflict and fission in small
+  groups}
+  \field{journaltitle}{Journal of anthropological research}
+  \field{year}{1977}
+\endentry
+
 \lossort
 \endlossort
 

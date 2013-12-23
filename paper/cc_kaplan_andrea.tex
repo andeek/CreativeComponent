@@ -55,7 +55,7 @@
 
 \usepackage{color}
 \newcommand{\hh}[1]{{\color{magenta} #1}}
-
+\newcommand{\ak}[1]{{\color{blue} #1}}
 
 \title{gravicom - a web-based tool for community detection in networks}
 \author{Andrea J. Kaplan}
@@ -93,13 +93,13 @@ The gravicom interface is comprised of five main parts,
 \caption{\label{fig:sitecomponents} The components that make up gravicom, (1) Control panel, (2) Data management, (3) Connection table, (4) Graph display, and (5) Tabset.}
 \end{figure}
 
-Each of these pieces serves as a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through direct interaction with diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
+Each part provides a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through direct interaction with diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
 
 \paragraph{Control Panel}
-The control panel serves as the starting point for a user's session in gravicom. It contains intructions for the user, as well as the means for a user to select a dataset and the diagnostic connection table. Additionally, the control panel contains a link to the source code for gravicom, should a user be interested in the inner workings of gravicom.
+The control panel serves as the starting point for a user's session in gravicom. It contains intructions for the user, as well as the means for a user to select a dataset and numerical summaries of the graph (such as a diagnostic connection table explained in \ak{??} to follow). Additionally, the control panel contains a link to the source code for gravicom, should a user be interested in the inner workings of gravicom.
 
 \paragraph{Data Management}
-The data management piece is made up of two main parts, data selection and data download. The data selection can be accomplished in two ways, the first being a drop down to select pre-loaded datasets to display. Currently there are two toy datasets in gravicom, a college football dataset and a karate friends dataset. From the dropdown the user can change the dataset to display in the graph. The second part of data selection gives the user the ability to upload his own dataset. Upon clicking the ``Upload new dataset" checkbox, a file selection control appears which gives the user the ability to upload his own graph data to explore with gravicom. This is shown in figure~\ref{fig:uploadnewdataset}. 
+The data management component is made up of two main parts, data selection and data download. The data selection can be accomplished in two ways, the first being a drop down to select pre-loaded datasets to display. Currently there are two well-known network datasets provided in gravicom, a college football dataset \cite{gn-football} and a karate club dataset \cite{zachary1977information}. From the dropdown the user can change the dataset to display in the graph. The second approach to data selection gives the user the ability to upload his own dataset. Upon clicking the ``Upload new dataset" checkbox, a file selection control appears which gives the user the ability to upload his own graph data to explore with gravicom. This is shown in figure~\ref{fig:uploadnewdataset}. 
 
 \begin{figure}[H]
 \centering
@@ -107,12 +107,10 @@ The data management piece is made up of two main parts, data selection and data 
 \caption{\label{fig:uploadnewdataset} The data selection area upon clicking the ``Upload new dataset" checkbox.}
 \end{figure}
 
-Data can be downloaded from gravicom with current communities stored. This feature can be used as a save point in working with a graph or as a means to export changes made in gravicom to another tool.
-
-
+The work performed by a user in visualizing graphs and community structure can also be downloaded as a dataset from gravicom with current communities stored. This feature can be used as a save point in processing a graph or as a means to export changes made in gravicom to another tool.
 
 \paragraph{Connection Table}
-The connection table is a diagnostic tool for the user to help determine if he has detected a community in his graph. The  table displays the number of connections within a user's selection of nodes in the graph and the number of connections from nodes in a user's selection to nodes not in the selection. The comparison of these two numbers can give the user an idea of if what he has selected is a community or not. The idea behind the connection table is that a community will have more connections within than connections to nodes outside the community.  To aid in the comparison, there is also a proportion column that displays the ratio of number of connections within a selection to the number of connections outside the selection. 
+The connection table is a quantitative diagnostic tool for the user in assessing the strength of a community structure in a graph. The idea behind the connection table is that a community of nodes will have proportionally more edge connections within the node cluster compared to edge connections to nodes outside the community. The table displays the number of edge connections within a user's selection of nodes in the graph and the number of connections from nodes in a user's selection to nodes not in the selection. The comparison of these two numbers can give the user a rough idea of if the plausibiity or extend to which the node selection constitutes a community. To aid in the comparison, there is also a proportion column that displays the ratio of number of connections within a node selection to the number of connections outside the selection. 
 
 \paragraph{Graph Display}
 The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has several ways to interact with the graph: drag, select, and group. A user can drag a node at any time. % to attempt to get a better view of potential communities. However, the graph is setup with a gravity parameter that generally keeps the graph in the center of the screen. 
@@ -124,7 +122,7 @@ Upon dragging, the force-directed layout is  rerun, giving an altered view of th
 \caption{\label{fig:graphdrag} A graph in the process of being dragged. The node being dragged is marked by a red circle.}
 \end{figure}
 
-Selection and grouping of  nodes are actions working together: in order to group nodes, a user  first selects a community based on a visual appraisal of the graph. To select nodes the user clicks and drags a selection box around nodes. See figure~\ref{fig:graphselect} for the results of selection in the interface. The shift key can also be used for multiple selections. Upon selection, the connection table is updated and the user can evaluate their selection as a community and alter the selection if need be (the shift key selection is very useful in this step).
+Selection and grouping of nodes are actions intended to work todether. In order to group nodes, a user first determines a node cluster or potential community based on a visual appraisal of the graph. To select nodes the user clicks and drags a selection box around nodes. See figure~\ref{fig:graphselect} for the results of selection in the interface. The shift key can also be used for multiple selections. Upon selection, the connection table is updated and the user can evaluate the selection as a community and alter the selection if need be (the shift key selection is useful in this step).
 
 \begin{figure}[H]
 \centering
@@ -133,7 +131,7 @@ Selection and grouping of  nodes are actions working together: in order to group
 \caption{\label{fig:graphselect} A graph in the process of nodes being selected. Upon selection of nodes, the connection table updates to display within and outside edges.}
 \end{figure}
 
-Selected nodes can be grouped together. Once grouped, a new node is created that comprises all grouped nodes and grouped within edges in size and charge. The force-directed layout is again run, showing the new graph with nodes grouped. This is shown in figure~\ref{fig:graphgroup}. Additionally, grouped nodes are ungrouped by clicking on a grouped node. This process can be repeated until all nodes have been grouped or the user is satisfied that all communities have been detected. 
+Selected nodes can be grouped together into one consolidated ``super-node" or grouped-node. \ak{Once grouped, a new node is created that comprises all grouped nodes and grouped within edges in size and charge}. The force-directed layout is again run, showing the new graph with previous nodes grouped. This is illustrated in figure~\ref{fig:graphgroup}. This process of node grouping can be repeated until all nodes have been grouped or until the user is satisfied that all communities have been selected. Additionally, grouped nodes can be ungrouped by clicking on a grouped node. 
 
 \begin{figure}[H]
 \centering
@@ -142,7 +140,7 @@ Selected nodes can be grouped together. Once grouped, a new node is created that
 \end{figure}
 
 \paragraph{Tabset}
-The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Each group show how many nodes are contained in that group as well as the ability to drop down and view the nodes contained in that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node IDs will be shown. For an example, see figure~\ref{fig:groupstab}.
+The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Within this tab, each node group or community summarizes the number of nodes in the group and also provides the ability to drop down and view the node IDs for that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node IDs will be shown as node numbers. For an example, see figure~\ref{fig:groupstab}.
 
 \begin{figure}[H]
 \centering
@@ -151,56 +149,51 @@ The tabset allows the user to switch between two tabs on the screen. The first (
 \end{figure}
 
 
-\subsection{Examples}
+\section{Examples}
 
 To demonstrate the use of gravicom, we present three real-world network datasets and explore their community structure.
 
-\subsubsection{College Football}
-The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. In this network, nodes represent teams and an edge represents a regular-season game played between the two teams connected. The distances between the nodes are based on the number of games played between the teams. The network as it looks on load in gravicom is presented in figure~\ref{fig:football_1}. 
+\subsection{College Football}
+The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. This is a default dataset available in gravicom. In this network, nodes represent teams and an edge represents a regular-season game played between the two connected teams. The distances between the nodes are based on the number of games played between the teams. The network as it appears upon load in gravicom is presented in figure~\ref{fig:football_1}. 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/football_1.png}
+\includegraphics[width=0.6\textwidth]{images/football_1.png}
 \caption{\label{fig:football_1} College Football network represented in gravicom. Communities are visually evident and will become more identifiable as other are grouped.}
 \end{figure}
 
-Colleges within the same football conference will play members of their conference more frequently than teams outside of their conference, making this an interesting dataset to try to detect communities in. This is also an ideal example due to the relatively small number of nodes and edges present, making a graphical representation feasible. One challenge encountered with this dataset is that there are independent teams like Notre Dame that are not in a conference, and so may complicate community detection. Another complication is that small conference schools will typically play large conference schools in the beginning of the season in order to pay for their athletic programs, which could cause there to be more edges than expected between small conferences and large conferences.
+Colleges within the same football conference will play members of their conference more frequently than teams outside of their conference, making this an interesting dataset for attempting to visually detect community structures. This is also an ideal illustrative example due to the relatively small number of nodes and edges present, making a graphical representation particularly feasible. One challenge with this dataset, however is the existence of independent teams, like Notre Dame, which do not belong to any conference and so may complicate efforts of community detection. Another complication is that small conference schools typically play large conference schools at the beginning of a season in order to help fund their athletic programs, which can potentially cause more edges than perhaps expected between distinct communities, particularly between small conferences and large conferences.
 
-Upon viewing the network in gravicom, some likely communities emerge and by selecting nodes to determine within and outside edges, we can classify colleges into conferences, as seen in figure~\ref{fig:football_2}.
+Upon viewing the network in gravicom, some likely communities visually emerge, and by selecting nodes to examine within and outside edges, we can classify colleges into conferences, as seen in figure~\ref{fig:football_2}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/football_2.png}
+\includegraphics[width=.49\textwidth]{images/football_2.png}
+\includegraphics[width=.49\textwidth]{images/football_4.png}
 \includegraphics[]{images/football_3.png}
-\caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges.}
+\caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges. After the first community is detected, more communities become apparent in the network.}
 \end{figure}
 
-Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this, allowing new communities to potentially become more easily apparent as seen in figure~\ref{fig:football_4}. 
+Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this. In particular, the grouped nodes for the suspected community will be collapsed into one super-node in the updated graph \ak{??}. The resulting graph update allows new community structures to potentially become more easily apparent as seen in figure~\ref{fig:football_2}. 
+
+Additionally, the user can check which nodes were grouped in each community \ak{??}. In this example (figure~\ref{fig:football_5}), we can see the first community detected corresponds to the Big 10.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/football_4.png}
-\caption{\label{fig:football_4} After the first community is detected, more communities become apparent in the network.}
+\includegraphics[scale=.76]{images/football_5.png}
+\caption{\label{fig:football_5} A drill-down of the first grouped community which corresponds to the Big 10 Conference.}
 \end{figure}
 
-Additionally, the user can check which nodes were grouped in each community. In this example (figure~\ref{fig:football_5}), we can see the first community detected roughly corresponds to the Big 10, with independent Notre Dame being grouped in the Big 10 due to playing two Big 10 teams in 2000.
+After the first community has been selected, another potential community at the top of the graph has been revealed \ak{(explain)}. The user can once again select and group this node cluster into a community and subsequently examine the nodes in the resulting group as seen in figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. Here, the first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences should, as expected, be more difficult to detect.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{images/football_5.png}
-\caption{\label{fig:football_5} A drill-down of the first grouped community which roughly corresponds to the Big 10 Conference.}
-\end{figure}
-
-After the first community has been selected, another community at the top of the graph has been revealed. The user can once again, select and group this community and take a look at the nodes in the community as seen in figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. The first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences would be more difficult to detect.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{images/football_6.png}
-\includegraphics[width=\textwidth]{images/football_7.png}
+\includegraphics[width=.49\textwidth]{images/football_45.png}
+\includegraphics[width=.49\textwidth]{images/football_6.png}
 \caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
 \end{figure}
 
-This process can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final}. 
+This process of grouping nodes into suspected communities can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final} \ak{(explain)}. 
 
 \begin{figure}[H]
 \centering
@@ -209,7 +202,7 @@ This process can be repeated until the user is satisfied with the communities se
 \end{figure}
 
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Fri Dec 06 08:57:09 2013
+% Mon Dec 23 10:10:20 2013
 \begin{table}[H]
 \centering
 \begin{tabular}{cp{10cm}c}
@@ -230,15 +223,16 @@ ACC & Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina, 
   WAC & Nevada,  Fresno State, {\it  Texas Christian},  Tulsa,  Hawaii,  Rice,  Southern Methodist,  San Jose State,  Texas El Paso & 88.9\% \\ 
    \hline
 \end{tabular}
+\caption{Resulting communities detected using gravicom and the corresponding conference. Teams that have been incorrectly classified are italicized.} 
 \label{tab:football_final}
 \end{table}
 
 
 
-We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify 91.3\% of the football teams into their conferences.
+We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify 91.3\% of the football teams into their conferences. \ak{(explain meaning of size/distance etc.)}
 
-\subsubsection{Political Books Sold}
-The second example dataset is a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the data set and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups with a smaller group between as a connection when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
+\subsection{Political Books Sold}
+For \ak{illustration}, we next consider a second example dataset consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the dataset and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
 
 \begin{figure}[H]
 \centering
@@ -248,7 +242,7 @@ The second example dataset is a network of political books purchased close to th
 \end{figure}
 
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Fri Dec 06 08:57:09 2013
+% Mon Dec 23 10:10:20 2013
 \begin{table}[H]
 \centering
 \begin{tabular}{cp{10cm}c}
@@ -260,16 +254,17 @@ Conservative & A National Party No More, Dereliction of Duty, Ten Minutes from N
   Neutral & 1000 Years for Revenge, {\it Bush vs. the Beltway}, {\it Charlie Wilson's War}, {\it Dangerous Dimplomacy}, Sleeping With the Devil, {\it The Man Who Warned America}, Why America Slept, Ghost Wars, Surprise, Security, the American Experience, {\it Allies}, {\it The Choice}, All the Shah's Men, {\it Soft Power}, Colossus, The Future of Freedom, {\it Rise of the Vulcans}, {\it America Unbound}, Empire & 50\% \\ 
    \hline
 \end{tabular}
+\caption{Resulting communities detected using gravicom and the corresponding type of book. Books that have been incorrectly classified are italicized.} 
 \label{tab:polbooks_final}
 \end{table}
 
 
-We detected visually 3 types of books in the dataset. Through manual specification of types of books, we were able to correctly classify 86.67\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
+We detected visually 3 types of books in the dataset \ak{(how?)}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify 86.67\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
 
 
 \subsection{Technical Aspects}
 
-gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}. The three pieces used are Shiny, D3, and igraph. They are used to manage server/client interaction, user interface and graph layout, and data formatting, respectively.
+gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}, which are Shiny, D3, and igraph. These are used, respectively, for server/client interaction management, user interface and graph layout, and data formatting, respectively. In the following subsections, we describe the purposes of these three components in more detail.
 
 \begin{figure}[H]
 \centering
@@ -291,18 +286,18 @@ The server side requirements are more extensive, but this does not affect the us
 
 \subsubsection{Shiny}
 
-Shiny \cite{rs-shiny} is an {\tt R} package created by RStudio that enables {\tt R} users to create an interactive web application that utilizes {\tt R} as the background engine. Through default methods to build user interface elements in HTML and a handle to the server side code, Shiny is a very simple way to turn {\tt R} code into a website. 
+Shiny \cite{rs-shiny} is an {\tt R} package created by RStudio that enables {\tt R} users to create an interactive web application that utilizes {\tt R} as the background engine. Through default methods to build user interface elements in HTML and a handle to the server side code, Shiny is a simple way to turn {\tt R} code into a website. 
 
-gravicom uses the Shiny functionality to create user controls, pass correctly formatted data to the client, and as a means to display summary information regarding the user's interactions with a graph at any point in time. In this context, Shiny serves as the translator between the formatted data and what the user sees and interacts with on their screen.
+gravicom uses the Shiny functionality to create user controls, pass correctly formatted data to the client, and as a means to display summary information regarding the user's interactions with a graph at any point in time. In this context, Shiny serves as the translator between the formatted data and what the user sees and interacts with on his screen.
 
 
 \subsubsection{D3}
 
 D3 \cite{mb-d3} stands for ``Data Driven Documents" and is a JavaScript library developed and maintained by Mike Bostock with the  purpose of visualizing and interacting with data in a web-based interface. It is freely available from \url{http://www.d3js.org}. The library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of rendering animations and providing user interactions that are tied to the underlying data. The key idea behind the library is that Document Object Model elements are completely determined by the data. The Document Object Model (DOM) is a convention for representing and interacting with objects in HTML, XHTML and XML. So, rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representations of their data in a web framework. 
 
-gravicom uses D3 to handle all graphical displays and user interactions with the graph. The data is passed to the client and able to be used through Shiny's input bindings. It is crucial that the data has been formatted correctly at this point for the JavaScript to properly function. For this reason, we limit the file types being passed in to the tool to a robust graph-specific type.
+gravicom uses D3 to handle all graphical displays and user interactions with the graph. The data is passed to the client and able to be used through Shiny's input bindings. It is crucial that the data has been formatted correctly at this point for the JavaScript to properly function. For this reason, we limit the file types being passed into the tool to a robust graph-specific type.
 
-At this point in the page lifecycle, the graph's nodes are tied to circles and the edges are tied to paths on the page. User manipulations such as selecting, dragging, and grouping are handled by D3 and  data is passed back to the server via Shiny's output bindings to allow for communication between user and the {\tt R} engine underneath. This is illustrated in figure~\ref{fig:pagelifecycle}. What this means is that all visualization and user interaction with the graph are accomplished using JavaScript, more specifically the library D3. Shiny and {\tt R} serve as the framework on which the data sits, but when the user touches the data they are doing so through the JavaScript elements. 
+At this point in the page lifecycle, the graph nodes are tied to circles and the edges are tied to paths on the page. User manipulations such as selecting, dragging, and grouping are handled by D3 and  data is passed back to the server via Shiny's output bindings to allow for communication between user and the {\tt R} engine underneath. This is illustrated in figure~\ref{fig:pagelifecycle}. What this means is that all visualization and user interaction with the graph are accomplished using JavaScript, more specifically the library D3. Shiny and {\tt R} serve as the framework on which the data sits, but when the user touches the data they are doing so through the JavaScript elements. 
 
 \begin{figure}[H]
 \centering
