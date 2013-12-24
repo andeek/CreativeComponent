@@ -1,6 +1,6 @@
 \documentclass{article}
-\usepackage[margin=1.25in]{geometry}
-\usepackage{graphicx, hyperref, float, multicol, pdflscape}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx, hyperref, float, multicol, pdflscape, paralist}
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 

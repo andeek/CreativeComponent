@@ -153,6 +153,22 @@
   \field{year}{2002}
 \endentry
 
+\entry{krebs2004divided}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Krebs}{K.}%
+     {Valdis}{V.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KV1}
+  \strng{fullhash}{KV1}
+  \field{sortinit}{K}
+  \field{note}{\url{http://www.orgnet.com/divided2.html}}
+  \field{title}{Divided We Stand... Still}
+  \field{year}{2004}
+\endentry
+
 \entry{rs-shiny}{manual}{}
   \name{author}{1}{}{%
     {{}%

@@ -48,8 +48,8 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-\usepackage[margin=1.25in]{geometry}
-\usepackage{graphicx, hyperref, float, multicol, pdflscape}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx, hyperref, float, multicol, pdflscape, paralist}
 \usepackage[backend=bibtex, natbib=true]{biblatex}
 \addbibresource{references/refs.bib}
 
@@ -96,7 +96,7 @@ The gravicom interface is comprised of five main parts,
 Each part provides a means for the user to interact with gravicom, either through controls that allow user input to gravicom or through direct interaction with diagnostics and visualization of a graph. Their placement on the gravicom interface can be seen in figure~\ref{fig:sitecomponents}.
 
 \paragraph{Control Panel}
-The control panel serves as the starting point for a user's session in gravicom. It contains intructions for the user, as well as the means for a user to select a dataset and numerical summaries of the graph (such as a diagnostic connection table explained in \ak{??} to follow). Additionally, the control panel contains a link to the source code for gravicom, should a user be interested in the inner workings of gravicom.
+The control panel serves as the starting point for a user's session in gravicom. It contains intructions for the user, as well as the means for a user to select a dataset and numerical summaries of the graph (such as a diagnostic connection table explained below). Additionally, the control panel contains a link to the source code for gravicom, should a user be interested in the inner workings of gravicom.
 
 \paragraph{Data Management}
 The data management component is made up of two main parts, data selection and data download. The data selection can be accomplished in two ways, the first being a drop down to select pre-loaded datasets to display. Currently there are two well-known network datasets provided in gravicom, a college football dataset \cite{gn-football} and a karate club dataset \cite{zachary1977information}. From the dropdown the user can change the dataset to display in the graph. The second approach to data selection gives the user the ability to upload his own dataset. Upon clicking the ``Upload new dataset" checkbox, a file selection control appears which gives the user the ability to upload his own graph data to explore with gravicom. This is shown in figure~\ref{fig:uploadnewdataset}. 
@@ -112,9 +112,8 @@ The work performed by a user in visualizing graphs and community structure can a
 \paragraph{Connection Table}
 The connection table is a quantitative diagnostic tool for the user in assessing the strength of a community structure in a graph. The idea behind the connection table is that a community of nodes will have proportionally more edge connections within the node cluster compared to edge connections to nodes outside the community. The table displays the number of edge connections within a user's selection of nodes in the graph and the number of connections from nodes in a user's selection to nodes not in the selection. The comparison of these two numbers can give the user a rough idea of if the plausibiity or extend to which the node selection constitutes a community. To aid in the comparison, there is also a proportion column that displays the ratio of number of connections within a node selection to the number of connections outside the selection. 
 
-\paragraph{Graph Display}
-The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has several ways to interact with the graph: drag, select, and group. A user can drag a node at any time. % to attempt to get a better view of potential communities. However, the graph is setup with a gravity parameter that generally keeps the graph in the center of the screen. 
-Upon dragging, the force-directed layout is  rerun, giving an altered view of the graph. Figure~\ref{fig:graphdrag} shows a graph in the process of being dragged.
+\paragraph{Graph Display} \label{par:graph}
+The graph display shows an interactive graphical representation of  the selected (or uploaded) graph data. Upon load, the graph displays all nodes and edges in the dataset using a force-directed layout algorithm. The user has several ways to interact with the graph: drag, select, and group. A user can drag a node at any time. Upon dragging, the force-directed layout is  rerun, giving an altered view of the graph. Figure~\ref{fig:graphdrag} shows a graph in the process of being dragged.
 
 \begin{figure}[H]
 \centering
@@ -131,7 +130,7 @@ Selection and grouping of nodes are actions intended to work todether. In order 
 \caption{\label{fig:graphselect} A graph in the process of nodes being selected. Upon selection of nodes, the connection table updates to display within and outside edges.}
 \end{figure}
 
-Selected nodes can be grouped together into one consolidated ``super-node" or grouped-node. \ak{Once grouped, a new node is created that comprises all grouped nodes and grouped within edges in size and charge}. The force-directed layout is again run, showing the new graph with previous nodes grouped. This is illustrated in figure~\ref{fig:graphgroup}. This process of node grouping can be repeated until all nodes have been grouped or until the user is satisfied that all communities have been selected. Additionally, grouped nodes can be ungrouped by clicking on a grouped node. 
+Selected nodes can be grouped together into one consolidated ``super-node" or grouped-node. Once grouped, the size and edges of the super-node represent the number of nodes in the potential community and the number of edges to the grouped community nodes, respectively. The force-directed layout is again run, showing the new graph with previous nodes grouped. This is illustrated in figure~\ref{fig:graphgroup}. This process of node grouping can be repeated until all nodes have been grouped or until the user is satisfied that all communities have been selected. Additionally, grouped nodes can be ungrouped by clicking on a grouped node. 
 
 \begin{figure}[H]
 \centering
@@ -139,7 +138,7 @@ Selected nodes can be grouped together into one consolidated ``super-node" or gr
 \caption{\label{fig:graphgroup} A graph after nodes have been grouped and the force-directed algorithm has been re-run.}
 \end{figure}
 
-\paragraph{Tabset}
+\paragraph{Tabset} \label{par:group}
 The tabset allows the user to switch between two tabs on the screen. The first (and default tab) shows the graph display. The second tab shows the groups that a user has created in the graph. Within this tab, each node group or community summarizes the number of nodes in the group and also provides the ability to drop down and view the node IDs for that group. If the data are equipped with node labels, these will be displayed. If there are no node labels provided, node IDs will be shown as node numbers. For an example, see figure~\ref{fig:groupstab}.
 
 \begin{figure}[H]
@@ -153,7 +152,7 @@ The tabset allows the user to switch between two tabs on the screen. The first (
 
 To demonstrate the use of gravicom, we present three real-world network datasets and explore their community structure.
 
-\subsection{College Football}
+\subsection{College Football} \label{sec:football}
 The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. This is a default dataset available in gravicom. In this network, nodes represent teams and an edge represents a regular-season game played between the two connected teams. The distances between the nodes are based on the number of games played between the teams. The network as it appears upon load in gravicom is presented in figure~\ref{fig:football_1}. 
 
 \begin{figure}[H]
@@ -174,15 +173,21 @@ Upon viewing the network in gravicom, some likely communities visually emerge, a
 \caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges. After the first community is detected, more communities become apparent in the network.}
 \end{figure}
 
-Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this. In particular, the grouped nodes for the suspected community will be collapsed into one super-node in the updated graph \ak{??}. The resulting graph update allows new community structures to potentially become more easily apparent as seen in figure~\ref{fig:football_2}. 
+Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this. In particular, the grouped nodes for the suspected community will be collapsed into one super-node in the updated graph. See section~\ref{par:graph} for details. The resulting graph update allows new community structures to potentially become more easily apparent as seen in figure~\ref{fig:football_2}. 
 
-Additionally, the user can check which nodes were grouped in each community \ak{??}. In this example (figure~\ref{fig:football_5}), we can see the first community detected corresponds to the Big 10.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=.76]{images/football_5.png}
-\caption{\label{fig:football_5} A drill-down of the first grouped community which corresponds to the Big 10 Conference.}
-\end{figure}
+Additionally, the user can check which nodes were grouped in each community as described in \ref{par:group}. In this example, the first community detected contains the following schools, which corresponds to the Big 10:\begin{inparaenum}[\itshape a\upshape)]
+\item Illinois;
+\item Indiana; 
+\item Iowa; 
+\item Michigan; 
+\item Michigan State; 
+\item Minnesota; 
+\item Northwestern; 
+\item Ohio State; 
+\item Penn State;
+\item Purdue; and
+\item Wisconsin.
+\end{inparaenum}
 
 After the first community has been selected, another potential community at the top of the graph has been revealed \ak{(explain)}. The user can once again select and group this node cluster into a community and subsequently examine the nodes in the resulting group as seen in figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. Here, the first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences should, as expected, be more difficult to detect.
 
@@ -193,7 +198,7 @@ After the first community has been selected, another potential community at the 
 \caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
 \end{figure}
 
-This process of grouping nodes into suspected communities can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final} \ak{(explain)}. 
+This process of grouping nodes into suspected communities can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final}. It should be noted that this is a fundamentally a subjective process and that another user with the same data may find slightly different communities. However, by leveraging the human visual system to find structure in a dataset, gravicom has the ability to provide a starting point for an objective algorithm to then adopt the detection of communities. 
 
 \begin{figure}[H]
 \centering
@@ -202,7 +207,7 @@ This process of grouping nodes into suspected communities can be repeated until 
 \end{figure}
 
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Mon Dec 23 10:13:36 2013
+% Mon Dec 23 20:37:21 2013
 \begin{table}[H]
 \centering
 \begin{tabular}{cp{10cm}c}
@@ -229,10 +234,10 @@ ACC & Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina, 
 
 
 
-We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify 91.3\% of the football teams into their conferences. \ak{(explain meaning of size/distance etc.)}
+Using the visual approach detailed above, we were able to detect 11 community structures in the graph. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify 91.3\% of the football teams into their conferences. 
 
 \subsection{Political Books Sold}
-For \ak{illustration}, we next consider a second example dataset consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the dataset and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
+For illustration, we next consider a second example dataset consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the dataset \cite{krebs2004divided} and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
 
 \begin{figure}[H]
 \centering
@@ -242,7 +247,7 @@ For \ak{illustration}, we next consider a second example dataset consisting of a
 \end{figure}
 
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Mon Dec 23 10:13:36 2013
+% Mon Dec 23 20:37:21 2013
 \begin{table}[H]
 \centering
 \begin{tabular}{cp{10cm}c}
@@ -259,7 +264,7 @@ Conservative & A National Party No More, Dereliction of Duty, Ten Minutes from N
 \end{table}
 
 
-We detected visually 3 types of books in the dataset \ak{(how?)}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify 86.67\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
+We detected visually 3 types of books in the dataset using the process of selection and grouping detailed in section~\ref{sec:football}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify 86.67\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
 
 
 \subsection{Technical Aspects}

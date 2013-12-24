@@ -1,6 +1,6 @@
 To demonstrate the use of gravicom, we present three real-world network datasets and explore their community structure.
 
-\subsection{College Football}
+\subsection{College Football} \label{sec:football}
 The first dataset is a representation of U.S. College Football Division 1 games from the 2000 season \cite{gn-football}. This is a default dataset available in gravicom. In this network, nodes represent teams and an edge represents a regular-season game played between the two connected teams. The distances between the nodes are based on the number of games played between the teams. The network as it appears upon load in gravicom is presented in figure~\ref{fig:football_1}. 
 
 \begin{figure}[H]
@@ -21,15 +21,21 @@ Upon viewing the network in gravicom, some likely communities visually emerge, a
 \caption{\label{fig:football_2} Selecting a potential community in gravicom and assessing the number of within verses outside selection edges. After the first community is detected, more communities become apparent in the network.}
 \end{figure}
 
-Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this. In particular, the grouped nodes for the suspected community will be collapsed into one super-node in the updated graph \ak{??}. The resulting graph update allows new community structures to potentially become more easily apparent as seen in figure~\ref{fig:football_2}. 
+Once the user is satisfied that he has selected a viable community, he clicks to group those nodes and the graph will update to reflect this. In particular, the grouped nodes for the suspected community will be collapsed into one super-node in the updated graph. See section~\ref{par:graph} for details. The resulting graph update allows new community structures to potentially become more easily apparent as seen in figure~\ref{fig:football_2}. 
 
-Additionally, the user can check which nodes were grouped in each community \ak{??}. In this example (figure~\ref{fig:football_5}), we can see the first community detected corresponds to the Big 10.
-
-\begin{figure}[H]
-\centering
-\includegraphics[scale=.76]{images/football_5.png}
-\caption{\label{fig:football_5} A drill-down of the first grouped community which corresponds to the Big 10 Conference.}
-\end{figure}
+Additionally, the user can check which nodes were grouped in each community as described in \ref{par:group}. In this example, the first community detected contains the following schools, which corresponds to the Big 10:\begin{inparaenum}[\itshape a\upshape)]
+\item Illinois;
+\item Indiana; 
+\item Iowa; 
+\item Michigan; 
+\item Michigan State; 
+\item Minnesota; 
+\item Northwestern; 
+\item Ohio State; 
+\item Penn State;
+\item Purdue; and
+\item Wisconsin.
+\end{inparaenum}
 
 After the first community has been selected, another potential community at the top of the graph has been revealed \ak{(explain)}. The user can once again select and group this node cluster into a community and subsequently examine the nodes in the resulting group as seen in figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. Here, the first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences should, as expected, be more difficult to detect.
 
@@ -40,7 +46,7 @@ After the first community has been selected, another potential community at the 
 \caption{\label{fig:football_6} A second community is grouped which corresponds to the SEC Conference.}
 \end{figure}
 
-This process of grouping nodes into suspected communities can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final} \ak{(explain)}. 
+This process of grouping nodes into suspected communities can be repeated until the user is satisfied with the communities selected. The entirety of this process is seen in figure~\ref{fig:football_progression} and the resulting communities in table~\ref{tab:football_final}. It should be noted that this is a fundamentally a subjective process and that another user with the same data may find slightly different communities. However, by leveraging the human visual system to find structure in a dataset, gravicom has the ability to provide a starting point for an objective algorithm to then adopt the detection of communities. 
 
 \begin{figure}[H]
 \centering
@@ -80,10 +86,10 @@ percent_correct <- 1 - sum(football.df.m$value != football.df.m$orig.grp)/nrow(f
 print(xtable(results, align=c("c", "c","p{10cm}","c"), label='tab:football_final', caption='Resulting communities detected using gravicom and the corresponding conference. Teams that have been incorrectly classified are italicized.'),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H')
 @
 
-We detected visually 11 conferences in the dataset. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the football teams into their conferences. \ak{(explain meaning of size/distance etc.)}
+Using the visual approach detailed above, we were able to detect 11 community structures in the graph. There were 11 conferences and 5 independent schools in the dataset. Through manual specification of conferences, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the football teams into their conferences. 
 
 \subsection{Political Books Sold}
-For \ak{illustration}, we next consider a second example dataset consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the dataset and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
+For illustration, we next consider a second example dataset consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent copurchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the dataset \cite{krebs2004divided} and we can see a clear partition in figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This dataset is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
 
 \begin{figure}[H]
 \centering
@@ -114,4 +120,4 @@ percent_correct <- 1 - sum(polbooks.df.m$value != polbooks.df.m$orig.grp)/nrow(p
 
 print(xtable(results, align=c("c", "c","p{10cm}","c"), label='tab:polbooks_final', caption='Resulting communities detected using gravicom and the corresponding type of book. Books that have been incorrectly classified are italicized.'),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H')
 @
-We detected visually 3 types of books in the dataset \ak{(how?)}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
+We detected visually 3 types of books in the dataset using the process of selection and grouping detailed in section~\ref{sec:football}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the books into the categories created by the author of the dataset. See table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
