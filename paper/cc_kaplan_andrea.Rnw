@@ -50,6 +50,8 @@
 @
 
 \section{Further Work}
+<<further, child='parts/further.Rnw', eval=TRUE>>=
+@
 
 \printbibliography
 \end{document}

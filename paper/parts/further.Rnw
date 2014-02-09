@@ -1,0 +1,5 @@
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{images/further_got.png}
+\caption{\label{fig:further_got} Caption.}
+\end{figure}
