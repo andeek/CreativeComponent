@@ -103,6 +103,25 @@
   \field{year}{2006}
 \endentry
 
+\entry{cukier2012got}{online}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Cukier}{C.}%
+     {Jerome}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CJ1}
+  \strng{fullhash}{CJ1}
+  \field{sortinit}{C}
+  \field{title}{Events in the Game of Thrones}
+  \verb{url}
+  \verb http://www.jeromecukier.net/projects/agot/events.html
+  \endverb
+  \field{month}{12}
+  \field{year}{2012}
+\endentry
+
 \entry{gn-football}{article}{}
   \name{author}{2}{}{%
     {{}%
@@ -167,6 +186,96 @@
   \field{note}{\url{http://www.orgnet.com/divided2.html}}
   \field{title}{Divided We Stand... Still}
   \field{year}{2004}
+\endentry
+
+\entry{martin1998clash}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Martin}{M.}%
+     {George~RR}{G.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Random House Digital, Inc.}%
+  }
+  \strng{namehash}{MGR1}
+  \strng{fullhash}{MGR1}
+  \field{sortinit}{M}
+  \field{title}{A Clash of Kings: Book Two of A Song of Ice and Fire}
+  \field{year}{1998}
+\endentry
+
+\entry{martin2011dance}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Martin}{M.}%
+     {George~RR}{G.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Random House Digital, Inc.}%
+  }
+  \strng{namehash}{MGR1}
+  \strng{fullhash}{MGR1}
+  \field{sortinit}{M}
+  \field{title}{A Dance with Dragons: A Song of Ice and Fire: Book Five}
+  \field{year}{2011}
+\endentry
+
+\entry{martin2005feast}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Martin}{M.}%
+     {George~RR}{G.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Bantam}%
+  }
+  \strng{namehash}{MGR1}
+  \strng{fullhash}{MGR1}
+  \field{sortinit}{M}
+  \field{title}{A feast for crows}
+  \field{year}{2005}
+\endentry
+
+\entry{martin1996game}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Martin}{M.}%
+     {George~RR}{G.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Random House Digital, Inc.}%
+  }
+  \strng{namehash}{MGR1}
+  \strng{fullhash}{MGR1}
+  \field{sortinit}{M}
+  \field{title}{A game of thrones}
+  \field{year}{1996}
+\endentry
+
+\entry{martin2000storm}{misc}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Martin}{M.}%
+     {George~RR}{G.~R.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {London: Voyager-Harper Collins}%
+  }
+  \strng{namehash}{MGR1}
+  \strng{fullhash}{MGR1}
+  \field{sortinit}{M}
+  \field{title}{A Storm of Swords. Vol 3 of A Song of Ice and Fire}
+  \field{year}{2000}
 \endentry
 
 \entry{rs-shiny}{manual}{}

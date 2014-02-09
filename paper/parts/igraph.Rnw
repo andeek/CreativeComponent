@@ -8,7 +8,7 @@ For the conversion from an  XML file  to a JSON file we make user of the R packa
 <<json, results='markup', echo=FALSE>>=
 cat( readLines( "../data/sample.json" ) , sep = "\n" )
 @
-Our example data will yield the graph in figure~\ref{fig:samplegraph}.
+Our example data will yield the graph in Figure~\ref{fig:samplegraph}.
 
 \begin{figure}[H]
 \centering

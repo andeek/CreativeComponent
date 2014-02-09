@@ -1,4 +1,4 @@
-gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in figure~\ref{fig:clientserver}, which are Shiny, D3, and igraph. These are used, respectively, for server/client interaction management, user interface and graph layout, and data formatting, respectively. In the following subsections, we describe the purposes of these three components in more detail.
+gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in Figure~\ref{fig:clientserver}, which are Shiny, D3, and igraph. These are used, respectively, for server/client interaction management, user interface and graph layout, and data formatting, respectively. In the following subsections, we describe the purposes of these three components in more detail.
 
 \begin{figure}[H]
 \centering

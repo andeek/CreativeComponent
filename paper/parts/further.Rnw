@@ -1,5 +1,21 @@
+In this section, we will briefly cover two ideas for extending our work on gravicom.  The first, integrated algorithmic community detection, improves community detection, and the second, dynamic temporal graph visualization, will allow for the analysis of changing graphs over time in gravicom.
+
+\subsection{Integrated Algorithmic Community Detection}
+The idea behind integrated algorithmic community detection is to combine the benefits of human detection of communities with algorithmic detection. Human detection using gravicom as described in this paper can serve as an initialization phase of community detection. From there, an iterative algoritm would be available to run in the background. The algorithm would run step-by-step and send results back to the user for two purposes. First, the user can visually track how the algorithm is detecting communities by showing what groups are created when. That transition helps the user track progression with the algorithm.  Being able to visually track changes will help the user understand what is going on with the algorithm, rather than a black box method. 
+
+Second, in between iterations of the algorithm, the user can choose to accept or reject changes made by the algorithm. The user could make adjustments and send the updated results back to the algorithm. This checkpoint would in effect create flexible stopping criteria.  For example, suppose the algorithm, running step-by-step, still has remaining steps before meeting the stopping criteria.  A user could decide at each point whether to continue through the remaining steps or stop at a specific point.  Similarly, suppose the algorithm has met the stopping criteria but the user identifies the need to perform additional iterations.  The integration of human and algorithmic detection would allow the user to stop or continue as necessary.
+
+Because we built gravicom on the shiny framework, it is not a major step to add this feature. We already have the ability to send a current graph's status to R running on the server, perform manipulations, and send the graph back. The next step would be to implement the algorithm in R, using, for example, the igraph package.
+
+\subsection{Dynamic Temporal Graph Visualization}
+The idea for dynamic temporal graph visualization is that a user would be able to view a dynamic graph across time, specifically how the edges change between nodes. With this, a user could find time-dependent communities. 
+
+An example that illustrates this point is the series of novels, A Song of Ice and Fire \cite{martin1996game, martin1998clash, martin2000storm, martin2005feast, martin2011dance}. This data was compiled by Jerome Cukier using two fan-maintained ressources on the series \cite{cukier2012got}. Looking at important events in the same chapter, one could look at how relationships between characters are changing from one chapter to the next. We performed this analysis for each book separately and we present the results in Figure~\ref{fig:further_got}. The first thing that stands out from this visualization is a stark difference in how characters interact from book two to book three. Book two there are many medium sized clusters in evidence, meaning many disparate events affecting a mid size amoutn of characters. To the contrary, book 3 shows one very large event occuring and then many other events affecting a small amount of characters. In fact, the third book in the series, A Storm of Swords, houses a brutal massacre in which over 10 major characters are killed. 
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{images/further_got.png}
-\caption{\label{fig:further_got} Caption.}
+\caption{\label{fig:further_got} A look at the relationships between characters over time for all five books in A Song of Ice and Fire by George R. R. Martin in terms of mutual events.}
 \end{figure}
+
+The piece that is missing with the analysis is the ability to track the change of character's relationships from one book to the next. 
