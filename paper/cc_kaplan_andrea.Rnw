@@ -33,19 +33,19 @@
 <<examples, child='parts/examples.Rnw', eval=TRUE>>=
 @
 
-\subsection{Technical Aspects}
+\section{Technical Aspects}
 <<technical_aspects, child='parts/technical_aspects.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{Shiny}
+\subsection{Shiny}
 <<shiny, child='parts/shiny.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{D3}
+\subsection{D3}
 <<d3, child='parts/d3.Rnw', eval=TRUE>>=
 @
 
-\subsubsection{igraph}
+\subsection{igraph}
 <<igraph, child='parts/igraph.Rnw', eval=TRUE>>=
 @
 

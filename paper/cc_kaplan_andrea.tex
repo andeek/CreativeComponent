@@ -207,7 +207,7 @@ This process of grouping nodes into suspected communities can be repeated until 
 \end{figure}
 
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Sun Feb 09 17:06:10 2014
+% Sun Feb 09 17:10:13 2014
 \begin{table}[H]
 \centering
 \begin{tabular}{cp{10cm}c}
@@ -247,7 +247,7 @@ For illustration, we next consider a second example dataset consisting of a netw
 \end{figure}
 
 % latex table generated in R 3.0.2 by xtable 1.7-1 package
-% Sun Feb 09 17:06:10 2014
+% Sun Feb 09 17:10:13 2014
 \begin{table}[H]
 \centering
 \begin{tabular}{cp{10cm}c}
@@ -267,7 +267,7 @@ Conservative & A National Party No More, Dereliction of Duty, Ten Minutes from N
 We detected visually 3 types of books in the dataset using the process of selection and grouping detailed in section~\ref{sec:football}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify 86.67\% of the books into the categories created by the author of the dataset. See Table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
 
 
-\subsection{Technical Aspects}
+\section{Technical Aspects}
 
 gravicom utilizes three main pieces of software to establish interactive user control of a random graph as sketched out in Figure~\ref{fig:clientserver}, which are Shiny, D3, and igraph. These are used, respectively, for server/client interaction management, user interface and graph layout, and data formatting, respectively. In the following subsections, we describe the purposes of these three components in more detail.
 
@@ -289,14 +289,14 @@ The server side requirements are more extensive, but this does not affect the us
 \end{itemize}
 
 
-\subsubsection{Shiny}
+\subsection{Shiny}
 
 Shiny \cite{rs-shiny} is an {\tt R} package created by RStudio that enables {\tt R} users to create an interactive web application that utilizes {\tt R} as the background engine. Through default methods to build user interface elements in HTML and a handle to the server side code, Shiny is a simple way to turn {\tt R} code into a website. 
 
 gravicom uses the Shiny functionality to create user controls, pass correctly formatted data to the client, and as a means to display summary information regarding the user's interactions with a graph at any point in time. In this context, Shiny serves as the translator between the formatted data and what the user sees and interacts with on his screen.
 
 
-\subsubsection{D3}
+\subsection{D3}
 
 D3 \cite{mb-d3} stands for ``Data Driven Documents" and is a JavaScript library developed and maintained by Mike Bostock with the  purpose of visualizing and interacting with data in a web-based interface. It is freely available from \url{http://www.d3js.org}. The library facilitates manipulation of HTML elements, SVG (scalable vector graphics), and CSS (cascading style sheets) with the end goal of rendering animations and providing user interactions that are tied to the underlying data. The key idea behind the library is that Document Object Model elements are completely determined by the data. The Document Object Model (DOM) is a convention for representing and interacting with objects in HTML, XHTML and XML. So, rather than adding elements to a web page to be viewed by users, D3 allows users to see and interact with graphical representations of their data in a web framework. 
 
@@ -311,7 +311,7 @@ At this point in the page lifecycle, the graph nodes are tied to circles and the
 \end{figure}
 
 
-\subsubsection{igraph}
+\subsection{igraph}
 
 igraph \cite{gc-igraph} is a software package used for creating and manipulating undirected and directed graphs. It is a cross-language package available for C, R, python, and Ruby. igraph also supports multiple graph file formats and visualization of graph structures.
 
