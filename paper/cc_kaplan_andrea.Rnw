@@ -19,6 +19,8 @@
 <<networks, child='parts/networks.Rnw', eval=TRUE>>=
 @
 \subsection{Visualization}
+<<visualization, child='parts/visualization.Rnw', eval=TRUE>>=
+@
 \subsection{Layout Algorithms}
 <<layouts, child='parts/layouts.Rnw', eval=TRUE>>=
 @
