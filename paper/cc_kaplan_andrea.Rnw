@@ -20,6 +20,9 @@
 @
 \subsection{Visualization}
 \subsection{Layout Algorithms}
+<<layouts, child='parts/layouts.Rnw', eval=TRUE>>=
+@
+
 
 \section{User Interface}
 \subsection{Design and Functionality}
