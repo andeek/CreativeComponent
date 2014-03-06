@@ -15,7 +15,9 @@
 
 \maketitle
 \section{Background}
-\subsection{Networks}
+\subsection{Networks and Communities}
+<<networks, child='parts/networks.Rnw', eval=TRUE>>=
+@
 \subsection{Visualization}
 \subsection{Layout Algorithms}
 
