@@ -216,3 +216,16 @@ pip-log.txt
 
 #################
 paper/font
+.Rproj.user
+.Rhistory
+.RData
+*.Rproj
+Thumbs.db
+*.tex
+*.log
+*.gz
+*.sty
+cc_kaplan_andrea.run.xml
+*.bbl
+*-blx.bib
+
