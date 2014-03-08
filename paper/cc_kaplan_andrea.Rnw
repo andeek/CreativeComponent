@@ -14,25 +14,22 @@
 \begin{document}
 
 \maketitle
-\section{Background}
-\subsection{Networks and Communities}
-<<networks, child='parts/networks.Rnw', eval=TRUE>>=
-@
-\subsection{Visualization}
-<<visualization, child='parts/visualization.Rnw', eval=TRUE>>=
-@
-\subsection{Layout Algorithms}
-<<layouts, child='parts/layouts.Rnw', eval=TRUE>>=
-@
 
+\begin{abstract}
+The analysis of graphs, in particular the detection of community structures within network data, is of increasing interest across a broad range of disciplines. Current methodology for community detection often involves an algorithmic approach, and commonly partitions a graph into node clusters in an iterative manner before some stopping criterion. Because communities are often fuzzily-defined human concepts, an alternative approach is to leverage the human visual system to identify communities. We present gravicom, a web application built on the R package shiny and the JavaScript library D3, that facilitates detection of community structures through direct user interaction. The application functions as a standalone tool or as an initialization step for use with an objective community detection algorithm. In this paper we discuss the design of gravicom and demonstrate community structure detection using multiple well-known network dataset.
+\end{abstract}
+
+\clearpage
+
+\setcounter{page}{1}
+\section{Introduction}
+<<intro, child='parts/intro.Rnw', eval=TRUE>>=
+@
 
 \section{User Interface}
-\subsection{Design and Functionality}
 <<design, child='parts/design.Rnw', eval=TRUE>>=
 @
-
-
-\subsubsection{Description}
+\subsection{Design and Functionality}
 <<description, child='parts/description.Rnw', eval=TRUE>>=
 @
 

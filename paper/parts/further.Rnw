@@ -18,4 +18,4 @@ An example that illustrates this point is the series of novels, A Song of Ice an
 \caption{\label{fig:further_got} A look at the relationships between characters over time for all five books in A Song of Ice and Fire by George R. R. Martin in terms of mutual events.}
 \end{figure}
 
-The piece that is missing with the analysis is the ability to track the change of character's relationships from one book to the next. 
+The piece that is missing with the analysis is the ability to track the change of character's relationships from one book to the next. A feature that would aide this process is the addition of optional labels on some of the characters in the clusters.
