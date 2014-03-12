@@ -10,6 +10,6 @@ For community detection, the users had difficulty with the circular and orthogon
 \cite{mcgrath1996seeing}
 This study is an experiment testing users' understanding of graphs in terms of perception of clustering of nodes in relation to graph layout. The authors tested five layouts for speed and accuracy of cluster identification in a network.
 
-The results of this study indicate location of a node spacially relative to other nodes in a cluster has a significant effect on users' ability to detect the community. The authors suggest a simple principle that will lead to clear depiction of a network: ``adjacent nodes must be placed near to each other if possible".
+The results of this study indicate location of a node spatially relative to other nodes in a cluster has a significant effect on users' ability to detect the community. The authors suggest a simple principle that will lead to clear depiction of a network: ``adjacent nodes must be placed near to each other if possible".
 
 [The force-directed algorithm used in gravicom implements edges as fixed-distance geometric constraints, meaning that groups of nodes sharing multiple edges will be pulled in closer proximity, making detection of communities easier.]
