@@ -17,10 +17,9 @@ concept called cliques. Algorithmic clustering is indeed useful because this off
 
 Since communities are often fuzzily-defined human concepts, an alternative approach is to leverage the human visual system, which is capable of incorporating nuance, to identify communities. To facilitate this process, our goal here is to introduce a novel visualization-based community detection tool, called gravicom, that
 \cc{replace: which} 
-allows users to visually direct and interact with the steps of community detection. Additionally, as described
-\cc{replace: I describe}
-in the following, gravicom is equipped 
-\cc{delete: gravicom is equipped; insert: We equipped gravicom} with several functionalities which 
+allows users to visually direct and interact with the steps of community detection. Additionally, as described in the following, gravicom is equipped 
+\cc{delete: gravicom is equipped; insert: We equipped gravicom} 
+with several functionalities which 
 \cc{replace: that}
 permit users to visually cluster nodes and assess the resulting clusters through visual features and quantitative summaries in the process of finding community structures. Unlike the tools mentioned above for graph visualization, gravicom allows human interaction as the vehicle for community detection.
 
@@ -39,9 +38,9 @@ layout ``may be a difficult task for automatic algorithms, since maximal clique 
 
 In complex or large graphs it can be difficult to glean meaning from a graphical representation, even while using a force-directed layout. Dunne and Schneiderman \cite{dunne2013motif} introduce the idea of motifs, or repeated patterns in a graph, to simplify a network. One type of motif is a clique. By replacing the cliques with representations, like a large circle, and removing the corresponding extra nodes and edges, the visualization will be more effective at revealing relationships. With fewer nodes and edges to display, visual complexity of the graph visualization is greatly reduced, allowing the user to analyze the network structure more accurately.
 
-We used these findings to construct a community detection visualization tool
-\cc{replace: in the construction of our}. 
-In this paper we first describe the user interface and functionality provided in gravicom. In Section 3, we then illustrate the use of gravicom for community detection with two network data sets, one, a well known data set of college football and the other, a network of political book co-purchasing. Section 4 details three important pieces of technology 
+We used these findings to construct a
+\cc{delete: a; insert: the gravicom}
+community detection visualization tool. In this paper we first describe the user interface and functionality provided in gravicom. In Section 3, we then illustrate the use of gravicom for community detection with two network data sets, one, a well known data set of college football and the other, a network of political book co-purchasing. Section 4 details three important pieces of technology 
 \cc{insert: that we}
 used to create gravicom and describes the technical aspects of how these components are implemented together. Section 5 then provides some 
 \cc{delete: some}
