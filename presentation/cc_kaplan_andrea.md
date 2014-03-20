@@ -19,7 +19,7 @@ css: css/charts.css
 <script type="text/javascript" src="scripts/d3.v3.min.js"></script>
 <script type="text/javascript" src="scripts/charts.js"></script>
 
-<h3>a web-based tool for community detection in networks</h3>
+A web-based tool for community detection in networks
 
 Outline
 ========================================================
@@ -32,11 +32,14 @@ Outline
 
 Introduction
 ========================================================
-type: sub-section
+type: section
 
 Who cares and why did we make this?
 
-Networks and Community Detection
+Networks 
+========================================================
+
+Community Detection
 ========================================================
 
 The Problem
@@ -47,7 +50,7 @@ Current Solutions
 
 User Interface
 ========================================================
-type: sub-section
+type: section
 
 Meet gravicom
 
@@ -66,14 +69,14 @@ An Interface
 
 Demo
 ========================================================
-type: sub-section
+type: section
 
 http://shiny1.iastate.edu/andeek/gravicom  
 <small>(must be VPNed to internal ISU network)</small>
 
 Technical Aspects
 ========================================================
-type: sub-section
+type: section
 
 What makes it tick?
 
@@ -146,7 +149,7 @@ Graph Simplification
 
 Further Work
 ========================================================
-type: sub-section
+type: section
 
 Possible extensions to gravicom
 
@@ -169,7 +172,7 @@ Dynamic Temporal Graph Visualization
 
 Questions?
 ========================================================
-type: sub-section
+type: section
 
 Thank you!
 
