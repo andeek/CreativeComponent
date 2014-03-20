@@ -792,6 +792,16 @@ hljs.initHighlightingOnLoad();
 </script>
 
    
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+
+<script type="text/javascript" src="cc_kaplan_andrea_files/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
   
 
 <style>.reveal section del,.reveal h1 del {  color: #FF9900;}.reveal section code {  font-size: 14px;}</style>
@@ -838,6 +848,27 @@ hljs.initHighlightingOnLoad();
 <section data-transition="linear" data-transition-speed="default">
 <h3>Networks </h3>
 <div class="slideContent" >
+<ul>
+<li>Many relationships easily conceptualized as a graph/network</li>
+<li>A <em>graph</em> is defined as a collection of nodes (entities) and edges (relationships)</li>
+<li>Examples of such relationships include:
+
+<ul>
+<li>social networks (sociology)</li>
+<li>the world wide web (computer science)</li>
+<li>protein networks (biology).</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Network Examples</h3>
+<div class="slideContent" >
+<p><a title="Zachary's Karate Club Network" src="http://www1.ind.ku.dk/complexLearning/zachary1977.pdf"><img alt="Social network of a karate club." src="images/social_network.png" style="width: 32%" /></a>
+<a title="Internet as of 2005 By The Opte Project [CC-BY-2.5 (http://creativecommons.org/licenses/by/2.5) or CC-BY-2.5 (http://creativecommons.org/licenses/by/2.5)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AInternet_map_1024_-_transparent.png"><img alt="Internet map 1024 - transparent" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Internet_map_1024_-_transparent.png/512px-Internet_map_1024_-_transparent.png" style="width: 33%;"/></a>
+<a title="Treponema pallidum By Häuser et al. [CC-BY-1.0 (http://creativecommons.org/licenses/by/1.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AThe_protein_interaction_network_of_Treponema_pallidum.png"><img alt="The protein interaction network of Treponema pallidum" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_protein_interaction_network_of_Treponema_pallidum.png/512px-The_protein_interaction_network_of_Treponema_pallidum.png" style="width: 33%;"/></a></p>
 
 </div>
 
@@ -845,6 +876,25 @@ hljs.initHighlightingOnLoad();
 <section data-transition="linear" data-transition-speed="default">
 <h3>Community Detection</h3>
 <div class="slideContent" >
+<ul>
+<li>A <em>community</em> is defined as a group of nodes in a graph that share properties</li>
+<li><em>Community structure</em> - collection of nodes which are densely linked to nodes within the community and sparsely linked to notes outside</li>
+<li>Current methodology for <em>community detection</em> often involves an algorithmic approach; partitions a graph into node clusters iteratively before stopping criterion</li>
+<li>First define an objective function and then optimize. </li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Community Detection (Cont'd)</h3>
+<div class="slideContent" >
+<p>Example objective function: Girvan &amp; Newman’s modularity measure  </p>
+
+<p>\[  Q = \sum\limits_r (e_{rr} - a_r^2)   \]
+\( r  \) = a community<br/>
+\( e_{rr} \) = fraction of links that connect two nodes inside the community<br/>
+\( a_r^2 \) = the fraction of links that have one or both vertices inside the community</p>
 
 </div>
 
@@ -858,6 +908,13 @@ hljs.initHighlightingOnLoad();
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Current Solutions</h3>
+<div class="slideContent" >
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Leverage the Human Visual System</h3>
 <div class="slideContent" >
 
 </div>
