@@ -1,4 +1,4 @@
-The gravicom interface is comprised of five main parts,
+Before discussing gravicom's performance and use on example data sets, we give a brief overview of the components and functionality that make up the tool. The gravicom interface is comprised of five main parts,
 \begin{enumerate}
 \item Control panel
 \item Data management

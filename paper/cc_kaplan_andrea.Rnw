@@ -11,6 +11,7 @@
 
 \title{gravicom - a web-based tool for community detection in networks}
 \author{Andrea J. Kaplan}
+\date{March 27, 2014}
 
 \begin{document}
 
@@ -28,9 +29,6 @@ The analysis of graphs, in particular the detection of community structures with
 @
 
 \section{User Interface}
-<<design, child='parts/design.Rnw', eval=TRUE>>=
-@
-\subsection{Design and Functionality}
 <<description, child='parts/description.Rnw', eval=TRUE>>=
 @
 

@@ -37,7 +37,7 @@ Additionally, the user can check which nodes were grouped in each community as d
 \item Wisconsin.
 \end{inparaenum}
 
-After the first community has been selected, another potential community at the top of the graph has been revealed \ak{(explain)}. The user can once again select and group this node cluster into a community and subsequently examine the nodes in the resulting group as seen in Figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. Here, the first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences should, as expected, be more difficult to detect.
+After the first community has been selected, another potential community at the top of the graph has been revealed. The user can once again select and group this node cluster into a community and subsequently examine the nodes in the resulting group as seen in Figure~\ref{fig:football_6}. The second conference grouped corresponds exactly to the SEC Conference, another large college football conference. Here, the first two communities to become evident correspond to large Division 1 conferences that play the majority of their games within conference, matching our earlier assertion that small conferences should, as expected, be more difficult to detect.
 
 \begin{figure}[H]
 \centering
