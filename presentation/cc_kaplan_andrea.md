@@ -16,9 +16,6 @@ date: March 27, 2014
 font-family: Helvetica
 css: css/charts.css
 
-<script type="text/javascript" src="scripts/d3.v3.min.js"></script>
-<script type="text/javascript" src="scripts/charts.js"></script>
-
 A web-based tool for community detection in networks
 
 Outline
@@ -87,8 +84,6 @@ class: particle-chart
 - **Shiny**: Server-client interaction
 - **D3**: User interface and graph layout
 - **igraph**: Data formatting
-
-<script>d3.select(".particle-chart").call(particleChart())</script>
 
 Tools (Cont'd)
 ========================================================
@@ -176,5 +171,8 @@ type: section
 
 Thank you!
 
-
+<script type="text/javascript" src="scripts/jquery.min.js"></script>
+<script type="text/javascript" src="scripts/d3.v3.min.js"></script>
+<script type="text/javascript" src="scripts/charts.js"></script>
+<script>$(document).ready(function() { (particleChart())()  });</script>
 
