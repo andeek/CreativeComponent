@@ -1,6 +1,7 @@
 <style>
 .reveal section del,
-.reveal h1 del {
+.reveal h1 del,
+.reveal h3 del {
   color: #0772A1;
 }
 
@@ -58,6 +59,10 @@
   background: #0990CC;
 }
 
+.reveal blockquote {
+  background: #0772A1;
+  color: white;
+}
 </style>
 
 gravicom
@@ -97,15 +102,15 @@ Networks
 Network Examples
 ========================================================
 <a title="Zachary's Karate Club Network" src="http://www1.ind.ku.dk/complexLearning/zachary1977.pdf"><img alt="Social network of a karate club." src="images/social_network.png" style="width: 32%" /></a>
-<a title="Internet as of 2005 By The Opte Project [CC-BY-2.5 (http://creativecommons.org/licenses/by/2.5) or CC-BY-2.5 (http://creativecommons.org/licenses/by/2.5)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AInternet_map_1024_-_transparent.png"><img alt="Internet map 1024 - transparent" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Internet_map_1024_-_transparent.png/512px-Internet_map_1024_-_transparent.png" style="width: 33%;"/></a>
-<a title="Treponema pallidum By Häuser et al. [CC-BY-1.0 (http://creativecommons.org/licenses/by/1.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AThe_protein_interaction_network_of_Treponema_pallidum.png"><img alt="The protein interaction network of Treponema pallidum" src="//upload.wikimedia.org/wikipedia/commons/thumb/b/b4/The_protein_interaction_network_of_Treponema_pallidum.png/512px-The_protein_interaction_network_of_Treponema_pallidum.png" style="width: 33%;"/></a>
+<a title="Internet as of 2005 By The Opte Project [CC-BY-2.5 (http://creativecommons.org/licenses/by/2.5) or CC-BY-2.5 (http://creativecommons.org/licenses/by/2.5)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AInternet_map_1024_-_transparent.png"><img alt="Internet map 1024 - transparent" src="images/internet_network.png" style="width: 33%;"/></a>
+<a title="Treponema pallidum By Häuser et al. [CC-BY-1.0 (http://creativecommons.org/licenses/by/1.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AThe_protein_interaction_network_of_Treponema_pallidum.png"><img alt="The protein interaction network of Treponema pallidum" src="images/protein_network.png" style="width: 33%;"/></a>
 
 Community Detection
 ========================================================
 - A ~~community~~ is defined as a group of nodes in a graph that share properties
 - ~~Community structure~~ - collection of nodes which are densely linked to nodes within the community and sparsely linked to notes outside
 - Current methodology for ~~community detection~~ often involves an algorithmic approach; partitions a graph into node clusters iteratively before stopping criterion
-- First define an objective function and then optimize. 
+- First define an objective function and then optimize
 
 Community Detection (Cont'd)
 ========================================================
@@ -119,12 +124,34 @@ Example objective function: Girvan & Newman’s modularity measure
 
 The Problem
 ========================================================
+- Search for an optimal modularity value is NP-hard 
+- The number of possible partitions of the network requires \(2^n\) complexity
+- In fact, the optimization of an objective function is typically
+an NP-hard problem
+
 
 Current Solutions
 ========================================================
+- Heuristics used to optimize the objective function in a reasonable amount of time
+- Heuristic-based clustering is useful because this offers an automated way to perform community detection 
+
+<blockquote>The main elements of the problem themselves [graph clustering], i.e. the concepts of community and partition, are not rigorously defined, and require some degree of arbitrariness and/or common sense. (Fortunato, 2010)</blockquote>
+<br/>
+- Heuristics are not ~~the~~ solution.
 
 Leverage the Human Visual System
 ========================================================
+- Communities are often fuzzily-defined human concepts
+- Address this by adding element of human judgement
+- Introduce a novel visualization-based community detection tool, ~~gravicom~~
+
+gravicom Functionality
+========================================================
+- Allows users to 
+  - Visually direct and interact with the steps of community detection
+  - Assess the created clusters through visual and quantitative summaries
+- Standalone exploratory tool for graph data
+- Initial state to be passed to a community detection algorithm in order reduce the complexity of optimization
 
 User Interface
 ========================================================
@@ -135,7 +162,7 @@ Meet gravicom
 Components
 ========================================================
 ![Site Components](images/sitecomponents.png)
-(1) Control Panel, (2) Data Management, (3) Connection table, (4) Graph display, and (5) Tabset
+(1) Control Panel, (2) Data Management, (3) Connection table, (4) Graph Display, and (5) Tabset
 
 Demo
 ========================================================
@@ -150,11 +177,27 @@ type: section
 
 Theory behind the curtain
 
+Importance of Graph Layout
+========================================================
+- ~~Graph layout~~ is an assignment of a Cartesian coordinate to each node for display in 2D or 3D
+- Layout of a graph significantly affects the number of communities that users detect within a graph
+- Humans used to detect communities \( \Rightarrow \) special attention needs to be paid to the layout being used
+- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible"
+
 Force-Directed Layout
 ========================================================
+- Physics based algorithm for graph drawing
+- Repulsive forces (charged particles) used to separate all pairs of nodes
+- Links are fixed-distance geometric constraints 
+- Groups of nodes sharing multiple edges are pulled in closer proximity
+- Pseudo-gravity force keeps nodes centered in the visible area and avoids expulsion of disconnected subgraphs
 
 Graph Simplification
 ========================================================
+- Difficult to glean meaning from a visual representation in large/complex graphs 
+- Replace repeated patterns in a graph by a representation, to simplify a network
+- Fewer nodes and edges to display \( \Rightarrow \) visual complexity of the graph visualization is greatly reduced
+- Allows the user to analyze the network structure more accurately
 
 Technical Aspects
 ========================================================
