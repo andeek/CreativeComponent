@@ -1,12 +1,63 @@
 <style>
 .reveal section del,
 .reveal h1 del {
-  color: #FF9900;
+  color: #0772A1;
 }
 
 .reveal section code {
   font-size: 14px;
 }
+
+.reveal, .reveal h3 {
+  color: #333333;
+}
+
+/*** section background ***/
+.section .reveal .state-background {
+   background: #0772A1;
+}
+
+/*** navigation color ***/
+.reveal .controls div.navigate-left,
+.reveal .controls div.navigate-left.enabled {
+  border-right-color: #0990CC;
+}
+
+.reveal .controls div.navigate-right,
+.reveal .controls div.navigate-right.enabled {
+  border-left-color: #0990CC;
+}
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-up.enabled {
+  border-bottom-color: #0990CC;
+}
+
+.reveal .controls div.navigate-down,
+.reveal .controls div.navigate-down.enabled {
+  border-top-color: #0990CC;
+}
+
+.reveal .controls div.navigate-left.enabled:hover {
+  border-right-color: #0BB5FF;
+}
+
+.reveal .controls div.navigate-right.enabled:hover {
+  border-left-color: #0BB5FF;
+}
+
+.reveal .controls div.navigate-up.enabled:hover {
+  border-bottom-color: #0BB5FF;
+}
+
+.reveal .controls div.navigate-down.enabled:hover {
+  border-top-color: #0BB5FF;
+}
+
+.reveal .progress span {
+  background: #0990CC;
+}
+
 </style>
 
 gravicom
@@ -24,6 +75,7 @@ Outline
 - Introduction/Background
 - User Interface
 - Demo
+- Graphical Devices
 - Technical Aspects
 - Further Work
 
@@ -36,11 +88,11 @@ Who cares and why did we make this?
 Networks 
 ========================================================
 - Many relationships easily conceptualized as a graph/network
-- A *graph* is defined as a collection of nodes (entities) and edges (relationships)
+- A ~~graph~~ is defined as a collection of nodes (entities) and edges (relationships)
 - Examples of such relationships include:
   - social networks (sociology)
   - the world wide web (computer science)
-  - protein networks (biology).
+  - protein networks (biology)
   
 Network Examples
 ========================================================
@@ -50,9 +102,9 @@ Network Examples
 
 Community Detection
 ========================================================
-- A *community* is defined as a group of nodes in a graph that share properties
-- *Community structure* - collection of nodes which are densely linked to nodes within the community and sparsely linked to notes outside
-- Current methodology for *community detection* often involves an algorithmic approach; partitions a graph into node clusters iteratively before stopping criterion
+- A ~~community~~ is defined as a group of nodes in a graph that share properties
+- ~~Community structure~~ - collection of nodes which are densely linked to nodes within the community and sparsely linked to notes outside
+- Current methodology for ~~community detection~~ often involves an algorithmic approach; partitions a graph into node clusters iteratively before stopping criterion
 - First define an objective function and then optimize. 
 
 Community Detection (Cont'd)
@@ -80,18 +132,10 @@ type: section
 
 Meet gravicom
 
-Site Components
-========================================================
-1. Control Panel
-1. Data Management
-1. Connection table
-1. Graph display
-1. Tabset
-
-An Interface
+Components
 ========================================================
 ![Site Components](images/sitecomponents.png)
-
+(1) Control Panel, (2) Data Management, (3) Connection table, (4) Graph display, and (5) Tabset
 
 Demo
 ========================================================
@@ -100,27 +144,41 @@ type: section
 http://shiny1.iastate.edu/andeek/gravicom  
 <small>(must be VPNed to internal ISU network)</small>
 
+Graphical Devices
+========================================================
+type: section
+
+Theory behind the curtain
+
+Force-Directed Layout
+========================================================
+
+Graph Simplification
+========================================================
+
 Technical Aspects
 ========================================================
 type: section
 
 What makes it tick?
 
-Tools
-========================================================
-class: particle-chart
-
-- **Shiny**: Server-client interaction
-- **D3**: User interface and graph layout
-- **igraph**: Data formatting
-
-Tools (Cont'd)
-========================================================
-![Integrated Algorithm](images/clientserverflow.png)
 
 Page Lifecycle
 ========================================================
 ![Integrated Algorithm](images/pagelifecycle.png)
+
+
+Tools
+========================================================
+class: particle-chart
+
+- ~~Shiny~~: Server-client interaction
+- ~~D3~~: User interface and graph layout
+- ~~igraph~~: Data formatting
+
+Tools (Cont'd)
+========================================================
+![Integrated Algorithm](images/clientserverflow.png)
 
 Data Formatting
 ========================================================
@@ -133,13 +191,6 @@ JSON file structure:
 ```{r json, results='markup', echo=FALSE}
 cat( readLines( "data/sample.json" ) , sep = "\n" )
 ```
-
-Force-Directed Layout
-========================================================
-
-Graph Simplification
-========================================================
-
 
 Further Work
 ========================================================
@@ -173,5 +224,9 @@ Thank you!
 <script type="text/javascript" src="scripts/jquery.min.js"></script>
 <script type="text/javascript" src="scripts/d3.v3.min.js"></script>
 <script type="text/javascript" src="scripts/charts.js"></script>
-<script>$(document).ready(function() { (particleChart())()  });</script>
+<script>
+$(document).ready(function() { 
+  (particleChart())() ;   
+});
+</script>
 
