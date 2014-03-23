@@ -168,7 +168,7 @@ Meet gravicom
 Components
 ========================================================
 ![Site Components](images/sitecomponents.png)
-(1) Control Panel, (2) Data Management, (3) Connection table, (4) Graph Display, and (5) Tabset
+(1) Control Panel, (2) Data Management, (3) Connection Table, (4) Graph Display, and (5) Tabset
 
 Demo
 ========================================================
@@ -233,7 +233,7 @@ Importance of Graph Layout
 - ~~Graph layout~~ is an assignment of a Cartesian coordinate to each node for display in 2D or 3D
 - Layout of a graph significantly affects the number of communities that users detect within a graph
 - Humans used to detect communities \( \Rightarrow \) special attention needs to be paid to the layout being used
-- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible"
+- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible" (McGrath, Blythe, and Krackhardt, 1996)
 
 Force-Directed Layout
 ========================================================

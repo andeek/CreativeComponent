@@ -168,7 +168,7 @@ Meet gravicom
 Components
 ========================================================
 ![Site Components](images/sitecomponents.png)
-(1) Control Panel, (2) Data Management, (3) Connection table, (4) Graph Display, and (5) Tabset
+(1) Control Panel, (2) Data Management, (3) Connection Table, (4) Graph Display, and (5) Tabset
 
 Demo
 ========================================================
@@ -184,7 +184,7 @@ Football Example
 Football Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Sun Mar 23 13:25:34 2014 -->
+<!-- Sun Mar 23 15:27:41 2014 -->
 <TABLE border=1>
 <TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> ACC </TD> <TD> Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina,  Maryland,  Georgia Tech,  North Carolina State </TD> <TD align="center"> 100% </TD> </TR>
@@ -200,7 +200,7 @@ Football Example (Cont'd)
 Football Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Sun Mar 23 13:25:34 2014 -->
+<!-- Sun Mar 23 15:27:41 2014 -->
 <TABLE border=1>
 <TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> SEC </TD> <TD> Vanderbilt,  Florida,  Louisiana State,  South Carolina,  Mississippi,  Arkansas,  Auburn,  Kentucky,  Georgia,  Mississippi State,  Alabama,  Tennessee </TD> <TD align="center"> 100% </TD> </TR>
@@ -225,7 +225,7 @@ Importance of Graph Layout
 - ~~Graph layout~~ is an assignment of a Cartesian coordinate to each node for display in 2D or 3D
 - Layout of a graph significantly affects the number of communities that users detect within a graph
 - Humans used to detect communities \( \Rightarrow \) special attention needs to be paid to the layout being used
-- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible"
+- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible" (McGrath, Blythe, and Krackhardt, 1996)
 
 Force-Directed Layout
 ========================================================
