@@ -13,6 +13,12 @@
   color: #333333;
 }
 
+.reveal table {
+  font-size: 14px;
+  border-collapse: collapse;
+  float: left;
+}
+
 /*** section background ***/
 .section .reveal .state-background {
    background: #0772A1;
@@ -170,6 +176,43 @@ type: section
 
 http://shiny1.iastate.edu/andeek/gravicom  
 <small>(must be VPNed to internal ISU network)</small>
+
+Football Example
+========================================================
+![Site Components](images/football_progression.png)
+
+Football Example (Cont'd)
+========================================================
+<!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
+<!-- Sun Mar 23 13:25:34 2014 -->
+<TABLE border=1>
+<TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> ACC </TD> <TD> Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina,  Maryland,  Georgia Tech,  North Carolina State </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Big 10 </TD> <TD> Ohio State,  Penn State,  Michigan,  Michigan State,  Purdue,  Minnesota,  Northwestern,  Illinois,  Iowa,  Wisconsin,  Indiana </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Big 12 </TD> <TD> Kansas State,  Iowa State,  Kansas,  Texas A& M,  Texas Tech,  Baylor,  Missouri,  Texas,  Oklahoma State,  Colorado,  Oklahoma,  Nebraska </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> C-USA </TD> <TD> Cincinnati,  Louisville,  Houston,  Tulane,  Southern Mississippi,  Army,  Memphis,  East Carolina,  Alabama Birmingham </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Independent </TD> <TD> Notre Dame,  Navy </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Pac-10 </TD> <TD> Arizona,  Oregon State,  Washington,  Washington State,  Arizona State,  UC LA,  Stanford,  Southern California,  Oregon,  California </TD> <TD align="center"> 100% </TD> </TR>
+   <A NAME=tab:football_final></A>
+</TABLE>
+
+
+Football Example (Cont'd)
+========================================================
+<!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
+<!-- Sun Mar 23 13:25:34 2014 -->
+<TABLE border=1>
+<TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> SEC </TD> <TD> Vanderbilt,  Florida,  Louisiana State,  South Carolina,  Mississippi,  Arkansas,  Auburn,  Kentucky,  Georgia,  Mississippi State,  Alabama,  Tennessee </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> MAC </TD> <TD> <i><del> Central Florida</del></i>,  Western Michigan,  Miami Ohio,  Ohio,  Bowling Green State,  Marshall,  Ball State,  Akron,  Buffalo,  Northern Illinois,  Eastern Michigan,  Toledo,  Central Michigan,  Kent </TD> <TD align="center"> 92.9% </TD> </TR>
+  <TR> <TD align="center"> Big East </TD> <TD> Boston College,  Miami Florida,  Virginia Tech,  Syracuse,  Temple,  West Virginia, <i><del> Connecticut</del></i>,  Pittsburgh,  Rutgers </TD> <TD align="center"> 88.9% </TD> </TR>
+  <TR> <TD align="center"> WAC </TD> <TD> Nevada,  Fresno State, <i><del> Texas Christian</del></i>,  Tulsa,  Hawaii,  Rice,  Southern Methodist,  San Jose State,  Texas El Paso </TD> <TD align="center"> 88.9% </TD> </TR>
+  <TR> <TD align="center"> Big West </TD> <TD> Middle Tennessee State,  Louisiana Lafayette,  Louisiana Monroe, <i><del> Louisiana Tech</del></i> </TD> <TD align="center"> 75% </TD> </TR>
+  <TR> <TD align="center"> Mountain West </TD> <TD> Brigham Young,  San Diego State, <i><del> Boise State</del></i>,  Wyoming,  New Mexico,  Nevada Las Vegas,  Utah, <i><del> North Texas</del></i>, <i><del> Utah State</del></i>, <i><del> New Mexico State</del></i>,  Colorado State, <i><del> Arkansas State</del></i>, <i><del> Idaho</del></i>,  Air Force </TD> <TD align="center"> 57.1% </TD> </TR>
+   <A NAME=tab:football_final></A>
+</TABLE>
+
+- Through manual specification of conferences, we were able to correctly classify 91.3 % of the football teams into their conferences. 
 
 Graphical Devices
 ========================================================
