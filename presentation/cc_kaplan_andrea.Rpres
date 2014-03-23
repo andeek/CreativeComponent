@@ -13,6 +13,12 @@
   color: #333333;
 }
 
+.reveal table {
+  font-size: 14px;
+  border-collapse: collapse;
+  float: left;
+}
+
 /*** section background ***/
 .section .reveal .state-background {
    background: #0772A1;
@@ -162,7 +168,7 @@ Meet gravicom
 Components
 ========================================================
 ![Site Components](images/sitecomponents.png)
-(1) Control Panel, (2) Data Management, (3) Connection table, (4) Graph Display, and (5) Tabset
+(1) Control Panel, (2) Data Management, (3) Connection Table, (4) Graph Display, and (5) Tabset
 
 Demo
 ========================================================
@@ -170,6 +176,51 @@ type: section
 
 http://shiny1.iastate.edu/andeek/gravicom  
 <small>(must be VPNed to internal ISU network)</small>
+
+Football Example
+========================================================
+![Site Components](images/football_progression.png)
+
+Football Example (Cont'd)
+========================================================
+```{r echo=FALSE, results='asis'}
+library(igraph)
+library(plyr)
+library(scales)
+library(xtable)
+football.df <- get.data.frame(read.graph("data/football_network.gml", format="gml"), what="vertices")
+
+#put all ungrouped as own group -- corresponds to value 5
+football.df[substring(football.df$Group,1,1) == "n",]$Group<-"independent"
+
+#create map from gravicom to original by most mapped
+map <- ddply(football.df, .(Group), summarise, orig.grp = names(sort(-table(value)))[1])
+football.df.m <- merge(football.df, map, by = "Group", all.x=TRUE)
+
+idx <- with(football.df.m, which(value != orig.grp))
+football.df.m$label[idx] <- sprintf("<i><del>%s</del></i>",football.df.m$label[idx]) 
+results <- ddply(football.df.m, .(orig.grp), summarise, 
+                 teams=paste(label, collapse=", "), 
+                 perc.right=percent(1 - sum(value != orig.grp)/length(orig.grp)))
+results <- results[with(results, order(as.numeric(orig.grp))),]
+results$Conference <- c("ACC", "Big East", "Big 10", "Big 12", "C-USA", "Independent", "MAC", "Mountain West", "Pac-10", "SEC", "Big West", "WAC" )
+
+results <- results[,c(4,2,3)]
+colnames(results) <- c("Conference", "Teams Identified", "Accuracy")
+results$`Teams Identified` <- gsub('(.)([A-Z])',"\\1 \\2", results$`Teams Identified`)
+
+#percent school misspecified
+percent_correct <- 1 - sum(football.df.m$value != football.df.m$orig.grp)/nrow(football.df)
+
+print(xtable(results[with(results, order(-as.numeric(substr(Accuracy, 1, nchar(Accuracy)-1)))),][1:6,], align=c("c", "c","p{10cm}","c"), label='tab:football_final'), include.rownames=FALSE, table.placement='H', type="html", sanitize.text.function = function(x)gsub('&lt', '<', gsub('&gt', '>', x)))
+```
+
+Football Example (Cont'd)
+========================================================
+```{r echo=FALSE, results='asis'}
+print(xtable(results[with(results, order(-as.numeric(substr(Accuracy, 1, nchar(Accuracy)-1)))),][7:nrow(results),], align=c("c", "c","p{10cm}","c"), label='tab:football_final'), include.rownames=FALSE, table.placement='H', type="html", sanitize.text.function = function(x)gsub('&lt', '<', gsub('&gt', '>', x)))
+```
+- Through manual specification of conferences, we were able to correctly classify `r round(100*percent_correct, 2)` % of the football teams into their conferences. 
 
 Graphical Devices
 ========================================================
@@ -182,7 +233,7 @@ Importance of Graph Layout
 - ~~Graph layout~~ is an assignment of a Cartesian coordinate to each node for display in 2D or 3D
 - Layout of a graph significantly affects the number of communities that users detect within a graph
 - Humans used to detect communities \( \Rightarrow \) special attention needs to be paid to the layout being used
-- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible"
+- Location of a node spatially relative to other nodes in a cluster has a significant effect on user: "adjacent nodes must be placed near to each other if possible" (McGrath, Blythe, and Krackhardt, 1996)
 
 Force-Directed Layout
 ========================================================
