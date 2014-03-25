@@ -148,10 +148,11 @@ Other Objective Functions
 \[ \phi(S) = \frac{\#\text{ of edges leaving} S}{\sum\limits_{u \in S} \text{degree of } u} \]
 (double counting of edges within community \(S\))
 
-Community Detection (Cont'd)
+Example Objective Functions
 ========================================================
 ![Site Components](images/modularity_example.png)
 ***
+<div style="font-size:65%">
 \[\begin{matrix}
  e_{AA} = \frac{3}{10} = 0.3 & e_{BB} = \frac{5}{10} = 0.5 \\
  a_{A}^2 = \left(\frac{5}{10}\right)^2 = 0.25 & a_{B}^2 = \left(\frac{7}{10}\right)^2 = 0.49 \\
@@ -159,18 +160,18 @@ Community Detection (Cont'd)
  Q = 0.06 & 
 \end{matrix}\]
 
-----
+<hr>
 
 \[\begin{matrix}
 \pi(A) = \frac{3}{2} = 1.5 & \pi(B) = \frac{5}{2} = 2.5
 \end{matrix}\]
 
------
+<hr>
 
 \[\begin{matrix}
 \phi(A) = \frac{2}{8} = 0.25 & \phi(B) = \frac{2}{12} = 0.167
 \end{matrix}\]
-
+</div>
 
 The Problem
 ========================================================
