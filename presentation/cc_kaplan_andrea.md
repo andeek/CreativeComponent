@@ -146,7 +146,6 @@ Other Objective Functions
 - Similar idea: Conductance
 
 \[ \phi(S) = \frac{\#\text{ of edges leaving} S}{\sum\limits_{u \in S} \text{degree of } u} \]
-(double counting of edges within community \(S\))
 
 Example Objective Functions
 ========================================================
@@ -233,7 +232,7 @@ Football Example (Cont'd)
 
 
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Mon Mar 24 19:52:56 2014 -->
+<!-- Mon Mar 24 19:55:52 2014 -->
 <TABLE border=1>
 <TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> SEC </TD> <TD> Vanderbilt,  Florida,  Louisiana State,  South Carolina,  Mississippi,  Arkansas,  Auburn,  Kentucky,  Georgia,  Mississippi State,  Alabama,  Tennessee </TD> <TD align="center"> 1.50 </TD> <TD align="center"> 100% </TD> </TR>
@@ -249,7 +248,7 @@ Football Example (Cont'd)
 Football Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Mon Mar 24 19:52:56 2014 -->
+<!-- Mon Mar 24 19:55:52 2014 -->
 <TABLE border=1>
 <TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> WAC </TD> <TD> Nevada,  Fresno State, <i><del> Texas Christian</del></i>,  Tulsa,  Hawaii,  Rice,  Southern Methodist,  San Jose State,  Texas El Paso </TD> <TD align="center"> 1.20 </TD> <TD align="center"> 88.9% </TD> </TR>
@@ -275,7 +274,7 @@ Political Books Example (Cont'd)
 Poltical Books Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Mon Mar 24 19:52:56 2014 -->
+<!-- Mon Mar 24 19:55:52 2014 -->
 <TABLE border=1>
 <TR> <TH> Classification </TH> <TH> Books Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> Conservative </TD> <TD> A National Party No More, Dereliction of Duty, Ten Minutes from Normal, Bush Country, Rumsfeld's War, Legacy, Hating America, Hillary's Scheme, <i><del>Meant To Be</del></i>, Tales from the Left Coast, Breakdown, Losing Bin Laden, The French Betrayal of America, Spin Sisters, The Right Man, Useful Idiots, Shut Up and Sing, Who's Looking Out for You?, Those Who Trespass, Bias, The O'Reilly Factor, Let Freedom Ring, Deliver Us from Evil, Give Me a Break, Betrayal, The Real America, The Faith of George W Bush, The Death of Right and Wrong, <i><del>Power Plays</del></i>, Arrogance, <i><del>The Perfect Wife</del></i>, The Bushes, Things Worth Fighting For, Off with Their Heads, Persecution, Why Courage Matters, Hollywood Interrupted, The Enemy Within, We Will Prevail, Endgame, The Official Handbook Vast Right Wing Conspiracy, The Third Terrorist, Slander, The Savage Nation, Fighting Back </TD> <TD align="center"> 8.04 </TD> <TD align="center"> 93.3% </TD> </TR>
@@ -286,7 +285,7 @@ Poltical Books Example (Cont'd)
 Political Books Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Mon Mar 24 19:52:56 2014 -->
+<!-- Mon Mar 24 19:55:52 2014 -->
 <TABLE border=1>
 <TR> <TH> Classification </TH> <TH> Books Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> Liberal </TD> <TD> Downsize This!, The Culture of Fear, House of Bush, House of Saud, The Best Democracy Money Can Buy, Rogue Nation, Stupid White Men, Rush Limbaugh Is a Big Fat Idiot, The Great Unraveling, Against All Enemies, American Dynasty, The Price of Loyalty, The Sorrows of Empire, Worse Than Watergate, <i><del>Plan of Attack</del></i>, Big Lies, The Lies of George W. Bush, Bushwomen, The Bubble of American Supremacy, Living History, The Politics of Truth, Fanatics and Fools, Bushwhacked, Disarming Iraq, Lies and the Lying Liars Who Tell Them, MoveOn's 50 Ways to Love Your Country, The Buying of the President 2004, Perfectly Legal, <i><del>Bush at War</del></i>, The New Pearl Harbor, Freethinkers, Had Enough?, It's Still the Economy, Stupid!, We're Right They're Wrong, What Liberal Media?, The Clinton Wars, Weapons of Mass Deception, Dude, Where's My Country?, Thieves in High Places, Shrub, Buck Up Suck Up, Hegemony or Survival, The Exception to the Rulers </TD> <TD align="center"> 7.42 </TD> <TD align="center"> 95.2% </TD> </TR>
@@ -297,7 +296,7 @@ Political Books Example (Cont'd)
 Political Books Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Mon Mar 24 19:52:56 2014 -->
+<!-- Mon Mar 24 19:55:53 2014 -->
 <TABLE border=1>
 <TR> <TH> Classification </TH> <TH> Books Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
   <TR> <TD align="center"> Neutral </TD> <TD> 1000 Years for Revenge, <i><del>Bush vs. the Beltway</del></i>, <i><del>Charlie Wilson's War</del></i>, <i><del>Dangerous Dimplomacy</del></i>, Sleeping With the Devil, <i><del>The Man Who Warned America</del></i>, Why America Slept, Ghost Wars, Surprise, Security, the American Experience, <i><del>Allies</del></i>, <i><del>The Choice</del></i>, All the Shah's Men, <i><del>Soft Power</del></i>, Colossus, The Future of Freedom, <i><del>Rise of the Vulcans</del></i>, <i><del>America Unbound</del></i>, Empire </TD> <TD align="center"> 1.06 </TD> <TD align="center"> 50% </TD> </TR>

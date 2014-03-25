@@ -146,7 +146,6 @@ Other Objective Functions
 - Similar idea: Conductance
 
 \[ \phi(S) = \frac{\#\text{ of edges leaving} S}{\sum\limits_{u \in S} \text{degree of } u} \]
-(double counting of edges within community \(S\))
 
 Example Objective Functions
 ========================================================
