@@ -118,15 +118,59 @@ Community Detection
 - Current methodology for ~~community detection~~ often involves an algorithmic approach; partitions a graph into node clusters iteratively before stopping criterion
 - First define an objective function and then optimize
 
-Community Detection (Cont'd)
+Modularity
 ========================================================
-
-Example objective function: Girvan & Newman’s modularity measure  
+- Example objective function: Girvan & Newmans modularity measure  
 
 \[ Q = \sum\limits_r (e_{rr} - a_r^2)  \]
-\(r \) = a community  
-\(e_{rr}\) = fraction of links that connect two nodes inside the community  
-\(a_r^2\) = the fraction of links that have one or both vertices inside the community
+\(r = \) a community  
+\(e_{rr} = \) fraction of links that connect two nodes inside the community  
+\(a_r = \) the fraction of links that have one or both vertices inside the community
+
+
+Modularity (Cont'd)
+========================================================
+- Interpretation: fraction of edges that connect vertices of the same type minus the expected value of the same quantity in a network with the same community divisions but random edges  
+
+\(Q = 0\):  number of within-community edges no better than random   
+\(Q \in [0.3, 0.7]\): strong community structure  
+\(Q=1\): maximum value 
+
+Other Objective Functions
+========================================================
+- Modularity is not the only useful objective function
+- Simple proportion: quantification of density within the community vs. sparcity outside
+
+\[ \pi(S) = \frac{\#\text{ of edges within } S}{\#\text{ of edges leaving} S} \]
+
+- Similar idea: Conductance
+
+\[ \phi(S) = \frac{\#\text{ of edges leaving} S}{\sum\limits_{u \in S} \text{degree of } u} \]
+(double counting of edges within community \(S\))
+
+Community Detection (Cont'd)
+========================================================
+![Site Components](images/modularity_example.png)
+***
+\[\begin{matrix}
+ e_{AA} = \frac{3}{10} = 0.3 & e_{BB} = \frac{5}{10} = 0.5 \\
+ a_{A}^2 = \left(\frac{5}{10}\right)^2 = 0.25 & a_{B}^2 = \left(\frac{7}{10}\right)^2 = 0.49 \\
+ e_{AA} - a_A^2 = 0.05 & e_{BB} - a_B^2 = 0.01 \\ ~\\
+ Q = 0.06 & 
+\end{matrix}\]
+
+----
+
+\[\begin{matrix}
+\pi(A) = \frac{3}{2} = 1.5 & \pi(B) = \frac{5}{2} = 2.5
+\end{matrix}\]
+
+-----
+
+\[\begin{matrix}
+\phi(A) = \frac{2}{8} = 0.25 & \phi(B) = \frac{2}{12} = 0.167
+\end{matrix}\]
+
 
 The Problem
 ========================================================
@@ -141,8 +185,9 @@ Current Solutions
 - Heuristics used to optimize the objective function in a reasonable amount of time
 - Heuristic-based clustering is useful because this offers an automated way to perform community detection 
 
-<blockquote>The main elements of the problem themselves [graph clustering], i.e. the concepts of community and partition, are not rigorously defined, and require some degree of arbitrariness and/or common sense. (Fortunato, 2010)</blockquote>
-<br/>
+>The main elements of the problem themselves [graph clustering], i.e. the concepts of community and partition, are not rigorously defined, and require some degree of arbitrariness and/or common sense. (Fortunato, 2010)
+
+
 - Heuristics are not ~~the~~ solution.
 
 Leverage the Human Visual System
@@ -183,16 +228,19 @@ Football Example
 
 Football Example (Cont'd)
 ========================================================
+
+
+
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Sun Mar 23 15:27:41 2014 -->
+<!-- Mon Mar 24 19:23:04 2014 -->
 <TABLE border=1>
-<TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Accuracy </TH>  </TR>
-  <TR> <TD align="center"> ACC </TD> <TD> Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina,  Maryland,  Georgia Tech,  North Carolina State </TD> <TD align="center"> 100% </TD> </TR>
-  <TR> <TD align="center"> Big 10 </TD> <TD> Ohio State,  Penn State,  Michigan,  Michigan State,  Purdue,  Minnesota,  Northwestern,  Illinois,  Iowa,  Wisconsin,  Indiana </TD> <TD align="center"> 100% </TD> </TR>
-  <TR> <TD align="center"> Big 12 </TD> <TD> Kansas State,  Iowa State,  Kansas,  Texas A& M,  Texas Tech,  Baylor,  Missouri,  Texas,  Oklahoma State,  Colorado,  Oklahoma,  Nebraska </TD> <TD align="center"> 100% </TD> </TR>
-  <TR> <TD align="center"> C-USA </TD> <TD> Cincinnati,  Louisville,  Houston,  Tulane,  Southern Mississippi,  Army,  Memphis,  East Carolina,  Alabama Birmingham </TD> <TD align="center"> 100% </TD> </TR>
-  <TR> <TD align="center"> Independent </TD> <TD> Notre Dame,  Navy </TD> <TD align="center"> 100% </TD> </TR>
-  <TR> <TD align="center"> Pac-10 </TD> <TD> Arizona,  Oregon State,  Washington,  Washington State,  Arizona State,  UC LA,  Stanford,  Southern California,  Oregon,  California </TD> <TD align="center"> 100% </TD> </TR>
+<TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> SEC </TD> <TD> Vanderbilt,  Florida,  Louisiana State,  South Carolina,  Mississippi,  Arkansas,  Auburn,  Kentucky,  Georgia,  Mississippi State,  Alabama,  Tennessee </TD> <TD align="center"> 1.50 </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> MAC </TD> <TD> <i><del> Central Florida</del></i>,  Western Michigan,  Miami Ohio,  Ohio,  Bowling Green State,  Marshall,  Ball State,  Akron,  Buffalo,  Northern Illinois,  Eastern Michigan,  Toledo,  Central Michigan,  Kent </TD> <TD align="center"> 1.46 </TD> <TD align="center"> 92.9% </TD> </TR>
+  <TR> <TD align="center"> Big 12 </TD> <TD> Kansas State,  Iowa State,  Kansas,  Texas A& M,  Texas Tech,  Baylor,  Missouri,  Texas,  Oklahoma State,  Colorado,  Oklahoma,  Nebraska </TD> <TD align="center"> 1.44 </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> ACC </TD> <TD> Duke,  Wake Forest,  Virginia,  Florida State,  Clemson,  North Carolina,  Maryland,  Georgia Tech,  North Carolina State </TD> <TD align="center"> 1.44 </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Pac-10 </TD> <TD> Arizona,  Oregon State,  Washington,  Washington State,  Arizona State,  UC LA,  Stanford,  Southern California,  Oregon,  California </TD> <TD align="center"> 1.33 </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Big 10 </TD> <TD> Ohio State,  Penn State,  Michigan,  Michigan State,  Purdue,  Minnesota,  Northwestern,  Illinois,  Iowa,  Wisconsin,  Indiana </TD> <TD align="center"> 1.22 </TD> <TD align="center"> 100% </TD> </TR>
    <A NAME=tab:football_final></A>
 </TABLE>
 
@@ -200,19 +248,62 @@ Football Example (Cont'd)
 Football Example (Cont'd)
 ========================================================
 <!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
-<!-- Sun Mar 23 15:27:41 2014 -->
+<!-- Mon Mar 24 19:23:04 2014 -->
 <TABLE border=1>
-<TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Accuracy </TH>  </TR>
-  <TR> <TD align="center"> SEC </TD> <TD> Vanderbilt,  Florida,  Louisiana State,  South Carolina,  Mississippi,  Arkansas,  Auburn,  Kentucky,  Georgia,  Mississippi State,  Alabama,  Tennessee </TD> <TD align="center"> 100% </TD> </TR>
-  <TR> <TD align="center"> MAC </TD> <TD> <i><del> Central Florida</del></i>,  Western Michigan,  Miami Ohio,  Ohio,  Bowling Green State,  Marshall,  Ball State,  Akron,  Buffalo,  Northern Illinois,  Eastern Michigan,  Toledo,  Central Michigan,  Kent </TD> <TD align="center"> 92.9% </TD> </TR>
-  <TR> <TD align="center"> Big East </TD> <TD> Boston College,  Miami Florida,  Virginia Tech,  Syracuse,  Temple,  West Virginia, <i><del> Connecticut</del></i>,  Pittsburgh,  Rutgers </TD> <TD align="center"> 88.9% </TD> </TR>
-  <TR> <TD align="center"> WAC </TD> <TD> Nevada,  Fresno State, <i><del> Texas Christian</del></i>,  Tulsa,  Hawaii,  Rice,  Southern Methodist,  San Jose State,  Texas El Paso </TD> <TD align="center"> 88.9% </TD> </TR>
-  <TR> <TD align="center"> Big West </TD> <TD> Middle Tennessee State,  Louisiana Lafayette,  Louisiana Monroe, <i><del> Louisiana Tech</del></i> </TD> <TD align="center"> 75% </TD> </TR>
-  <TR> <TD align="center"> Mountain West </TD> <TD> Brigham Young,  San Diego State, <i><del> Boise State</del></i>,  Wyoming,  New Mexico,  Nevada Las Vegas,  Utah, <i><del> North Texas</del></i>, <i><del> Utah State</del></i>, <i><del> New Mexico State</del></i>,  Colorado State, <i><del> Arkansas State</del></i>, <i><del> Idaho</del></i>,  Air Force </TD> <TD align="center"> 57.1% </TD> </TR>
+<TR> <TH> Conference </TH> <TH> Teams Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> WAC </TD> <TD> Nevada,  Fresno State, <i><del> Texas Christian</del></i>,  Tulsa,  Hawaii,  Rice,  Southern Methodist,  San Jose State,  Texas El Paso </TD> <TD align="center"> 1.20 </TD> <TD align="center"> 88.9% </TD> </TR>
+  <TR> <TD align="center"> Mountain West </TD> <TD> Brigham Young,  San Diego State, <i><del> Boise State</del></i>,  Wyoming,  New Mexico,  Nevada Las Vegas,  Utah, <i><del> North Texas</del></i>, <i><del> Utah State</del></i>, <i><del> New Mexico State</del></i>,  Colorado State, <i><del> Arkansas State</del></i>, <i><del> Idaho</del></i>,  Air Force </TD> <TD align="center"> 0.96 </TD> <TD align="center"> 57.1% </TD> </TR>
+  <TR> <TD align="center"> C-USA </TD> <TD> Cincinnati,  Louisville,  Houston,  Tulane,  Southern Mississippi,  Army,  Memphis,  East Carolina,  Alabama Birmingham </TD> <TD align="center"> 0.91 </TD> <TD align="center"> 100% </TD> </TR>
+  <TR> <TD align="center"> Big East </TD> <TD> Boston College,  Miami Florida,  Virginia Tech,  Syracuse,  Temple,  West Virginia, <i><del> Connecticut</del></i>,  Pittsburgh,  Rutgers </TD> <TD align="center"> 0.83 </TD> <TD align="center"> 88.9% </TD> </TR>
+  <TR> <TD align="center"> Big West </TD> <TD> Middle Tennessee State,  Louisiana Lafayette,  Louisiana Monroe, <i><del> Louisiana Tech</del></i> </TD> <TD align="center"> 0.26 </TD> <TD align="center"> 75% </TD> </TR>
+  <TR> <TD align="center"> Independent </TD> <TD> Notre Dame,  Notre Dame,  Navy,  Navy </TD> <TD align="center"> 0.00 </TD> <TD align="center"> 100% </TD> </TR>
    <A NAME=tab:football_final></A>
 </TABLE>
 
 - Through manual specification of conferences, we were able to correctly classify 91.3 % of the football teams into their conferences. 
+
+Political Books Example
+========================================================
+- Political books co-purchased close to the 2004 United States presidential election and sold on Amazon.com
+![Political Books](images/polbooks_1.png)
+
+Political Books Example (Cont'd)
+========================================================
+![Political Books Grouped](images/polbooks_2.png)
+
+Poltical Books Example (Cont'd)
+========================================================
+<!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
+<!-- Mon Mar 24 19:23:04 2014 -->
+<TABLE border=1>
+<TR> <TH> Classification </TH> <TH> Books Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> Conservative </TD> <TD> A National Party No More, Dereliction of Duty, Ten Minutes from Normal, Bush Country, Rumsfeld's War, Legacy, Hating America, Hillary's Scheme, <i><del>Meant To Be</del></i>, Tales from the Left Coast, Breakdown, Losing Bin Laden, The French Betrayal of America, Spin Sisters, The Right Man, Useful Idiots, Shut Up and Sing, Who's Looking Out for You?, Those Who Trespass, Bias, The O'Reilly Factor, Let Freedom Ring, Deliver Us from Evil, Give Me a Break, Betrayal, The Real America, The Faith of George W Bush, The Death of Right and Wrong, <i><del>Power Plays</del></i>, Arrogance, <i><del>The Perfect Wife</del></i>, The Bushes, Things Worth Fighting For, Off with Their Heads, Persecution, Why Courage Matters, Hollywood Interrupted, The Enemy Within, We Will Prevail, Endgame, The Official Handbook Vast Right Wing Conspiracy, The Third Terrorist, Slander, The Savage Nation, Fighting Back </TD> <TD align="center"> 8.04 </TD> <TD align="center"> 93.3% </TD> </TR>
+   <A NAME=tab:polbooks_final></A>
+</TABLE>
+
+
+Political Books Example (Cont'd)
+========================================================
+<!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
+<!-- Mon Mar 24 19:23:04 2014 -->
+<TABLE border=1>
+<TR> <TH> Classification </TH> <TH> Books Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> Liberal </TD> <TD> Downsize This!, The Culture of Fear, House of Bush, House of Saud, The Best Democracy Money Can Buy, Rogue Nation, Stupid White Men, Rush Limbaugh Is a Big Fat Idiot, The Great Unraveling, Against All Enemies, American Dynasty, The Price of Loyalty, The Sorrows of Empire, Worse Than Watergate, <i><del>Plan of Attack</del></i>, Big Lies, The Lies of George W. Bush, Bushwomen, The Bubble of American Supremacy, Living History, The Politics of Truth, Fanatics and Fools, Bushwhacked, Disarming Iraq, Lies and the Lying Liars Who Tell Them, MoveOn's 50 Ways to Love Your Country, The Buying of the President 2004, Perfectly Legal, <i><del>Bush at War</del></i>, The New Pearl Harbor, Freethinkers, Had Enough?, It's Still the Economy, Stupid!, We're Right They're Wrong, What Liberal Media?, The Clinton Wars, Weapons of Mass Deception, Dude, Where's My Country?, Thieves in High Places, Shrub, Buck Up Suck Up, Hegemony or Survival, The Exception to the Rulers </TD> <TD align="center"> 7.42 </TD> <TD align="center"> 95.2% </TD> </TR>
+   <A NAME=tab:polbooks_final></A>
+</TABLE>
+
+
+Political Books Example (Cont'd)
+========================================================
+<!-- html table generated in R 3.0.2 by xtable 1.7-1 package -->
+<!-- Mon Mar 24 19:23:04 2014 -->
+<TABLE border=1>
+<TR> <TH> Classification </TH> <TH> Books Identified </TH> <TH> Proportion </TH> <TH> Accuracy </TH>  </TR>
+  <TR> <TD align="center"> Neutral </TD> <TD> 1000 Years for Revenge, <i><del>Bush vs. the Beltway</del></i>, <i><del>Charlie Wilson's War</del></i>, <i><del>Dangerous Dimplomacy</del></i>, Sleeping With the Devil, <i><del>The Man Who Warned America</del></i>, Why America Slept, Ghost Wars, Surprise, Security, the American Experience, <i><del>Allies</del></i>, <i><del>The Choice</del></i>, All the Shah's Men, <i><del>Soft Power</del></i>, Colossus, The Future of Freedom, <i><del>Rise of the Vulcans</del></i>, <i><del>America Unbound</del></i>, Empire </TD> <TD align="center"> 1.06 </TD> <TD align="center"> 50% </TD> </TR>
+   <A NAME=tab:polbooks_final></A>
+</TABLE>
+
+- Correctly classified 86.67 %  of the books into the categories created by the author of the data set.
 
 Graphical Devices
 ========================================================
