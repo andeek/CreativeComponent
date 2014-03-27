@@ -120,7 +120,7 @@ Community Detection
 
 Modularity
 ========================================================
-- Example objective function: Girvan & Newman’s modularity measure  
+- Example objective function: Girvan & Newman's modularity measure  
 
 \[ Q = \sum\limits_r (e_{rr} - a_r^2)  \]
 \(r = \) a community  
@@ -400,7 +400,7 @@ class: particle-chart
 
 - ~~Shiny~~: Server-client interaction
 - ~~D3~~: User interface and graph layout
-- ~~igraph~~: Data formatting
+- ~~igraph/rjson~~: Data formatting
 
 Tools (Cont'd)
 ========================================================
