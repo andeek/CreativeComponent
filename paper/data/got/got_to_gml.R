@@ -35,6 +35,7 @@ makegraph <- function(id) {
   graph <- graph.data.frame(coocc[,c("charName_1", "charName_2")], directed=FALSE)
   graph <- simplify(graph, remove.loops=FALSE)
   V(graph)$label <- V(graph)$name
+  V(graph)$name <- 1:length(V(graph))
   write.graph(graph, sprintf("paper/data/got/book_%x.gml", id), format="gml")
 }
 

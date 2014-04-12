@@ -1,4 +1,4 @@
-Creator "igraph version 0.6.5.999-42 Mon Feb 03 09:52:45 2014"
+Creator "igraph version 0.6.5 Sat Apr 12 11:57:59 2014"
 Version 1
 graph
 [
@@ -6,505 +6,505 @@ graph
   node
   [
     id 0
-    name "Alebelly"
+    name "1"
     label "Alebelly"
   ]
   node
   [
     id 1
-    name "Alfyn"
+    name "2"
     label "Alfyn"
   ]
   node
   [
     id 2
-    name "Allar Deem"
+    name "3"
     label "Allar Deem"
   ]
   node
   [
     id 3
-    name "Amory Lorch"
+    name "4"
     label "Amory Lorch"
   ]
   node
   [
     id 4
-    name "Antario Jast"
+    name "5"
     label "Antario Jast"
   ]
   node
   [
     id 5
-    name "Arya Stark"
+    name "6"
     label "Arya Stark"
   ]
   node
   [
     id 6
-    name "Arys Oakheart"
+    name "7"
     label "Arys Oakheart"
   ]
   node
   [
     id 7
-    name "Barra"
+    name "8"
     label "Barra"
   ]
   node
   [
     id 8
-    name "Barristan Selmy"
+    name "9"
     label "Barristan Selmy"
   ]
   node
   [
     id 9
-    name "Belwas"
+    name "10"
     label "Belwas"
   ]
   node
   [
     id 10
-    name "Benfred Tallhart"
+    name "11"
     label "Benfred Tallhart"
   ]
   node
   [
     id 11
-    name "Biter"
+    name "12"
     label "Biter"
   ]
   node
   [
     id 12
-    name "Bran Stark"
+    name "13"
     label "Bran Stark"
   ]
   node
   [
     id 13
-    name "Brienne of Tarth"
+    name "14"
     label "Brienne of Tarth"
   ]
   node
   [
     id 14
-    name "Catelyn Tully"
+    name "15"
     label "Catelyn Tully"
   ]
   node
   [
     id 15
-    name "Chayle"
+    name "16"
     label "Chayle"
   ]
   node
   [
     id 16
-    name "Chiswyck"
+    name "17"
     label "Chiswyck"
   ]
   node
   [
     id 17
-    name "Cortnay Penrose"
+    name "18"
     label "Cortnay Penrose"
   ]
   node
   [
     id 18
-    name "Davos Seaworth"
+    name "19"
     label "Davos Seaworth"
   ]
   node
   [
     id 19
-    name "Donella Manderly"
+    name "20"
     label "Donella Manderly"
   ]
   node
   [
     id 20
-    name "Dontos Hollard"
+    name "21"
     label "Dontos Hollard"
   ]
   node
   [
     id 21
-    name "Ebben"
+    name "22"
     label "Ebben"
   ]
   node
   [
     id 22
-    name "Emmon Cuy"
+    name "23"
     label "Emmon Cuy"
   ]
   node
   [
     id 23
-    name "Garlan Tyrell"
+    name "24"
     label "Garlan Tyrell"
   ]
   node
   [
     id 24
-    name "Gendry"
+    name "25"
     label "Gendry"
   ]
   node
   [
     id 25
-    name "Gregor Clegane"
+    name "26"
     label "Gregor Clegane"
   ]
   node
   [
     id 26
-    name "Guncer Sunglass"
+    name "27"
     label "Guncer Sunglass"
   ]
   node
   [
     id 27
-    name "Guyard Morrigen"
+    name "28"
     label "Guyard Morrigen"
   ]
   node
   [
     id 28
-    name "Hot Pie"
+    name "29"
     label "Hot Pie"
   ]
   node
   [
     id 29
-    name "Hubard Rambton"
+    name "30"
     label "Hubard Rambton"
   ]
   node
   [
     id 30
-    name "Jacelyn Bywater"
+    name "31"
     label "Jacelyn Bywater"
   ]
   node
   [
     id 31
-    name "Janos Slynt"
+    name "32"
     label "Janos Slynt"
   ]
   node
   [
     id 32
-    name "Jaqen H'ghar"
+    name "33"
     label "Jaqen H'ghar"
   ]
   node
   [
     id 33
-    name "Joffrey Baratheon"
+    name "34"
     label "Joffrey Baratheon"
   ]
   node
   [
     id 34
-    name "Jon Snow"
+    name "35"
     label "Jon Snow"
   ]
   node
   [
     id 35
-    name "Lancel Lannister"
+    name "36"
     label "Lancel Lannister"
   ]
   node
   [
     id 36
-    name "Lommy Greenhands"
+    name "37"
     label "Lommy Greenhands"
   ]
   node
   [
     id 37
-    name "Loras Tyrell"
+    name "38"
     label "Loras Tyrell"
   ]
   node
   [
     id 38
-    name "Lothor Brune"
+    name "39"
     label "Lothor Brune"
   ]
   node
   [
     id 39
-    name "Luwin"
+    name "40"
     label "Luwin"
   ]
   node
   [
     id 40
-    name "Lyman Darry"
+    name "41"
     label "Lyman Darry"
   ]
   node
   [
     id 41
-    name "Lymond Vikary"
+    name "42"
     label "Lymond Vikary"
   ]
   node
   [
     id 42
-    name "Cressen"
+    name "43"
     label "Cressen"
   ]
   node
   [
     id 43
-    name "Mandon Moore"
+    name "44"
     label "Mandon Moore"
   ]
   node
   [
     id 44
-    name "Margaery Tyrell"
+    name "45"
     label "Margaery Tyrell"
   ]
   node
   [
     id 45
-    name "Melisandre"
+    name "46"
     label "Melisandre"
   ]
   node
   [
     id 46
-    name "Mikken"
+    name "47"
     label "Mikken"
   ]
   node
   [
     id 47
-    name "Nan"
+    name "48"
     label "Nan"
   ]
   node
   [
     id 48
-    name "Osha"
+    name "49"
     label "Osha"
   ]
   node
   [
     id 49
-    name "Petyr Baelish"
+    name "50"
     label "Petyr Baelish"
   ]
   node
   [
     id 50
-    name "Podrick Payne"
+    name "51"
     label "Podrick Payne"
   ]
   node
   [
     id 51
-    name "Pycelle"
+    name "52"
     label "Pycelle"
   ]
   node
   [
     id 52
-    name "Qhorin Halfhand"
+    name "53"
     label "Qhorin Halfhand"
   ]
   node
   [
     id 53
-    name "Rafford"
+    name "54"
     label "Rafford"
   ]
   node
   [
     id 54
-    name "Ramsay Snow"
+    name "55"
     label "Ramsay Snow"
   ]
   node
   [
     id 55
-    name "Randyll Tarly"
+    name "56"
     label "Randyll Tarly"
   ]
   node
   [
     id 56
-    name "Rattleshirt"
+    name "57"
     label "Rattleshirt"
   ]
   node
   [
     id 57
-    name "Reek"
+    name "58"
     label "Reek"
   ]
   node
   [
     id 58
-    name "Renly Baratheon"
+    name "59"
     label "Renly Baratheon"
   ]
   node
   [
     id 59
-    name "Rickard Karstark"
+    name "60"
     label "Rickard Karstark"
   ]
   node
   [
     id 60
-    name "Rickon Stark"
+    name "61"
     label "Rickon Stark"
   ]
   node
   [
     id 61
-    name "Robar Royce"
+    name "62"
     label "Robar Royce"
   ]
   node
   [
     id 62
-    name "Robb Stark"
+    name "63"
     label "Robb Stark"
   ]
   node
   [
     id 63
-    name "Rodrik Cassel"
+    name "64"
     label "Rodrik Cassel"
   ]
   node
   [
     id 64
-    name "Roland Crakehall"
+    name "65"
     label "Roland Crakehall"
   ]
   node
   [
     id 65
-    name "Roose Bolton"
+    name "66"
     label "Roose Bolton"
   ]
   node
   [
     id 66
-    name "Rorge"
+    name "67"
     label "Rorge"
   ]
   node
   [
     id 67
-    name "Rupert Brax"
+    name "68"
     label "Rupert Brax"
   ]
   node
   [
     id 68
-    name "Sandor Clegane"
+    name "69"
     label "Sandor Clegane"
   ]
   node
   [
     id 69
-    name "Sansa Stark"
+    name "70"
     label "Sansa Stark"
   ]
   node
   [
     id 70
-    name "Selyse Florent"
+    name "71"
     label "Selyse Florent"
   ]
   node
   [
     id 71
-    name "Shireen Baratheon"
+    name "72"
     label "Shireen Baratheon"
   ]
   node
   [
     id 72
-    name "Stafford Lannister"
+    name "73"
     label "Stafford Lannister"
   ]
   node
   [
     id 73
-    name "Stannis Baratheon"
+    name "74"
     label "Stannis Baratheon"
   ]
   node
   [
     id 74
-    name "Stevron Frey"
+    name "75"
     label "Stevron Frey"
   ]
   node
   [
     id 75
-    name "Theon Greyjoy"
+    name "76"
     label "Theon Greyjoy"
   ]
   node
   [
     id 76
-    name "Tommen Baratheon"
+    name "77"
     label "Tommen Baratheon"
   ]
   node
   [
     id 77
-    name "Tyrion Lannister"
+    name "78"
     label "Tyrion Lannister"
   ]
   node
   [
     id 78
-    name "Tywin Lannister"
+    name "79"
     label "Tywin Lannister"
   ]
   node
   [
     id 79
-    name "Walder Frey (Little)"
+    name "80"
     label "Walder Frey (Little)"
   ]
   node
   [
     id 80
-    name "Weese"
+    name "81"
     label "Weese"
   ]
   node
   [
     id 81
-    name "Wylis Manderly"
+    name "82"
     label "Wylis Manderly"
   ]
   node
   [
     id 82
-    name "Wyman Manderly"
+    name "83"
     label "Wyman Manderly"
   ]
   node
   [
     id 83
-    name "Yoren"
+    name "84"
     label "Yoren"
   ]
   edge
