@@ -54,6 +54,33 @@ This process of grouping nodes into suspected communities can be repeated until 
 \caption{\label{fig:football_progression}The full process of selecting and grouping communities in gravicom using the football data set.}
 \end{figure}
 
+<<example_func, echo=FALSE>>=
+community_stats <- function(path_to_gml){
+  require(igraph)
+  require(plyr)
+  
+  df <- get.data.frame(read.graph(path_to_gml, format="gml"), what="both")
+  edges_groups <- merge(merge(df$edges, df$vertices[, c("id", "Group")], by.x = "to", by.y = "id", all.x = TRUE),
+                        df$vertices[, c("id", "Group")], by.x = "from", by.y = "id", all.x = TRUE)
+  names(edges_groups)[3:4] <- c("Group.from", "Group.to")
+  
+  adj <- as.data.frame(table(edges_groups[,3:4]))
+  adj$Ratio <- adj$Freq/sum(adj$Freq)
+  
+  res <- mdply(unique(c(edges_groups$Group.from, edges_groups$Group.to)), function(x){
+    cbind(
+      Group = x,
+      Ratio = adj[with(adj, Group.from == x & Group.to == x), "Freq"]/(sum(adj[with(adj, Group.from == x & Group.to != x), "Freq"]) + sum(adj[with(adj, Group.from != x & Group.to == x), "Freq"]))
+    )
+  })
+  res$Group <- as.character(res$Group)
+  if(nrow(res[substring(res$Group,1,1) == "n",]) > 0) res[substring(res$Group,1,1) == "n",]$Group<-"independent"
+  res$Modularity <- diag(table(edges_groups[,3:4])/sum(table(edges_groups[,3:4]))) - (rowSums(table(edges_groups[,3:4])/sum(table(edges_groups[,3:4]))))^2
+  
+  return(res)
+}
+@
+
 <<football_check, echo=FALSE, warning=FALSE, results='hide', error=FALSE, results='asis'>>=
 library(igraph)
 library(plyr)
@@ -69,27 +96,33 @@ map <- ddply(football.df, .(Group), summarise, orig.grp = names(sort(-table(valu
 football.df.m <- merge(football.df, map, by = "Group", all.x=TRUE)
 
 idx <- with(football.df.m, which(value != orig.grp))
+stats <- community_stats("../data/football_network.gml")
+
+football.df.m <- merge(football.df.m, stats[-nrow(stats),], by="Group", all.x=TRUE)
 football.df.m$label[idx] <- sprintf("{\\it %s}",football.df.m$label[idx]) 
+football.df.m$Ratio <- as.numeric(as.character(football.df.m$Ratio))
+
 results <- ddply(football.df.m, .(orig.grp), summarise, 
                  teams=paste(label, collapse=", "), 
+                 prop=min(Ratio),
                  perc.right=percent(1 - sum(value != orig.grp)/length(orig.grp)))
 results <- results[with(results, order(as.numeric(orig.grp))),]
 results$Conference <- c("ACC", "Big East", "Big 10", "Big 12", "C-USA", "Independent", "MAC", "Mountain West", "Pac-10", "SEC", "Big West", "WAC" )
 
-results <- results[,c(4,2,3)]
-colnames(results) <- c("Conference", "Teams Identified", "Accuracy")
+results <- results[,c(5,2,3,4)]
+colnames(results) <- c("Conference", "Teams Identified", "Ratio", "Accuracy")
 results$`Teams Identified` <- gsub('(.)([A-Z])',"\\1 \\2", results$`Teams Identified`)
 
 #percent school misspecified
 percent_correct <- 1 - sum(football.df.m$value != football.df.m$orig.grp)/nrow(football.df)
 
-print(xtable(results, align=c("c", "c","p{10cm}","c"), label='tab:football_final', caption='Resulting communities detected using gravicom and the corresponding conference. Teams that have been incorrectly classified are italicized.'),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H')
+print(xtable(results[with(results, order(-Ratio)),], align=c("c", "c","p{10cm}","c", "c"), label='tab:football_final', caption='Resulting communities detected using gravicom and the corresponding conference. Teams that have been incorrectly classified are italicized.'),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H')
 @
 
 Using the visual approach detailed above, we were able to detect 11 community structures in the graph. There were 11 conferences and 5 independent schools in the data set. Through manual specification of conferences, we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the football teams into their conferences. 
 
 \subsection{Political Books Sold}
-For illustration, we next consider a second example data set consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent co-purchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the data set \cite{krebs2004divided} and we can see a clear partition in Figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This data set is interesting because it highlights a great divide in the United States population that can be ascribed to the two party political system. 
+For illustration, we next consider a second example data set consisting of a network of political books purchased close to the 2004 United States presidential election and sold on Amazon.com \cite{polbooks}. Each node represents a book and each edge represents frequent co-purchasing of two books by the same buyers. The books are classified as being conservative, liberal, or neutral by the author of the data set \cite{krebs2004divided} and we can see a clear partition in Figure~\ref{fig:polbooks_1} between two main groups (i.e. roughly conservative and liberal) with a smaller group between, when looking at the network in gravicom. This data set is interesting because it highlights a great divide in the political books sold via Amazon that can be ascribed to the two party political system. 
 
 \begin{figure}[H]
 \centering
@@ -105,19 +138,25 @@ polbooks.df <- get.data.frame(read.graph("../data/polbooks_network.gml", format=
 map <- ddply(polbooks.df, .(Group), summarise, orig.grp = names(sort(-table(value)))[1])
 polbooks.df.m <- merge(polbooks.df, map, by = "Group", all.x=TRUE)
 
+stats <- community_stats("../data/polbooks_network.gml")
+polbooks.df.m <- merge(polbooks.df.m, stats, by="Group", all.x=TRUE)
+
 idx <- with(polbooks.df.m, which(value != orig.grp))
 polbooks.df.m$label[idx] <- sprintf("{\\it %s}",polbooks.df.m$label[idx]) 
-results <- ddply(polbooks.df.m, .(orig.grp), summarise, 
-                 books=paste(label, collapse=", "), 
-                 perc.right=percent(1 - sum(value != orig.grp)/length(orig.grp)))
-results$designation <- c("Conservative", "Liberal", "Neutral")
+polbooks.df.m$Ratio <- as.numeric(as.character(polbooks.df.m$Ratio))
 
-results <- results[,c(4,2,3)]
-colnames(results) <- c("Classification", "Books Identified", "Accuracy")
+results_pol <- ddply(polbooks.df.m, .(orig.grp), summarise, 
+                 books=paste(label, collapse=", "), 
+                 prop=min(Ratio),
+                 perc.right=percent(1 - sum(value != orig.grp)/length(orig.grp)))
+results_pol$designation <- c("Conservative", "Liberal", "Neutral")
+
+results_pol <- results_pol[,c(5,2,3,4)]
+colnames(results_pol) <- c("Classification", "Books Identified", "Ratio", "Accuracy")
 
 #percent books misspecified
 percent_correct <- 1 - sum(polbooks.df.m$value != polbooks.df.m$orig.grp)/nrow(polbooks.df)
 
-print(xtable(results, align=c("c", "c","p{10cm}","c"), label='tab:polbooks_final', caption='Resulting communities detected using gravicom and the corresponding type of book. Books that have been incorrectly classified are italicized.'),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H')
+print(xtable(results_pol[with(results_pol, order(-Ratio)),], align=c("c", "c","p{10cm}","c", "c"), label='tab:polbooks_final', caption='Resulting communities detected using gravicom and the corresponding type of book. Books that have been incorrectly classified are italicized.'),sanitize.text.function = function(x)gsub('%', '\\\\%', gsub('&', '\\\\&', x)), include.rownames=FALSE, table.placement='H')
 @
 We detected visually 3 types of books in the data set using the process of selection and grouping detailed in section~\ref{sec:football}. Through subsequent manual verification of the classification of books, we found that we were able to correctly classify \Sexpr{round(100*percent_correct, 2)}\% of the books into the categories created by the author of the data set. See Table~\ref{tab:polbooks_final} for the final groups of books found using gravicom.
